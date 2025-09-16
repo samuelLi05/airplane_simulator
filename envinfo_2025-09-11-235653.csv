@@ -1,0 +1,2 @@
+number_of_agents,number_of_airports,number_of_initial_cargo,max_cargo_per_episode,avg_working_capacity,avg_processing_time,soft_deadline_multiplier,hard_deadline_multiplier,min_degree,max_degree,avg_degree,malfunction_rate,malfunction_max_steps,malfunction_min_steps,max_soft_deadline,max_hard_deadline,REWARD_CARGO_MISSED_PENALTY,REWARD_CARGO_LATE_PENALTY,REWARD_MOVEMENT_PENALTY
+2,8,40,50,4294967296.0,0.0,10,20,4,12,8,0.5,30,10,3022,3582,10,1,0.01
