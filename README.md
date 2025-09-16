@@ -4,7 +4,7 @@ This project is a simulation environment for airlift logistics.
 
 ## Local Development Setup
 
-These instructions will guide you through setting up the project for local development.
+These instructions will guide you through setting up the simulation environment.
 
 ### Prerequisites
 
@@ -22,12 +22,15 @@ These instructions will guide you through setting up the project for local devel
 
 2.  **Install the `airlift` Package in Editable Mode**
 
-    This command installs the `airlift` project in "editable" mode. This is useful for development as any changes you make to the `airlift` source code will be immediately available in your environment.
+    Activate the conda environment. 
+    '''bash
+    conda activate airlift-solution"
+    '''
 
-    We use `conda run` to execute the command within the `airlift` environment without having to activate it first.
+    Then run this installation to download the airlift software package. 
 
     ```bash
-    conda run -n airlift pip install -e ./airlift
+    pip install -e ./airlift
     ```
 
 3.  **Activate the Conda Environment**
@@ -35,7 +38,7 @@ These instructions will guide you through setting up the project for local devel
     To start working on the project, you need to activate the Conda environment in your terminal.
 
     ```bash
-    conda activate airlift
+    conda activate airlift-solution
     ```
 
     Your terminal prompt should now indicate that you are in the `airlift` environment. You are now ready to run the simulation and work on the code.
