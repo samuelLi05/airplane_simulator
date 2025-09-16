@@ -4,7 +4,7 @@ This project is a simulation environment for airlift logistics.
 
 ## Local Development Setup
 
-These instructions will guide you through setting up the simulation environment.
+These instructions will guide you through setting up the simulation environment in an Linux environment.
 
 ### Prerequisites
 
