@@ -18,5 +18,6 @@ class MySolution(Solution):
 
     def policies(self, obs, dones, infos):
         # Use the acion helper to generate an action
+        #print (self._action_helper.sample_valid_actions(obs))
         return self._action_helper.sample_valid_actions(obs)
 
