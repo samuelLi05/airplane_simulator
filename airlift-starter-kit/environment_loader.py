@@ -8,7 +8,9 @@ def load_pickle_into_json(filepath:str, json_file_path:str, save_json = False):
     if not os.path.exists(filepath):
         raise FileNotFoundError(f"Pickle file not found at: {filepath}")
     env = AirliftEnv.load(filename=filepath)
-    json_env = jsonpickle.encode(env, indent=4, keys=True)
+    # get agent name and get the global state
+    starting_obs = env.reset()[env.agents[0]]["globalstate"]
+    json_env = jsonpickle.encode(starting_obs, indent=4, keys=True)
     # Encode here with editable data format
     with open(json_file_path, 'w') as f:
         f.write(json_env)
