@@ -1,1 +1,5 @@
 *.csv
+justin/
+.vscode/
+__pycache__/
+.env
