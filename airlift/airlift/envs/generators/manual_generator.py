@@ -94,11 +94,12 @@ class ManualWorldGenerator(WorldGenerator):
                 source_airport=routemap.airports_by_id[cargo_data['location']],
                 end_airport=routemap.airports_by_id[cargo_data['destination']],
                 weight=cargo_data.get('weight', 1),
-                earliest_pickup_time=cargo_data.get('earliest_pickup_time', 0),
+                earliest_pickup_time=0,#cargo_data.get('earliest_pickup_time', 0),
                 soft_deadline=cargo_data.get('soft_deadline', 100),
                 hard_deadline=cargo_data.get('hard_deadline', 200)
             )
             cargo.add(cargo_item)
+            routemap.airports_by_id[cargo_data['location']].add_cargo(cargo_item)
 
         return routemap, airplanes, cargo
     

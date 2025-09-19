@@ -92,7 +92,14 @@ def doepisode(env, solution, render=False, env_seed=None, solution_seed=None, re
         # Compute Action
         starting_time = timeit.default_timer()
         actions = solution.policies(env.observe(), env.dones, infos=infos)
-        total_actions.append(actions)
+        # Manual deep copy
+        actions_copy = {}
+        for agent, action in actions.items():
+            if action is not None:
+                actions_copy[agent] = action.copy()
+            else:
+                actions_copy[agent] = None
+        total_actions.append(actions_copy) 
         total_solution_time += timeit.default_timer() - starting_time
         obs, rewards, dones, infos = env.step(actions)  # If there is no observation, just return 0
         if capture_metrics:
@@ -106,6 +113,7 @@ def doepisode(env, solution, render=False, env_seed=None, solution_seed=None, re
             if render_mode != "video":
                 time.sleep(render_sleep_time)
         # Extract only a single solutiuon
+        # TODO stop at 5 steps
         if (early_exit and json_file_path):
             json_env = jsonpickle.encode(total_actions, indent=4, keys=True)
             with open(json_file_path, 'w') as f:

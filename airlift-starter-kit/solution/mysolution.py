@@ -1,6 +1,8 @@
 from airlift.solutions import Solution
 from airlift.envs import ActionHelper
 
+import json
+
 class MySolution(Solution):
     """
     Utilizing this class for your solution is required for your submission. The primary solution algorithm will go inside the
@@ -18,6 +20,5 @@ class MySolution(Solution):
 
     def policies(self, obs, dones, infos):
         # Use the acion helper to generate an action
-        #print (self._action_helper.sample_valid_actions(obs))
         return self._action_helper.sample_valid_actions(obs)
 

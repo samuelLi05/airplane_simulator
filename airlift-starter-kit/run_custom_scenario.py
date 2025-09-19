@@ -26,7 +26,6 @@ from eval_solution import write_results
 max_cycles = 5000
 
 # Use a plain map (this is faster to generate and captures essential elements of the scenario)
-map_generator=PlainMapGenerator()
 
 """
 Create an AirliftEnv using all the generators. There exist multiple generators for each aspect. For example instead of using the
@@ -50,7 +49,7 @@ env_info, metrics, time_taken, total_solution_time, step_metrics = \
             env_seed=100,
             solution_seed=200,
             capture_metrics=True, 
-            early_exit=False,
+            early_exit=True,
             inject_path= "./test-environments/Test_1_json/example.json", # edited json file we inject
             json_file_path="./test-environments/solution_example.json") # Where solution is stored
 
