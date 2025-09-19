@@ -1,6 +1,7 @@
 import random
 import time
 import timeit
+import jsonpickle
 
 from gym.utils import seeding
 
@@ -56,7 +57,7 @@ class Solution:
         return list(obs.values())[0]["globalstate"]  # Assume state space for each agent is the same
 
 
-def doepisode(env, solution, render=False, env_seed=None, solution_seed=None, render_sleep_time=0.1, capture_metrics=False, render_mode="human"):
+def doepisode(env, solution, render=False, env_seed=None, solution_seed=None, render_sleep_time=0.1, capture_metrics=False, render_mode="human", early_exit=False, inject_path = "", json_file_path=""):
     """
     Runs a single episode.
 
@@ -66,6 +67,9 @@ def doepisode(env, solution, render=False, env_seed=None, solution_seed=None, re
     :parameter env_seed: int, environment seed,
     :parameter solution_seed: int, solution seed
     :parameter render_sleep_time: float, sleep timer
+    :parameter early_exit: Stop after one solution
+    :paramter inject_path: Edited json file to change airlift environment
+    :paramter json_file_path: Where to store solutions json file
     :return: `env.env_info`: a NamedTuple that contains all the environment initialization parameters
         `env.metrics`: a NamedTuple that contains all the environment metrics collected for the solution.
 
@@ -75,7 +79,7 @@ def doepisode(env, solution, render=False, env_seed=None, solution_seed=None, re
     step = 0
     _done = False
     infos = None
-    obs = env.reset(seed=env_seed)
+    obs = env.reset(seed=env_seed, json_file_path = inject_path)
     if capture_metrics:
         step_metrics = [env.metrics]
 
@@ -83,14 +87,17 @@ def doepisode(env, solution, render=False, env_seed=None, solution_seed=None, re
     episode_starting_time = timeit.default_timer()
     starting_time = timeit.default_timer()
     total_solution_time = timeit.default_timer() - starting_time
+    total_actions = []
     while not _done:
         # Compute Action
         starting_time = timeit.default_timer()
         actions = solution.policies(env.observe(), env.dones, infos=infos)
+        total_actions.append(actions)
         total_solution_time += timeit.default_timer() - starting_time
         obs, rewards, dones, infos = env.step(actions)  # If there is no observation, just return 0
         if capture_metrics:
             step_metrics.append(env.metrics)
+
 
         _done = all(dones.values())
         step += 1
@@ -98,11 +105,28 @@ def doepisode(env, solution, render=False, env_seed=None, solution_seed=None, re
             env.render(render_mode)
             if render_mode != "video":
                 time.sleep(render_sleep_time)
+        # Extract only a single solutiuon
+        if (early_exit and json_file_path):
+            json_env = jsonpickle.encode(total_actions, indent=4, keys=True)
+            with open(json_file_path, 'w') as f:
+                f.write(json_env)
+            break
+        
+
     # print('is done')
     time_taken = timeit.default_timer() - episode_starting_time
 
     return_val = (env.env_info, env.metrics, time_taken, total_solution_time)
+
+    # Extract all solutions for a simulation
+    if (json_file_path):
+            json_env = jsonpickle.encode(total_actions, indent=4, keys=True)
+            # Encode here with editable data format
+            with open(json_file_path, 'w') as f:
+                f.write(json_env)
+            print(f"Created {json_file_path}")
+            
     if capture_metrics:
         return return_val + (step_metrics,)
     else:
-        return return_val
+        return return_val + (0, )

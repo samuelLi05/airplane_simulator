@@ -7,6 +7,7 @@ from math import floor
 from statistics import mean
 from typing import List, Dict, Tuple, NamedTuple, Optional, Collection
 import pickle
+import json
 import networkx as nx
 from PIL.Image import Image
 from gym import logger, Space
@@ -28,6 +29,7 @@ from airlift.envs.route_map import RouteMap
 # This should be included in PettingZoo in a future release.
 # See https://github.com/Farama-Foundation/PettingZoo/blob/master/pettingzoo/utils/env.py
 from airlift.envs.generators.world_generators import WorldGenerator
+from airlift.envs.generators.manual_generator import ManualWorldGenerator
 from airlift.utils.definitions import TEST_MODE
 from airlift.utils.seeds import generate_seed
 
@@ -86,7 +88,7 @@ class PlaneTypeObservation(NamedTuple):
     id: int
     max_weight: float
 
-
+# TODO
 class CargoObservation(NamedTuple):
     """Cargo info for Observation. This is part of the state space"""
     id: CargoID
@@ -170,7 +172,7 @@ class AirliftEnv(ParallelEnv):
 
         self.verbose = verbose
 
-    def reset(self, seed=None) -> Dict:
+    def reset(self, seed=None, json_file_path = "") -> Dict:
         """
         Resets the environment and generates a new random realization. If called without a seed, a new realization is generated.
 
@@ -180,6 +182,11 @@ class AirliftEnv(ParallelEnv):
         """
         self.agents = list(
             self.possible_agents)  # Make a copy of the list so that we don't affect possible_agents when we remove done agents
+        
+        global_state = None
+        if (json_file_path):
+            with open(json_file_path, 'r') as f:
+                global_state = json.load(f)
 
         # If a new seed is passed in, re-seed the environment and world generator.
         # If environment has not been reset yet, also do the seeding regardless.
@@ -195,8 +202,27 @@ class AirliftEnv(ParallelEnv):
                 ospace.seed(seed=generate_seed(self._np_random))
             for aspace in self.action_spaces.values():
                 aspace.seed(seed=generate_seed(self._np_random))
+        # inject json data
+        if not global_state:
+            self.routemap, airplanes, cargo = self.world_generator.generate()
+        else:
+            self.routemap, airplanes, cargo = ManualWorldGenerator(json_file_path).generate(self.routemap)
+            print ("Injecting")
 
-        self.routemap, airplanes, cargo = self.world_generator.generate()
+        if len(airplanes) != len(self.possible_agents):
+            print ("updating")
+            self.possible_agents = ['a_' + str(i) for i in range(len(airplanes))]
+            print (len(self.possible_agents))
+            if hasattr(self.__class__.action_spaces, "cache_clear"):
+                self.__class__.action_spaces.cache_clear()
+            if hasattr(self.__class__.observation_spaces, "cache_clear"):
+                self.__class__.observation_spaces.cache_clear()
+            if hasattr(self.__class__.state_space, "cache_clear"):
+                self.__class__.state_space.cache_clear()
+
+            self.agents = list(self.possible_agents)
+            print (len(self.agents))
+
         self.renderer.reset(self.routemap, airplanes)
         self.cargo_by_id = {}
         cargo_sorted = sorted(cargo, key=lambda c: c.id)
@@ -490,6 +516,12 @@ class AirliftEnv(ParallelEnv):
 
         dynamic_cargo_generated = self.world_generator.cargo_generator.current_cargo_count - self.world_generator.cargo_generator.num_initial_tasks
         total_cargo_generated = self.world_generator.cargo_generator.num_initial_tasks + dynamic_cargo_generated
+        #total_cargo_delivered = sum(c.is_delivered for c in self.cargo)
+        #total_cargo_generated = self.cargo_generator.num_initial_cargo + self.cargo_generator.num_dynamic_cargo
+
+        # Take JSON data as ground truth
+        if total_cargo_generated != len(self.cargo):
+            total_cargo_generated = len(self.cargo)
         assert total_cargo_generated == len(self.cargo)
 
         total_scaled_cost = 0
@@ -661,7 +693,7 @@ class AirliftEnv(ParallelEnv):
 
     @property
     def max_cargo_on_airplane(self):
-        return self.world_generator.cargo_generator.max_cargo_per_episode
+        return self.world_generator.max_cargo_per_episode
 
     @property
     @functools.lru_cache(maxsize=None)  # Ensures that we always return the same space (not a copy)

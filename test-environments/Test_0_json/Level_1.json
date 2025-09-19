@@ -2,345 +2,159 @@
     "route_map": {
         "json://0": {
             "py/object": "networkx.classes.digraph.DiGraph",
-            "graph": {},
             "_node": {
                 "json://1": {
-                    "pos": {
-                        "py/object": "airlift.envs.world_map.FlatCoordinate",
-                        "py/newargs": {
-                            "py/tuple": [
-                                {
-                                    "py/tuple": [
-                                        1.3084965279944045,
-                                        0.6401987602473875
-                                    ]
-                                }
-                            ]
-                        },
-                        "py/seq": [
-                            1.3084965279944045,
-                            0.6401987602473875
-                        ]
-                    },
+                    "pos": [
+                        0.9663583537761179,
+                        0.8438983657806473
+                    ],
                     "airport": 1,
-                    "working_capacity": 10
-                },
-                "json://2": {
-                    "pos": {
-                        "py/object": "airlift.envs.world_map.FlatCoordinate",
-                        "py/newargs": {
-                            "py/tuple": [
-                                {
-                                    "py/tuple": [
-                                        0.909941952708209,
-                                        0.0891185774208011
-                                    ]
-                                }
-                            ]
-                        },
-                        "py/seq": [
-                            0.909941952708209,
-                            0.0891185774208011
-                        ]
-                    },
-                    "airport": 2,
                     "working_capacity": 1
                 },
+                "json://2": {
+                    "pos": [
+                        1.2593596625481611,
+                        0.12367476050233622
+                    ],
+                    "airport": 2,
+                    "working_capacity": 10
+                },
                 "json://3": {
-                    "pos": {
-                        "py/object": "airlift.envs.world_map.FlatCoordinate",
-                        "py/newargs": {
-                            "py/tuple": [
-                                {
-                                    "py/tuple": [
-                                        0.14923048024414629,
-                                        0.7020361404985557
-                                    ]
-                                }
-                            ]
-                        },
-                        "py/seq": [
-                            0.14923048024414629,
-                            0.7020361404985557
-                        ]
-                    },
+                    "pos": [
+                        1.0154952192223612,
+                        1.0657854360936623
+                    ],
                     "airport": 3,
                     "working_capacity": 10
                 },
                 "json://4": {
-                    "pos": {
-                        "py/object": "airlift.envs.world_map.FlatCoordinate",
-                        "py/newargs": {
-                            "py/tuple": [
-                                {
-                                    "py/tuple": [
-                                        0.0036397678108328357,
-                                        0.7565985348378217
-                                    ]
-                                }
-                            ]
-                        },
-                        "py/seq": [
-                            0.0036397678108328357,
-                            0.7565985348378217
-                        ]
-                    },
+                    "pos": [
+                        0.36943643279953287,
+                        0.06911236616307026
+                    ],
                     "airport": 4,
                     "working_capacity": 10
                 },
                 "json://5": {
-                    "pos": {
-                        "py/object": "airlift.envs.world_map.FlatCoordinate",
-                        "py/newargs": {
-                            "py/tuple": [
-                                {
-                                    "py/tuple": [
-                                        1.2411608234939968,
-                                        0.7529610418818705
-                                    ]
-                                }
-                            ]
-                        },
-                        "py/seq": [
-                            1.2411608234939968,
-                            0.7529610418818705
-                        ]
-                    },
+                    "pos": [
+                        0.6642576254769925,
+                        1.0657854360936623
+                    ],
                     "airport": 5,
                     "working_capacity": 10
                 },
                 "json://6": {
-                    "pos": {
-                        "py/object": "airlift.envs.world_map.FlatCoordinate",
-                        "py/newargs": {
-                            "py/tuple": [
-                                {
-                                    "py/tuple": [
-                                        0.1710690871091433,
-                                        0.5528989293045621
-                                    ]
-                                }
-                            ]
-                        },
-                        "py/seq": [
-                            0.1710690871091433,
-                            0.5528989293045621
-                        ]
-                    },
+                    "pos": [
+                        0.7006553035853209,
+                        1.0876103938293686
+                    ],
                     "airport": 6,
                     "working_capacity": 10
                 },
                 "json://7": {
-                    "pos": {
-                        "py/object": "airlift.envs.world_map.FlatCoordinate",
-                        "py/newargs": {
-                            "py/tuple": [
-                                {
-                                    "py/tuple": [
-                                        1.6251563275368612,
-                                        0.7202236052783111
-                                    ]
-                                }
-                            ]
-                        },
-                        "py/seq": [
-                            1.6251563275368612,
-                            0.7202236052783111
-                        ]
-                    },
+                    "pos": [
+                        1.519603061022709,
+                        0.5929113518200237
+                    ],
                     "airport": 7,
-                    "working_capacity": 10
+                    "working_capacity": 1
                 },
                 "json://8": {
-                    "pos": {
-                        "py/object": "airlift.envs.world_map.FlatCoordinate",
-                        "py/newargs": {
-                            "py/tuple": [
-                                {
-                                    "py/tuple": [
-                                        1.5432615517931225,
-                                        0.7438673094919929
-                                    ]
-                                }
-                            ]
-                        },
-                        "py/seq": [
-                            1.5432615517931225,
-                            0.7438673094919929
-                        ]
-                    },
+                    "pos": [
+                        1.5705598103743685,
+                        0.5874551123860972
+                    ],
                     "airport": 8,
                     "working_capacity": 10
                 },
                 "json://9": {
-                    "pos": {
-                        "py/object": "airlift.envs.world_map.FlatCoordinate",
-                        "py/newargs": {
-                            "py/tuple": [
-                                {
-                                    "py/tuple": [
-                                        1.6269762114422777,
-                                        0.7093111264104578
-                                    ]
-                                }
-                            ]
-                        },
-                        "py/seq": [
-                            1.6269762114422777,
-                            0.7093111264104578
-                        ]
-                    },
+                    "pos": [
+                        1.6142370241043629,
+                        0.6511112391152407
+                    ],
                     "airport": 9,
                     "working_capacity": 10
                 },
                 "json://10": {
-                    "pos": {
-                        "py/object": "airlift.envs.world_map.FlatCoordinate",
-                        "py/newargs": {
-                            "py/tuple": [
-                                {
-                                    "py/tuple": [
-                                        0.2748024697178791,
-                                        0.38193676037486185
-                                    ]
-                                }
-                            ]
-                        },
-                        "py/seq": [
-                            0.2748024697178791,
-                            0.38193676037486185
-                        ]
-                    },
+                    "pos": [
+                        0.35305747765078505,
+                        0.21461208440111287
+                    ],
                     "airport": 10,
                     "working_capacity": 10
                 },
                 "json://11": {
-                    "pos": {
-                        "py/object": "airlift.envs.world_map.FlatCoordinate",
-                        "py/newargs": {
-                            "py/tuple": [
-                                {
-                                    "py/tuple": [
-                                        0.1510503641495627,
-                                        0.40921795754449486
-                                    ]
-                                }
-                            ]
-                        },
-                        "py/seq": [
-                            0.1510503641495627,
-                            0.40921795754449486
-                        ]
-                    },
+                    "pos": [
+                        0.287541657055794,
+                        0.3983054786766417
+                    ],
                     "airport": 11,
                     "working_capacity": 10
                 },
                 "json://12": {
-                    "pos": {
-                        "py/object": "airlift.envs.world_map.FlatCoordinate",
-                        "py/newargs": {
-                            "py/tuple": [
-                                {
-                                    "py/tuple": [
-                                        0.23112525598788508,
-                                        0.3928492392427151
-                                    ]
-                                }
-                            ]
-                        },
-                        "py/seq": [
-                            0.23112525598788508,
-                            0.3928492392427151
-                        ]
-                    },
+                    "pos": [
+                        0.2675229340962134,
+                        0.16914342245172456
+                    ],
                     "airport": 12,
                     "working_capacity": 10
                 }
             },
             "_adj": {
                 "json://1": {
-                    "json://2": {
-                        "cost": 0.6800993437621768,
-                        "plane_type": 0,
-                        "time": 5,
-                        "mal": 0,
-                        "route_available": true
-                    },
-                    "json://8": {
-                        "cost": 0.2566355090428715,
-                        "plane_type": 0,
-                        "time": 2,
-                        "mal": 0,
-                        "route_available": true
-                    },
-                    "json://5": {
-                        "cost": 0.13133708257754428,
-                        "plane_type": 0,
-                        "time": 1,
-                        "mal": 0,
-                        "route_available": true
-                    },
-                    "json://9": {
-                        "cost": 0.3258923563474844,
+                    "json://6": {
+                        "cost": 0.36054634028972465,
                         "plane_type": 0,
                         "time": 3,
                         "mal": 0,
                         "route_available": true
-                    }
-                },
-                "json://2": {
-                    "json://3": {
-                        "cost": 0.9769083291013623,
-                        "plane_type": 0,
-                        "time": 7,
-                        "mal": 0,
-                        "route_available": true
                     },
-                    "json://1": {
-                        "cost": 0.6800993437621768,
-                        "plane_type": 0,
-                        "time": 5,
-                        "mal": 0,
-                        "expected_mal_steps": 0.0,
-                        "route_available": true
-                    },
-                    "json://7": {
-                        "cost": 0.9538475549837974,
-                        "plane_type": 0,
-                        "time": 7,
-                        "mal": 0,
-                        "route_available": true
-                    },
-                    "json://5": {
-                        "cost": 0.7418845988335104,
-                        "plane_type": 0,
-                        "time": 5,
-                        "mal": 0,
-                        "route_available": true
-                    },
-                    "json://6": {
-                        "cost": 0.8723676554710177,
+                    "json://10": {
+                        "cost": 0.8787145091487811,
                         "plane_type": 0,
                         "time": 6,
                         "mal": 0,
                         "route_available": true
                     },
-                    "json://10": {
-                        "cost": 0.6993887696565776,
-                        "plane_type": 0,
-                        "time": 5,
-                        "mal": 0,
-                        "route_available": true
-                    },
-                    "json://8": {
-                        "cost": 0.9109278877792187,
+                    "json://12": {
+                        "cost": 0.9714243034565307,
                         "plane_type": 0,
                         "time": 7,
                         "mal": 0,
                         "route_available": true
                     },
                     "json://11": {
-                        "cost": 0.8236383043184906,
+                        "cost": 0.8120006950637267,
+                        "plane_type": 0,
+                        "time": 6,
+                        "mal": 0,
+                        "route_available": true
+                    },
+                    "json://7": {
+                        "cost": 0.6075147630084692,
+                        "plane_type": 0,
+                        "time": 5,
+                        "mal": 0,
+                        "route_available": true
+                    }
+                },
+                "json://2": {
+                    "json://12": {
+                        "cost": 0.9928783888904675,
+                        "plane_type": 0,
+                        "time": 7,
+                        "mal": 0,
+                        "route_available": true
+                    },
+                    "json://10": {
+                        "cost": 0.9108530327268107,
+                        "plane_type": 0,
+                        "time": 7,
+                        "mal": 0,
+                        "route_available": true
+                    },
+                    "json://4": {
+                        "cost": 0.8915943078117219,
                         "plane_type": 0,
                         "time": 6,
                         "mal": 0,
@@ -348,200 +162,207 @@
                     }
                 },
                 "json://3": {
-                    "json://10": {
-                        "cost": 0.3438487133841921,
+                    "json://5": {
+                        "cost": 0.35123759374536867,
                         "plane_type": 0,
                         "time": 3,
-                        "mal": 0,
-                        "route_available": true
-                    },
-                    "json://2": {
-                        "cost": 0.9769083291013623,
-                        "plane_type": 0,
-                        "time": 7,
-                        "mal": 0,
-                        "expected_mal_steps": 0.0,
-                        "route_available": true
-                    },
-                    "json://6": {
-                        "cost": 0.15072767666399473,
-                        "plane_type": 0,
-                        "time": 2,
-                        "mal": 0,
-                        "route_available": true
-                    },
-                    "json://4": {
-                        "cost": 0.1554789709988889,
-                        "plane_type": 0,
-                        "time": 2,
                         "mal": 0,
                         "route_available": true
                     }
                 },
                 "json://4": {
-                    "json://6": {
-                        "cost": 0.26367803521549,
+                    "json://11": {
+                        "cost": 0.33922685568877087,
                         "plane_type": 0,
-                        "time": 2,
+                        "time": 3,
                         "mal": 0,
                         "route_available": true
                     },
-                    "json://3": {
-                        "cost": 0.1554789709988889,
+                    "json://10": {
+                        "cost": 0.1464187084327494,
                         "plane_type": 0,
-                        "time": 2,
+                        "time": 1,
+                        "mal": 0,
+                        "route_available": true
+                    },
+                    "json://12": {
+                        "cost": 0.1428025680447499,
+                        "plane_type": 0,
+                        "time": 1,
+                        "mal": 0,
+                        "route_available": true
+                    },
+                    "json://2": {
+                        "cost": 0.8915943078117219,
+                        "plane_type": 0,
+                        "time": 6,
+                        "mal": 0,
+                        "expected_mal_steps": 0.0,
+                        "route_available": true
+                    }
+                },
+                "json://5": {
+                    "json://3": {
+                        "cost": 0.35123759374536867,
+                        "plane_type": 0,
+                        "time": 3,
+                        "mal": 0,
+                        "expected_mal_steps": 0.0,
+                        "route_available": true
+                    },
+                    "json://12": {
+                        "cost": 0.980492384454296,
+                        "plane_type": 0,
+                        "time": 7,
+                        "mal": 0,
+                        "route_available": true
+                    },
+                    "json://11": {
+                        "cost": 0.7664492249437983,
+                        "plane_type": 0,
+                        "time": 6,
+                        "mal": 0,
+                        "route_available": true
+                    },
+                    "json://10": {
+                        "cost": 0.9062789894059012,
+                        "plane_type": 0,
+                        "time": 7,
+                        "mal": 0,
+                        "route_available": true
+                    },
+                    "json://7": {
+                        "cost": 0.97735649263026,
+                        "plane_type": 0,
+                        "time": 7,
+                        "mal": 0,
+                        "route_available": true
+                    },
+                    "json://6": {
+                        "cost": 0.04243960122153431,
+                        "plane_type": 0,
+                        "time": 1,
+                        "mal": 0,
+                        "route_available": true
+                    }
+                },
+                "json://6": {
+                    "json://1": {
+                        "cost": 0.36054634028972465,
+                        "plane_type": 0,
+                        "time": 3,
                         "mal": 0,
                         "expected_mal_steps": 0.0,
                         "route_available": true
                     },
                     "json://10": {
-                        "cost": 0.4624939525542614,
+                        "cost": 0.9396543496727977,
                         "plane_type": 0,
-                        "time": 4,
+                        "time": 7,
                         "mal": 0,
+                        "route_available": true
+                    },
+                    "json://11": {
+                        "cost": 0.8036194068106065,
+                        "plane_type": 0,
+                        "time": 6,
+                        "mal": 0,
+                        "route_available": true
+                    },
+                    "json://5": {
+                        "cost": 0.04243960122153431,
+                        "plane_type": 0,
+                        "time": 1,
+                        "mal": 0,
+                        "expected_mal_steps": 0.0,
                         "route_available": true
                     }
                 },
-                "json://5": {
-                    "json://8": {
-                        "cost": 0.302237565513688,
+                "json://7": {
+                    "json://9": {
+                        "cost": 0.11109821713113041,
                         "plane_type": 0,
-                        "time": 3,
+                        "time": 1,
                         "mal": 0,
                         "route_available": true
                     },
-                    "json://7": {
-                        "cost": 0.38538848825633804,
-                        "plane_type": 0,
-                        "time": 3,
-                        "mal": 0,
-                        "route_available": true
-                    },
-                    "json://2": {
-                        "cost": 0.7418845988335104,
+                    "json://1": {
+                        "cost": 0.6075147630084692,
                         "plane_type": 0,
                         "time": 5,
                         "mal": 0,
                         "expected_mal_steps": 0.0,
                         "route_available": true
                     },
-                    "json://9": {
-                        "cost": 0.38827674241234683,
-                        "plane_type": 0,
-                        "time": 3,
-                        "mal": 0,
-                        "route_available": true
-                    },
-                    "json://1": {
-                        "cost": 0.13133708257754428,
-                        "plane_type": 0,
-                        "time": 1,
-                        "mal": 0,
-                        "expected_mal_steps": 0.0,
-                        "route_available": true
-                    }
-                },
-                "json://6": {
-                    "json://3": {
-                        "cost": 0.15072767666399473,
-                        "plane_type": 0,
-                        "time": 2,
-                        "mal": 0,
-                        "expected_mal_steps": 0.0,
-                        "route_available": true
-                    },
-                    "json://4": {
-                        "cost": 0.26367803521549,
-                        "plane_type": 0,
-                        "time": 2,
-                        "mal": 0,
-                        "expected_mal_steps": 0.0,
-                        "route_available": true
-                    },
-                    "json://12": {
-                        "cost": 0.17094632698389645,
-                        "plane_type": 0,
-                        "time": 2,
-                        "mal": 0,
-                        "route_available": true
-                    },
-                    "json://2": {
-                        "cost": 0.8723676554710177,
-                        "plane_type": 0,
-                        "time": 6,
-                        "mal": 0,
-                        "expected_mal_steps": 0.0,
-                        "route_available": true
-                    },
-                    "json://10": {
-                        "cost": 0.19997169267823317,
-                        "plane_type": 0,
-                        "time": 2,
-                        "mal": 0,
-                        "route_available": true
-                    },
-                    "json://11": {
-                        "cost": 0.14506884887821256,
-                        "plane_type": 0,
-                        "time": 1,
-                        "mal": 0,
-                        "route_available": true
-                    }
-                },
-                "json://7": {
                     "json://5": {
-                        "cost": 0.38538848825633804,
-                        "plane_type": 0,
-                        "time": 3,
-                        "mal": 0,
-                        "expected_mal_steps": 0.0,
-                        "route_available": true
-                    },
-                    "json://2": {
-                        "cost": 0.9538475549837974,
+                        "cost": 0.97735649263026,
                         "plane_type": 0,
                         "time": 7,
                         "mal": 0,
                         "expected_mal_steps": 0.0,
+                        "route_available": true
+                    },
+                    "json://8": {
+                        "cost": 0.05124803267685695,
+                        "plane_type": 0,
+                        "time": 1,
+                        "mal": 0,
                         "route_available": true
                     }
                 },
                 "json://8": {
-                    "json://5": {
-                        "cost": 0.302237565513688,
-                        "plane_type": 0,
-                        "time": 3,
-                        "mal": 0,
-                        "expected_mal_steps": 0.0,
-                        "route_available": true
-                    },
-                    "json://1": {
-                        "cost": 0.2566355090428715,
-                        "plane_type": 0,
-                        "time": 2,
-                        "mal": 0,
-                        "expected_mal_steps": 0.0,
-                        "route_available": true
-                    },
-                    "json://9": {
-                        "cost": 0.09056640673747884,
+                    "json://7": {
+                        "cost": 0.05124803267685695,
                         "plane_type": 0,
                         "time": 1,
-                        "mal": 0,
-                        "route_available": true
-                    },
-                    "json://2": {
-                        "cost": 0.9109278877792187,
-                        "plane_type": 0,
-                        "time": 7,
                         "mal": 0,
                         "expected_mal_steps": 0.0,
                         "route_available": true
                     }
                 },
                 "json://9": {
-                    "json://8": {
-                        "cost": 0.09056640673747884,
+                    "json://7": {
+                        "cost": 0.11109821713113041,
+                        "plane_type": 0,
+                        "time": 1,
+                        "mal": 0,
+                        "expected_mal_steps": 0.0,
+                        "route_available": true
+                    }
+                },
+                "json://10": {
+                    "json://1": {
+                        "cost": 0.8787145091487811,
+                        "plane_type": 0,
+                        "time": 6,
+                        "mal": 0,
+                        "expected_mal_steps": 0.0,
+                        "route_available": true
+                    },
+                    "json://12": {
+                        "cost": 0.09686876359568478,
+                        "plane_type": 0,
+                        "time": 1,
+                        "mal": 0,
+                        "route_available": true
+                    },
+                    "json://11": {
+                        "cost": 0.1950271413129463,
+                        "plane_type": 0,
+                        "time": 2,
+                        "mal": 0,
+                        "route_available": true
+                    },
+                    "json://6": {
+                        "cost": 0.9396543496727977,
+                        "plane_type": 0,
+                        "time": 7,
+                        "mal": 0,
+                        "expected_mal_steps": 0.0,
+                        "route_available": true
+                    },
+                    "json://4": {
+                        "cost": 0.1464187084327494,
                         "plane_type": 0,
                         "time": 1,
                         "mal": 0,
@@ -549,74 +370,64 @@
                         "route_available": true
                     },
                     "json://5": {
-                        "cost": 0.38827674241234683,
+                        "cost": 0.9062789894059012,
                         "plane_type": 0,
-                        "time": 3,
-                        "mal": 0,
-                        "expected_mal_steps": 0.0,
-                        "route_available": true
-                    },
-                    "json://1": {
-                        "cost": 0.3258923563474844,
-                        "plane_type": 0,
-                        "time": 3,
-                        "mal": 0,
-                        "expected_mal_steps": 0.0,
-                        "route_available": true
-                    }
-                },
-                "json://10": {
-                    "json://3": {
-                        "cost": 0.3438487133841921,
-                        "plane_type": 0,
-                        "time": 3,
+                        "time": 7,
                         "mal": 0,
                         "expected_mal_steps": 0.0,
                         "route_available": true
                     },
                     "json://2": {
-                        "cost": 0.6993887696565776,
+                        "cost": 0.9108530327268107,
                         "plane_type": 0,
-                        "time": 5,
-                        "mal": 0,
-                        "expected_mal_steps": 0.0,
-                        "route_available": true
-                    },
-                    "json://6": {
-                        "cost": 0.19997169267823317,
-                        "plane_type": 0,
-                        "time": 2,
-                        "mal": 0,
-                        "expected_mal_steps": 0.0,
-                        "route_available": true
-                    },
-                    "json://4": {
-                        "cost": 0.4624939525542614,
-                        "plane_type": 0,
-                        "time": 4,
+                        "time": 7,
                         "mal": 0,
                         "expected_mal_steps": 0.0,
                         "route_available": true
                     }
                 },
                 "json://11": {
-                    "json://12": {
-                        "cost": 0.08173079738851231,
+                    "json://4": {
+                        "cost": 0.33922685568877087,
                         "plane_type": 0,
-                        "time": 1,
-                        "mal": 0,
-                        "route_available": true
-                    },
-                    "json://6": {
-                        "cost": 0.14506884887821256,
-                        "plane_type": 0,
-                        "time": 1,
+                        "time": 3,
                         "mal": 0,
                         "expected_mal_steps": 0.0,
                         "route_available": true
                     },
-                    "json://2": {
-                        "cost": 0.8236383043184906,
+                    "json://10": {
+                        "cost": 0.1950271413129463,
+                        "plane_type": 0,
+                        "time": 2,
+                        "mal": 0,
+                        "expected_mal_steps": 0.0,
+                        "route_available": true
+                    },
+                    "json://12": {
+                        "cost": 0.2300347740715836,
+                        "plane_type": 0,
+                        "time": 2,
+                        "mal": 0,
+                        "route_available": true
+                    },
+                    "json://5": {
+                        "cost": 0.7664492249437983,
+                        "plane_type": 0,
+                        "time": 6,
+                        "mal": 0,
+                        "expected_mal_steps": 0.0,
+                        "route_available": true
+                    },
+                    "json://1": {
+                        "cost": 0.8120006950637267,
+                        "plane_type": 0,
+                        "time": 6,
+                        "mal": 0,
+                        "expected_mal_steps": 0.0,
+                        "route_available": true
+                    },
+                    "json://6": {
+                        "cost": 0.8036194068106065,
                         "plane_type": 0,
                         "time": 6,
                         "mal": 0,
@@ -625,272 +436,78 @@
                     }
                 },
                 "json://12": {
-                    "json://6": {
-                        "cost": 0.17094632698389645,
+                    "json://10": {
+                        "cost": 0.09686876359568478,
+                        "plane_type": 0,
+                        "time": 1,
+                        "mal": 0,
+                        "expected_mal_steps": 0.0,
+                        "route_available": true
+                    },
+                    "json://5": {
+                        "cost": 0.980492384454296,
+                        "plane_type": 0,
+                        "time": 7,
+                        "mal": 0,
+                        "expected_mal_steps": 0.0,
+                        "route_available": true
+                    },
+                    "json://1": {
+                        "cost": 0.9714243034565307,
+                        "plane_type": 0,
+                        "time": 7,
+                        "mal": 0,
+                        "expected_mal_steps": 0.0,
+                        "route_available": true
+                    },
+                    "json://11": {
+                        "cost": 0.2300347740715836,
                         "plane_type": 0,
                         "time": 2,
                         "mal": 0,
                         "expected_mal_steps": 0.0,
                         "route_available": true
                     },
-                    "json://11": {
-                        "cost": 0.08173079738851231,
+                    "json://2": {
+                        "cost": 0.9928783888904675,
+                        "plane_type": 0,
+                        "time": 7,
+                        "mal": 0,
+                        "expected_mal_steps": 0.0,
+                        "route_available": true
+                    },
+                    "json://4": {
+                        "cost": 0.1428025680447499,
                         "plane_type": 0,
                         "time": 1,
                         "mal": 0,
                         "expected_mal_steps": 0.0,
                         "route_available": true
-                    }
-                }
-            },
-            "_succ": {
-                "py/id": 29
-            },
-            "_pred": {
-                "json://1": {
-                    "json://2": {
-                        "py/id": 37
-                    },
-                    "json://5": {
-                        "py/id": 58
-                    },
-                    "json://8": {
-                        "py/id": 71
-                    },
-                    "json://9": {
-                        "py/id": 77
-                    }
-                },
-                "json://2": {
-                    "json://1": {
-                        "py/id": 31
-                    },
-                    "json://3": {
-                        "py/id": 46
-                    },
-                    "json://5": {
-                        "py/id": 56
-                    },
-                    "json://6": {
-                        "py/id": 63
-                    },
-                    "json://7": {
-                        "py/id": 68
-                    },
-                    "json://8": {
-                        "py/id": 73
-                    },
-                    "json://10": {
-                        "py/id": 80
-                    },
-                    "json://11": {
-                        "py/id": 86
-                    }
-                },
-                "json://3": {
-                    "json://2": {
-                        "py/id": 36
-                    },
-                    "json://4": {
-                        "py/id": 51
-                    },
-                    "json://6": {
-                        "py/id": 60
-                    },
-                    "json://10": {
-                        "py/id": 79
-                    }
-                },
-                "json://4": {
-                    "json://3": {
-                        "py/id": 48
-                    },
-                    "json://6": {
-                        "py/id": 61
-                    },
-                    "json://10": {
-                        "py/id": 82
-                    }
-                },
-                "json://5": {
-                    "json://1": {
-                        "py/id": 33
-                    },
-                    "json://2": {
-                        "py/id": 39
-                    },
-                    "json://7": {
-                        "py/id": 67
-                    },
-                    "json://8": {
-                        "py/id": 70
-                    },
-                    "json://9": {
-                        "py/id": 76
-                    }
-                },
-                "json://6": {
-                    "json://2": {
-                        "py/id": 40
-                    },
-                    "json://3": {
-                        "py/id": 47
-                    },
-                    "json://4": {
-                        "py/id": 50
-                    },
-                    "json://10": {
-                        "py/id": 81
-                    },
-                    "json://11": {
-                        "py/id": 85
-                    },
-                    "json://12": {
-                        "py/id": 88
-                    }
-                },
-                "json://7": {
-                    "json://2": {
-                        "py/id": 38
-                    },
-                    "json://5": {
-                        "py/id": 55
-                    }
-                },
-                "json://8": {
-                    "json://1": {
-                        "py/id": 32
-                    },
-                    "json://2": {
-                        "py/id": 42
-                    },
-                    "json://5": {
-                        "py/id": 54
-                    },
-                    "json://9": {
-                        "py/id": 75
-                    }
-                },
-                "json://9": {
-                    "json://1": {
-                        "py/id": 34
-                    },
-                    "json://5": {
-                        "py/id": 57
-                    },
-                    "json://8": {
-                        "py/id": 72
-                    }
-                },
-                "json://10": {
-                    "json://2": {
-                        "py/id": 41
-                    },
-                    "json://3": {
-                        "py/id": 45
-                    },
-                    "json://4": {
-                        "py/id": 52
-                    },
-                    "json://6": {
-                        "py/id": 64
-                    }
-                },
-                "json://11": {
-                    "json://2": {
-                        "py/id": 43
-                    },
-                    "json://6": {
-                        "py/id": 65
-                    },
-                    "json://12": {
-                        "py/id": 89
-                    }
-                },
-                "json://12": {
-                    "json://6": {
-                        "py/id": 62
-                    },
-                    "json://11": {
-                        "py/id": 84
-                    }
-                }
-            },
-            "adj": {
-                "py/object": "networkx.classes.coreviews.AdjacencyView",
-                "py/state": {
-                    "_atlas": {
-                        "py/id": 29
-                    }
-                }
-            },
-            "succ": {
-                "py/object": "networkx.classes.coreviews.AdjacencyView",
-                "py/state": {
-                    "_atlas": {
-                        "py/id": 29
-                    }
-                }
-            },
-            "edges": {
-                "py/object": "networkx.classes.reportviews.OutEdgeView",
-                "py/state": {
-                    "_graph": {
-                        "py/id": 2
-                    },
-                    "_adjdict": {
-                        "py/id": 29
-                    }
-                }
-            },
-            "nodes": {
-                "py/object": "networkx.classes.reportviews.NodeView",
-                "py/state": {
-                    "_nodes": {
-                        "py/id": 4
                     }
                 }
             }
         }
     },
     "plane_types": [
-        {
-            "py/object": "airlift.envs.airlift_env.PlaneTypeObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    0,
-                    12
-                ]
-            },
-            "py/seq": [
-                0,
-                12
-            ]
-        }
+        [
+            0,
+            12
+        ]
     ],
     "agents": {
         "a_0": {
             "cargo_onboard": [],
-            "state": {
-                "py/reduce": [
-                    {
-                        "py/type": "airlift.envs.agents.PlaneState"
-                    },
-                    {
-                        "py/tuple": [
-                            3
-                        ]
-                    }
-                ]
-            },
+            "state": 3,
             "plane_type": 0,
             "current_weight": 0,
             "max_weight": 12,
             "available_routes": [
-                3,
-                2,
-                6,
-                4
+                4,
+                10,
+                12,
+                5,
+                1,
+                6
             ],
             "next_action": {
                 "priority": 1,
@@ -898,46 +515,22 @@
                 "cargo_to_unload": [],
                 "destination": 0
             },
-            "current_airport": 10,
+            "current_airport": 11,
             "cargo_at_current_airport": [],
             "destination": 0
         },
         "a_1": {
             "cargo_onboard": [],
-            "state": {
-                "py/id": 116
-            },
-            "plane_type": 0,
-            "current_weight": 0,
-            "max_weight": 12,
-            "available_routes": [
-                5,
-                1,
-                9,
-                2
-            ],
-            "next_action": {
-                "priority": 1,
-                "cargo_to_load": [],
-                "cargo_to_unload": [],
-                "destination": 0
-            },
-            "current_airport": 8,
-            "cargo_at_current_airport": [],
-            "destination": 0
-        },
-        "a_2": {
-            "cargo_onboard": [],
-            "state": {
-                "py/id": 116
-            },
+            "state": 3,
             "plane_type": 0,
             "current_weight": 0,
             "max_weight": 12,
             "available_routes": [
                 10,
+                5,
+                1,
+                11,
                 2,
-                6,
                 4
             ],
             "next_action": {
@@ -946,78 +539,21 @@
                 "cargo_to_unload": [],
                 "destination": 0
             },
-            "current_airport": 3,
+            "current_airport": 12,
             "cargo_at_current_airport": [],
             "destination": 0
         },
-        "a_3": {
+        "a_2": {
             "cargo_onboard": [],
-            "state": {
-                "py/id": 116
-            },
+            "state": 3,
             "plane_type": 0,
             "current_weight": 0,
             "max_weight": 12,
             "available_routes": [
-                3,
                 1,
-                7,
-                5,
-                6,
                 10,
-                8,
-                11
-            ],
-            "next_action": {
-                "priority": 1,
-                "cargo_to_load": [],
-                "cargo_to_unload": [],
-                "destination": 0
-            },
-            "current_airport": 2,
-            "cargo_at_current_airport": [],
-            "destination": 0
-        },
-        "a_4": {
-            "cargo_onboard": [],
-            "state": {
-                "py/id": 116
-            },
-            "plane_type": 0,
-            "current_weight": 0,
-            "max_weight": 12,
-            "available_routes": [
-                8,
-                7,
-                2,
-                9,
-                1
-            ],
-            "next_action": {
-                "priority": 1,
-                "cargo_to_load": [],
-                "cargo_to_unload": [],
-                "destination": 0
-            },
-            "current_airport": 5,
-            "cargo_at_current_airport": [],
-            "destination": 0
-        },
-        "a_5": {
-            "cargo_onboard": [],
-            "state": {
-                "py/id": 116
-            },
-            "plane_type": 0,
-            "current_weight": 0,
-            "max_weight": 12,
-            "available_routes": [
-                3,
-                4,
-                12,
-                2,
-                10,
-                11
+                11,
+                5
             ],
             "next_action": {
                 "priority": 1,
@@ -1029,19 +565,18 @@
             "cargo_at_current_airport": [],
             "destination": 0
         },
-        "a_6": {
+        "a_3": {
             "cargo_onboard": [],
-            "state": {
-                "py/id": 116
-            },
+            "state": 3,
             "plane_type": 0,
             "current_weight": 0,
             "max_weight": 12,
             "available_routes": [
-                10,
-                2,
                 6,
-                4
+                10,
+                12,
+                11,
+                7
             ],
             "next_action": {
                 "priority": 1,
@@ -1049,24 +584,90 @@
                 "cargo_to_unload": [],
                 "destination": 0
             },
-            "current_airport": 3,
+            "current_airport": 1,
+            "cargo_at_current_airport": [],
+            "destination": 0
+        },
+        "a_4": {
+            "cargo_onboard": [],
+            "state": 3,
+            "plane_type": 0,
+            "current_weight": 0,
+            "max_weight": 12,
+            "available_routes": [
+                1,
+                12,
+                11,
+                6,
+                4,
+                5,
+                2
+            ],
+            "next_action": {
+                "priority": 1,
+                "cargo_to_load": [],
+                "cargo_to_unload": [],
+                "destination": 0
+            },
+            "current_airport": 10,
+            "cargo_at_current_airport": [],
+            "destination": 0
+        },
+        "a_5": {
+            "cargo_onboard": [],
+            "state": 3,
+            "plane_type": 0,
+            "current_weight": 0,
+            "max_weight": 12,
+            "available_routes": [
+                7
+            ],
+            "next_action": {
+                "priority": 1,
+                "cargo_to_load": [],
+                "cargo_to_unload": [],
+                "destination": 0
+            },
+            "current_airport": 9,
+            "cargo_at_current_airport": [],
+            "destination": 0
+        },
+        "a_6": {
+            "cargo_onboard": [],
+            "state": 3,
+            "plane_type": 0,
+            "current_weight": 0,
+            "max_weight": 12,
+            "available_routes": [
+                1,
+                10,
+                11,
+                5
+            ],
+            "next_action": {
+                "priority": 1,
+                "cargo_to_load": [],
+                "cargo_to_unload": [],
+                "destination": 0
+            },
+            "current_airport": 6,
             "cargo_at_current_airport": [],
             "destination": 0
         },
         "a_7": {
             "cargo_onboard": [],
-            "state": {
-                "py/id": 116
-            },
+            "state": 3,
             "plane_type": 0,
             "current_weight": 0,
             "max_weight": 12,
             "available_routes": [
-                8,
-                7,
-                2,
-                9,
-                1
+                1,
+                12,
+                11,
+                6,
+                4,
+                5,
+                2
             ],
             "next_action": {
                 "priority": 1,
@@ -1074,25 +675,21 @@
                 "cargo_to_unload": [],
                 "destination": 0
             },
-            "current_airport": 5,
+            "current_airport": 10,
             "cargo_at_current_airport": [],
             "destination": 0
         },
         "a_8": {
             "cargo_onboard": [],
-            "state": {
-                "py/id": 116
-            },
+            "state": 3,
             "plane_type": 0,
             "current_weight": 0,
             "max_weight": 12,
             "available_routes": [
-                3,
-                4,
-                12,
-                2,
+                1,
                 10,
-                11
+                11,
+                5
             ],
             "next_action": {
                 "priority": 1,
@@ -1106,64 +703,12 @@
         },
         "a_9": {
             "cargo_onboard": [],
-            "state": {
-                "py/id": 116
-            },
+            "state": 3,
             "plane_type": 0,
             "current_weight": 0,
             "max_weight": 12,
             "available_routes": [
-                12,
-                6,
-                2
-            ],
-            "next_action": {
-                "priority": 1,
-                "cargo_to_load": [],
-                "cargo_to_unload": [],
-                "destination": 0
-            },
-            "current_airport": 11,
-            "cargo_at_current_airport": [],
-            "destination": 0
-        },
-        "a_10": {
-            "cargo_onboard": [],
-            "state": {
-                "py/id": 116
-            },
-            "plane_type": 0,
-            "current_weight": 0,
-            "max_weight": 12,
-            "available_routes": [
-                2,
-                8,
-                5,
-                9
-            ],
-            "next_action": {
-                "priority": 1,
-                "cargo_to_load": [],
-                "cargo_to_unload": [],
-                "destination": 0
-            },
-            "current_airport": 1,
-            "cargo_at_current_airport": [],
-            "destination": 0
-        },
-        "a_11": {
-            "cargo_onboard": [],
-            "state": {
-                "py/id": 116
-            },
-            "plane_type": 0,
-            "current_weight": 0,
-            "max_weight": 12,
-            "available_routes": [
-                5,
-                1,
-                9,
-                2
+                7
             ],
             "next_action": {
                 "priority": 1,
@@ -1175,21 +720,98 @@
             "cargo_at_current_airport": [],
             "destination": 0
         },
-        "a_12": {
+        "a_10": {
             "cargo_onboard": [],
-            "state": {
-                "py/id": 116
-            },
+            "state": 3,
             "plane_type": 0,
             "current_weight": 0,
             "max_weight": 12,
             "available_routes": [
-                3,
+                7
+            ],
+            "next_action": {
+                "priority": 1,
+                "cargo_to_load": [],
+                "cargo_to_unload": [],
+                "destination": 0
+            },
+            "current_airport": 9,
+            "cargo_at_current_airport": [],
+            "destination": 0
+        },
+        "a_11": {
+            "cargo_onboard": [],
+            "state": 3,
+            "plane_type": 0,
+            "current_weight": 0,
+            "max_weight": 12,
+            "available_routes": [
                 4,
-                12,
-                2,
                 10,
-                11
+                12,
+                5,
+                1,
+                6
+            ],
+            "next_action": {
+                "priority": 1,
+                "cargo_to_load": [],
+                "cargo_to_unload": [],
+                "destination": 0
+            },
+            "current_airport": 11,
+            "cargo_at_current_airport": [],
+            "destination": 0
+        },
+        "a_12": {
+            "cargo_onboard": [],
+            "state": 3,
+            "plane_type": 0,
+            "current_weight": 0,
+            "max_weight": 12,
+            "available_routes": [
+                7
+            ],
+            "next_action": {
+                "priority": 1,
+                "cargo_to_load": [],
+                "cargo_to_unload": [],
+                "destination": 0
+            },
+            "current_airport": 8,
+            "cargo_at_current_airport": [],
+            "destination": 0
+        },
+        "a_13": {
+            "cargo_onboard": [],
+            "state": 3,
+            "plane_type": 0,
+            "current_weight": 0,
+            "max_weight": 12,
+            "available_routes": [
+                7
+            ],
+            "next_action": {
+                "priority": 1,
+                "cargo_to_load": [],
+                "cargo_to_unload": [],
+                "destination": 0
+            },
+            "current_airport": 8,
+            "cargo_at_current_airport": [],
+            "destination": 0
+        },
+        "a_14": {
+            "cargo_onboard": [],
+            "state": 3,
+            "plane_type": 0,
+            "current_weight": 0,
+            "max_weight": 12,
+            "available_routes": [
+                1,
+                10,
+                11,
+                5
             ],
             "next_action": {
                 "priority": 1,
@@ -1201,71 +823,17 @@
             "cargo_at_current_airport": [],
             "destination": 0
         },
-        "a_13": {
-            "cargo_onboard": [],
-            "state": {
-                "py/id": 116
-            },
-            "plane_type": 0,
-            "current_weight": 0,
-            "max_weight": 12,
-            "available_routes": [
-                10,
-                2,
-                6,
-                4
-            ],
-            "next_action": {
-                "priority": 1,
-                "cargo_to_load": [],
-                "cargo_to_unload": [],
-                "destination": 0
-            },
-            "current_airport": 3,
-            "cargo_at_current_airport": [],
-            "destination": 0
-        },
-        "a_14": {
-            "cargo_onboard": [],
-            "state": {
-                "py/id": 116
-            },
-            "plane_type": 0,
-            "current_weight": 0,
-            "max_weight": 12,
-            "available_routes": [
-                3,
-                1,
-                7,
-                5,
-                6,
-                10,
-                8,
-                11
-            ],
-            "next_action": {
-                "priority": 1,
-                "cargo_to_load": [],
-                "cargo_to_unload": [],
-                "destination": 0
-            },
-            "current_airport": 2,
-            "cargo_at_current_airport": [],
-            "destination": 0
-        },
         "a_15": {
             "cargo_onboard": [],
-            "state": {
-                "py/id": 116
-            },
+            "state": 3,
             "plane_type": 0,
             "current_weight": 0,
             "max_weight": 12,
             "available_routes": [
-                3,
-                2,
-                6,
-                4
+                9,
+                1,
+                5,
+                8
             ],
             "next_action": {
                 "priority": 1,
@@ -1273,27 +841,21 @@
                 "cargo_to_unload": [],
                 "destination": 0
             },
-            "current_airport": 10,
+            "current_airport": 7,
             "cargo_at_current_airport": [],
             "destination": 0
         },
         "a_16": {
             "cargo_onboard": [],
-            "state": {
-                "py/id": 116
-            },
+            "state": 3,
             "plane_type": 0,
             "current_weight": 0,
             "max_weight": 12,
             "available_routes": [
-                3,
+                9,
                 1,
-                7,
                 5,
-                6,
-                10,
-                8,
-                11
+                8
             ],
             "next_action": {
                 "priority": 1,
@@ -1301,27 +863,23 @@
                 "cargo_to_unload": [],
                 "destination": 0
             },
-            "current_airport": 2,
+            "current_airport": 7,
             "cargo_at_current_airport": [],
             "destination": 0
         },
         "a_17": {
             "cargo_onboard": [],
-            "state": {
-                "py/id": 116
-            },
+            "state": 3,
             "plane_type": 0,
             "current_weight": 0,
             "max_weight": 12,
             "available_routes": [
-                3,
-                1,
-                7,
-                5,
-                6,
+                4,
                 10,
-                8,
-                11
+                12,
+                5,
+                1,
+                6
             ],
             "next_action": {
                 "priority": 1,
@@ -1329,23 +887,21 @@
                 "cargo_to_unload": [],
                 "destination": 0
             },
-            "current_airport": 2,
+            "current_airport": 11,
             "cargo_at_current_airport": [],
             "destination": 0
         },
         "a_18": {
             "cargo_onboard": [],
-            "state": {
-                "py/id": 116
-            },
+            "state": 3,
             "plane_type": 0,
             "current_weight": 0,
             "max_weight": 12,
             "available_routes": [
-                2,
-                8,
-                5,
-                9
+                1,
+                10,
+                11,
+                5
             ],
             "next_action": {
                 "priority": 1,
@@ -1353,21 +909,23 @@
                 "cargo_to_unload": [],
                 "destination": 0
             },
-            "current_airport": 1,
+            "current_airport": 6,
             "cargo_at_current_airport": [],
             "destination": 0
         },
         "a_19": {
             "cargo_onboard": [],
-            "state": {
-                "py/id": 116
-            },
+            "state": 3,
             "plane_type": 0,
             "current_weight": 0,
             "max_weight": 12,
             "available_routes": [
-                6,
-                11
+                10,
+                5,
+                1,
+                11,
+                2,
+                4
             ],
             "next_action": {
                 "priority": 1,
@@ -1381,18 +939,15 @@
         },
         "a_20": {
             "cargo_onboard": [],
-            "state": {
-                "py/id": 116
-            },
+            "state": 3,
             "plane_type": 0,
             "current_weight": 0,
             "max_weight": 12,
             "available_routes": [
-                8,
-                7,
-                2,
                 9,
-                1
+                1,
+                5,
+                8
             ],
             "next_action": {
                 "priority": 1,
@@ -1400,22 +955,18 @@
                 "cargo_to_unload": [],
                 "destination": 0
             },
-            "current_airport": 5,
+            "current_airport": 7,
             "cargo_at_current_airport": [],
             "destination": 0
         },
         "a_21": {
             "cargo_onboard": [],
-            "state": {
-                "py/id": 116
-            },
+            "state": 3,
             "plane_type": 0,
             "current_weight": 0,
             "max_weight": 12,
             "available_routes": [
-                6,
-                3,
-                10
+                7
             ],
             "next_action": {
                 "priority": 1,
@@ -1423,23 +974,20 @@
                 "cargo_to_unload": [],
                 "destination": 0
             },
-            "current_airport": 4,
+            "current_airport": 9,
             "cargo_at_current_airport": [],
             "destination": 0
         },
         "a_22": {
             "cargo_onboard": [],
-            "state": {
-                "py/id": 116
-            },
+            "state": 3,
             "plane_type": 0,
             "current_weight": 0,
             "max_weight": 12,
             "available_routes": [
-                2,
-                8,
-                5,
-                9
+                12,
+                10,
+                4
             ],
             "next_action": {
                 "priority": 1,
@@ -1447,22 +995,23 @@
                 "cargo_to_unload": [],
                 "destination": 0
             },
-            "current_airport": 1,
+            "current_airport": 2,
             "cargo_at_current_airport": [],
             "destination": 0
         },
         "a_23": {
             "cargo_onboard": [],
-            "state": {
-                "py/id": 116
-            },
+            "state": 3,
             "plane_type": 0,
             "current_weight": 0,
             "max_weight": 12,
             "available_routes": [
-                5,
                 1,
-                9,
+                12,
+                11,
+                6,
+                4,
+                5,
                 2
             ],
             "next_action": {
@@ -1471,7 +1020,7 @@
                 "cargo_to_unload": [],
                 "destination": 0
             },
-            "current_airport": 8,
+            "current_airport": 10,
             "cargo_at_current_airport": [],
             "destination": 0
         }
@@ -1479,3017 +1028,1323 @@
     "active_cargo": [
         {
             "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    0,
-                    12,
-                    9,
-                    1,
-                    2438,
-                    false,
-                    3014,
-                    3302
-                ]
-            },
-            "py/seq": [
-                0,
-                12,
-                9,
-                1,
-                2438,
-                false,
-                3014,
-                3302
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    1,
-                    10,
-                    8,
-                    1,
-                    1719,
-                    false,
-                    1995,
-                    2133
-                ]
-            },
-            "py/seq": [
-                1,
-                10,
-                8,
-                1,
-                1719,
-                false,
-                1995,
-                2133
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    2,
-                    11,
-                    8,
-                    1,
-                    2341,
-                    false,
-                    2629,
-                    2773
-                ]
-            },
-            "py/seq": [
-                2,
-                11,
-                8,
-                1,
-                2341,
-                false,
-                2629,
-                2773
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    3,
-                    10,
-                    9,
-                    1,
-                    2450,
-                    false,
-                    2870,
-                    3080
-                ]
-            },
-            "py/seq": [
-                3,
-                10,
-                9,
-                1,
-                2450,
-                false,
-                2870,
-                3080
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    4,
-                    11,
-                    8,
-                    1,
-                    221,
-                    false,
-                    509,
-                    653
-                ]
-            },
-            "py/seq": [
-                4,
-                11,
-                8,
-                1,
-                221,
-                false,
-                509,
-                653
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    5,
-                    12,
-                    8,
-                    1,
-                    1634,
-                    false,
-                    2066,
-                    2282
-                ]
-            },
-            "py/seq": [
-                5,
-                12,
-                8,
-                1,
-                1634,
-                false,
-                2066,
-                2282
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    6,
-                    10,
-                    7,
-                    1,
-                    430,
-                    false,
-                    706,
-                    844
-                ]
-            },
-            "py/seq": [
-                6,
-                10,
-                7,
-                1,
-                430,
-                false,
-                706,
-                844
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    7,
-                    11,
-                    9,
-                    1,
-                    1658,
-                    false,
-                    2090,
-                    2306
-                ]
-            },
-            "py/seq": [
-                7,
-                11,
-                9,
-                1,
-                1658,
-                false,
-                2090,
-                2306
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    8,
-                    10,
-                    8,
-                    1,
-                    1151,
-                    false,
-                    1427,
-                    1565
-                ]
-            },
-            "py/seq": [
-                8,
-                10,
-                8,
-                1,
-                1151,
-                false,
-                1427,
-                1565
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    9,
-                    12,
-                    9,
-                    1,
-                    1591,
-                    false,
-                    2167,
-                    2455
-                ]
-            },
-            "py/seq": [
-                9,
-                12,
-                9,
-                1,
-                1591,
-                false,
-                2167,
-                2455
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    10,
-                    10,
-                    8,
-                    1,
-                    14,
-                    false,
-                    290,
-                    428
-                ]
-            },
-            "py/seq": [
-                10,
-                10,
-                8,
-                1,
-                14,
-                false,
-                290,
-                428
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    11,
-                    12,
-                    7,
-                    1,
-                    2149,
-                    false,
-                    2581,
-                    2797
-                ]
-            },
-            "py/seq": [
-                11,
-                12,
-                7,
-                1,
-                2149,
-                false,
-                2581,
-                2797
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    12,
-                    10,
-                    9,
-                    1,
-                    2406,
-                    false,
-                    2826,
-                    3036
-                ]
-            },
-            "py/seq": [
-                12,
-                10,
-                9,
-                1,
-                2406,
-                false,
-                2826,
-                3036
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    13,
-                    12,
-                    8,
-                    1,
-                    152,
-                    false,
-                    584,
-                    800
-                ]
-            },
-            "py/seq": [
-                13,
-                12,
-                8,
-                1,
-                152,
-                false,
-                584,
-                800
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    14,
-                    10,
-                    9,
-                    1,
-                    2379,
-                    false,
-                    2799,
-                    3009
-                ]
-            },
-            "py/seq": [
-                14,
-                10,
-                9,
-                1,
-                2379,
-                false,
-                2799,
-                3009
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    15,
-                    12,
-                    9,
-                    1,
-                    350,
-                    false,
-                    926,
-                    1214
-                ]
-            },
-            "py/seq": [
-                15,
-                12,
-                9,
-                1,
-                350,
-                false,
-                926,
-                1214
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    16,
-                    11,
-                    9,
-                    1,
-                    1480,
-                    false,
-                    1912,
-                    2128
-                ]
-            },
-            "py/seq": [
-                16,
-                11,
-                9,
-                1,
-                1480,
-                false,
-                1912,
-                2128
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    17,
-                    12,
-                    9,
-                    1,
-                    1788,
-                    false,
-                    2364,
-                    2652
-                ]
-            },
-            "py/seq": [
-                17,
-                12,
-                9,
-                1,
-                1788,
-                false,
-                2364,
-                2652
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    18,
-                    10,
-                    7,
-                    1,
-                    1913,
-                    false,
-                    2189,
-                    2327
-                ]
-            },
-            "py/seq": [
-                18,
-                10,
-                7,
-                1,
-                1913,
-                false,
-                2189,
-                2327
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    19,
-                    12,
-                    9,
-                    1,
-                    936,
-                    false,
-                    1512,
-                    1800
-                ]
-            },
-            "py/seq": [
-                19,
-                12,
-                9,
-                1,
-                936,
-                false,
-                1512,
-                1800
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    20,
-                    12,
-                    8,
-                    1,
-                    648,
-                    false,
-                    1080,
-                    1296
-                ]
-            },
-            "py/seq": [
-                20,
-                12,
-                8,
-                1,
-                648,
-                false,
-                1080,
-                1296
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    21,
-                    12,
-                    7,
-                    1,
-                    274,
-                    false,
-                    706,
-                    922
-                ]
-            },
-            "py/seq": [
-                21,
-                12,
-                7,
-                1,
-                274,
-                false,
-                706,
-                922
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    22,
-                    11,
-                    9,
-                    1,
-                    1694,
-                    false,
-                    2126,
-                    2342
-                ]
-            },
-            "py/seq": [
-                22,
-                11,
-                9,
-                1,
-                1694,
-                false,
-                2126,
-                2342
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    23,
-                    12,
-                    9,
-                    1,
-                    308,
-                    false,
-                    884,
-                    1172
-                ]
-            },
-            "py/seq": [
-                23,
-                12,
-                9,
-                1,
-                308,
-                false,
-                884,
-                1172
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    24,
-                    11,
-                    7,
-                    1,
-                    707,
-                    false,
-                    995,
-                    1139
-                ]
-            },
-            "py/seq": [
-                24,
-                11,
-                7,
-                1,
-                707,
-                false,
-                995,
-                1139
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    25,
-                    12,
-                    7,
-                    1,
-                    2065,
-                    false,
-                    2497,
-                    2713
-                ]
-            },
-            "py/seq": [
-                25,
-                12,
-                7,
-                1,
-                2065,
-                false,
-                2497,
-                2713
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    26,
-                    10,
-                    9,
-                    1,
-                    1474,
-                    false,
-                    1894,
-                    2104
-                ]
-            },
-            "py/seq": [
-                26,
-                10,
-                9,
-                1,
-                1474,
-                false,
-                1894,
-                2104
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    27,
-                    11,
-                    7,
-                    1,
-                    681,
-                    false,
-                    969,
-                    1113
-                ]
-            },
-            "py/seq": [
-                27,
-                11,
-                7,
-                1,
-                681,
-                false,
-                969,
-                1113
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    28,
-                    12,
-                    9,
-                    1,
-                    1757,
-                    false,
-                    2333,
-                    2621
-                ]
-            },
-            "py/seq": [
-                28,
-                12,
-                9,
-                1,
-                1757,
-                false,
-                2333,
-                2621
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    29,
-                    10,
-                    7,
-                    1,
-                    242,
-                    false,
-                    518,
-                    656
-                ]
-            },
-            "py/seq": [
-                29,
-                10,
-                7,
-                1,
-                242,
-                false,
-                518,
-                656
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    30,
-                    12,
-                    8,
-                    1,
-                    2413,
-                    false,
-                    2845,
-                    3061
-                ]
-            },
-            "py/seq": [
-                30,
-                12,
-                8,
-                1,
-                2413,
-                false,
-                2845,
-                3061
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    31,
-                    12,
-                    8,
-                    1,
-                    490,
-                    false,
-                    922,
-                    1138
-                ]
-            },
-            "py/seq": [
-                31,
-                12,
-                8,
-                1,
-                490,
-                false,
-                922,
-                1138
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    32,
-                    11,
-                    7,
-                    1,
-                    274,
-                    false,
-                    562,
-                    706
-                ]
-            },
-            "py/seq": [
-                32,
-                11,
-                7,
-                1,
-                274,
-                false,
-                562,
-                706
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    33,
-                    10,
-                    8,
-                    1,
-                    1866,
-                    false,
-                    2142,
-                    2280
-                ]
-            },
-            "py/seq": [
-                33,
-                10,
-                8,
-                1,
-                1866,
-                false,
-                2142,
-                2280
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    34,
-                    10,
-                    9,
-                    1,
-                    1056,
-                    false,
-                    1476,
-                    1686
-                ]
-            },
-            "py/seq": [
-                34,
-                10,
-                9,
-                1,
-                1056,
-                false,
-                1476,
-                1686
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    35,
-                    10,
-                    7,
-                    1,
-                    343,
-                    false,
-                    619,
-                    757
-                ]
-            },
-            "py/seq": [
-                35,
-                10,
-                7,
-                1,
-                343,
-                false,
-                619,
-                757
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    36,
-                    12,
-                    9,
-                    1,
-                    1139,
-                    false,
-                    1715,
-                    2003
-                ]
-            },
-            "py/seq": [
-                36,
-                12,
-                9,
-                1,
-                1139,
-                false,
-                1715,
-                2003
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    37,
-                    12,
-                    7,
-                    1,
-                    2473,
-                    false,
-                    2905,
-                    3121
-                ]
-            },
-            "py/seq": [
-                37,
-                12,
-                7,
-                1,
-                2473,
-                false,
-                2905,
-                3121
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    38,
-                    12,
-                    9,
-                    1,
-                    1755,
-                    false,
-                    2331,
-                    2619
-                ]
-            },
-            "py/seq": [
-                38,
-                12,
-                9,
-                1,
-                1755,
-                false,
-                2331,
-                2619
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    39,
-                    12,
-                    7,
-                    1,
-                    1932,
-                    false,
-                    2364,
-                    2580
-                ]
-            },
-            "py/seq": [
-                39,
-                12,
-                7,
-                1,
-                1932,
-                false,
-                2364,
-                2580
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    40,
-                    11,
-                    8,
-                    1,
-                    2338,
-                    false,
-                    2626,
-                    2770
-                ]
-            },
-            "py/seq": [
-                40,
-                11,
-                8,
-                1,
-                2338,
-                false,
-                2626,
-                2770
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    41,
-                    10,
-                    7,
-                    1,
-                    1376,
-                    false,
-                    1652,
-                    1790
-                ]
-            },
-            "py/seq": [
-                41,
-                10,
-                7,
-                1,
-                1376,
-                false,
-                1652,
-                1790
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    42,
-                    12,
-                    7,
-                    1,
-                    1479,
-                    false,
-                    1911,
-                    2127
-                ]
-            },
-            "py/seq": [
-                42,
-                12,
-                7,
-                1,
-                1479,
-                false,
-                1911,
-                2127
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    43,
-                    12,
-                    7,
-                    1,
-                    358,
-                    false,
-                    790,
-                    1006
-                ]
-            },
-            "py/seq": [
-                43,
-                12,
-                7,
-                1,
-                358,
-                false,
-                790,
-                1006
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    44,
-                    11,
-                    7,
-                    1,
-                    860,
-                    false,
-                    1148,
-                    1292
-                ]
-            },
-            "py/seq": [
-                44,
-                11,
-                7,
-                1,
-                860,
-                false,
-                1148,
-                1292
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    45,
-                    10,
-                    8,
-                    1,
-                    1463,
-                    false,
-                    1739,
-                    1877
-                ]
-            },
-            "py/seq": [
-                45,
-                10,
-                8,
-                1,
-                1463,
-                false,
-                1739,
-                1877
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    46,
-                    12,
-                    8,
-                    1,
-                    191,
-                    false,
-                    623,
-                    839
-                ]
-            },
-            "py/seq": [
-                46,
-                12,
-                8,
-                1,
-                191,
-                false,
-                623,
-                839
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    47,
-                    12,
-                    8,
-                    1,
-                    1304,
-                    false,
-                    1736,
-                    1952
-                ]
-            },
-            "py/seq": [
-                47,
-                12,
-                8,
-                1,
-                1304,
-                false,
-                1736,
-                1952
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    48,
-                    10,
-                    7,
-                    1,
-                    1487,
-                    false,
-                    1763,
-                    1901
-                ]
-            },
-            "py/seq": [
-                48,
-                10,
-                7,
-                1,
-                1487,
-                false,
-                1763,
-                1901
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    49,
-                    12,
-                    8,
-                    1,
-                    2119,
-                    false,
-                    2551,
-                    2767
-                ]
-            },
-            "py/seq": [
-                49,
-                12,
-                8,
-                1,
-                2119,
-                false,
-                2551,
-                2767
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    50,
-                    11,
-                    7,
-                    1,
-                    1940,
-                    false,
-                    2228,
-                    2372
-                ]
-            },
-            "py/seq": [
-                50,
-                11,
-                7,
-                1,
-                1940,
-                false,
-                2228,
-                2372
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    51,
-                    10,
-                    7,
-                    1,
-                    282,
-                    false,
-                    558,
-                    696
-                ]
-            },
-            "py/seq": [
-                51,
-                10,
-                7,
-                1,
-                282,
-                false,
-                558,
-                696
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    52,
-                    12,
-                    7,
-                    1,
-                    2294,
-                    false,
-                    2726,
-                    2942
-                ]
-            },
-            "py/seq": [
-                52,
-                12,
-                7,
-                1,
-                2294,
-                false,
-                2726,
-                2942
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    53,
-                    10,
-                    7,
-                    1,
-                    1402,
-                    false,
-                    1678,
-                    1816
-                ]
-            },
-            "py/seq": [
-                53,
-                10,
-                7,
-                1,
-                1402,
-                false,
-                1678,
-                1816
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    54,
-                    12,
-                    7,
-                    1,
-                    848,
-                    false,
-                    1280,
-                    1496
-                ]
-            },
-            "py/seq": [
-                54,
-                12,
-                7,
-                1,
-                848,
-                false,
-                1280,
-                1496
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    55,
-                    11,
-                    7,
-                    1,
-                    1347,
-                    false,
-                    1635,
-                    1779
-                ]
-            },
-            "py/seq": [
-                55,
-                11,
-                7,
-                1,
-                1347,
-                false,
-                1635,
-                1779
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    56,
-                    10,
-                    9,
-                    1,
-                    1155,
-                    false,
-                    1575,
-                    1785
-                ]
-            },
-            "py/seq": [
-                56,
-                10,
-                9,
-                1,
-                1155,
-                false,
-                1575,
-                1785
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    57,
-                    10,
-                    9,
-                    1,
-                    1010,
-                    false,
-                    1430,
-                    1640
-                ]
-            },
-            "py/seq": [
-                57,
-                10,
-                9,
-                1,
-                1010,
-                false,
-                1430,
-                1640
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    58,
-                    11,
-                    8,
-                    1,
-                    1768,
-                    false,
-                    2056,
-                    2200
-                ]
-            },
-            "py/seq": [
-                58,
-                11,
-                8,
-                1,
-                1768,
-                false,
-                2056,
-                2200
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    59,
-                    10,
-                    7,
-                    1,
-                    876,
-                    false,
-                    1152,
-                    1290
-                ]
-            },
-            "py/seq": [
-                59,
-                10,
-                7,
-                1,
-                876,
-                false,
-                1152,
-                1290
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    60,
-                    12,
-                    8,
-                    1,
-                    1300,
-                    false,
-                    1732,
-                    1948
-                ]
-            },
-            "py/seq": [
-                60,
-                12,
-                8,
-                1,
-                1300,
-                false,
-                1732,
-                1948
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    61,
-                    10,
-                    7,
-                    1,
-                    2283,
-                    false,
-                    2559,
-                    2697
-                ]
-            },
-            "py/seq": [
-                61,
-                10,
-                7,
-                1,
-                2283,
-                false,
-                2559,
-                2697
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    62,
-                    10,
-                    7,
-                    1,
-                    581,
-                    false,
-                    857,
-                    995
-                ]
-            },
-            "py/seq": [
-                62,
-                10,
-                7,
-                1,
-                581,
-                false,
-                857,
-                995
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    63,
-                    11,
-                    7,
-                    1,
-                    116,
-                    false,
-                    404,
-                    548
-                ]
-            },
-            "py/seq": [
-                63,
-                11,
-                7,
-                1,
-                116,
-                false,
-                404,
-                548
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    64,
-                    10,
-                    9,
-                    1,
-                    1318,
-                    false,
-                    1738,
-                    1948
-                ]
-            },
-            "py/seq": [
-                64,
-                10,
-                9,
-                1,
-                1318,
-                false,
-                1738,
-                1948
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    65,
-                    11,
-                    7,
-                    1,
-                    1796,
-                    false,
-                    2084,
-                    2228
-                ]
-            },
-            "py/seq": [
-                65,
-                11,
-                7,
-                1,
-                1796,
-                false,
-                2084,
-                2228
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    66,
-                    12,
-                    8,
-                    1,
-                    2397,
-                    false,
-                    2829,
-                    3045
-                ]
-            },
-            "py/seq": [
-                66,
-                12,
-                8,
-                1,
-                2397,
-                false,
-                2829,
-                3045
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    67,
-                    12,
-                    8,
-                    1,
-                    1221,
-                    false,
-                    1653,
-                    1869
-                ]
-            },
-            "py/seq": [
-                67,
-                12,
-                8,
-                1,
-                1221,
-                false,
-                1653,
-                1869
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    68,
-                    10,
-                    8,
-                    1,
-                    1375,
-                    false,
-                    1651,
-                    1789
-                ]
-            },
-            "py/seq": [
-                68,
-                10,
-                8,
-                1,
-                1375,
-                false,
-                1651,
-                1789
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    69,
-                    10,
-                    9,
-                    1,
-                    2126,
-                    false,
-                    2546,
-                    2756
-                ]
-            },
-            "py/seq": [
-                69,
-                10,
-                9,
-                1,
-                2126,
-                false,
-                2546,
-                2756
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    70,
-                    10,
-                    9,
-                    1,
-                    1162,
-                    false,
-                    1582,
-                    1792
-                ]
-            },
-            "py/seq": [
-                70,
-                10,
-                9,
-                1,
-                1162,
-                false,
-                1582,
-                1792
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    71,
-                    12,
-                    7,
-                    1,
-                    1012,
-                    false,
-                    1444,
-                    1660
-                ]
-            },
-            "py/seq": [
-                71,
-                12,
-                7,
-                1,
-                1012,
-                false,
-                1444,
-                1660
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    72,
-                    12,
-                    7,
-                    1,
-                    2219,
-                    false,
-                    2651,
-                    2867
-                ]
-            },
-            "py/seq": [
-                72,
-                12,
-                7,
-                1,
-                2219,
-                false,
-                2651,
-                2867
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    73,
-                    11,
-                    8,
-                    1,
-                    1331,
-                    false,
-                    1619,
-                    1763
-                ]
-            },
-            "py/seq": [
-                73,
-                11,
-                8,
-                1,
-                1331,
-                false,
-                1619,
-                1763
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    74,
-                    11,
-                    9,
-                    1,
-                    1708,
-                    false,
-                    2140,
-                    2356
-                ]
-            },
-            "py/seq": [
-                74,
-                11,
-                9,
-                1,
-                1708,
-                false,
-                2140,
-                2356
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    75,
-                    10,
-                    7,
-                    1,
-                    2324,
-                    false,
-                    2600,
-                    2738
-                ]
-            },
-            "py/seq": [
-                75,
-                10,
-                7,
-                1,
-                2324,
-                false,
-                2600,
-                2738
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    76,
-                    10,
-                    8,
-                    1,
-                    2427,
-                    false,
-                    2703,
-                    2841
-                ]
-            },
-            "py/seq": [
-                76,
-                10,
-                8,
-                1,
-                2427,
-                false,
-                2703,
-                2841
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    77,
-                    11,
-                    7,
-                    1,
-                    528,
-                    false,
-                    816,
-                    960
-                ]
-            },
-            "py/seq": [
-                77,
-                11,
-                7,
-                1,
-                528,
-                false,
-                816,
-                960
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    78,
-                    12,
-                    8,
-                    1,
-                    2076,
-                    false,
-                    2508,
-                    2724
-                ]
-            },
-            "py/seq": [
-                78,
-                12,
-                8,
-                1,
-                2076,
-                false,
-                2508,
-                2724
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    79,
-                    10,
-                    9,
-                    1,
-                    2365,
-                    false,
-                    2785,
-                    2995
-                ]
-            },
-            "py/seq": [
-                79,
-                10,
-                9,
-                1,
-                2365,
-                false,
-                2785,
-                2995
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    80,
-                    10,
-                    8,
-                    1,
-                    2387,
-                    false,
-                    2663,
-                    2801
-                ]
-            },
-            "py/seq": [
-                80,
-                10,
-                8,
-                1,
-                2387,
-                false,
-                2663,
-                2801
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    81,
-                    10,
-                    7,
-                    1,
-                    1437,
-                    false,
-                    1713,
-                    1851
-                ]
-            },
-            "py/seq": [
-                81,
-                10,
-                7,
-                1,
-                1437,
-                false,
-                1713,
-                1851
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    82,
-                    10,
-                    7,
-                    1,
-                    657,
-                    false,
-                    933,
-                    1071
-                ]
-            },
-            "py/seq": [
-                82,
-                10,
-                7,
-                1,
-                657,
-                false,
-                933,
-                1071
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    83,
-                    12,
-                    9,
-                    1,
-                    1761,
-                    false,
-                    2337,
-                    2625
-                ]
-            },
-            "py/seq": [
-                83,
-                12,
-                9,
-                1,
-                1761,
-                false,
-                2337,
-                2625
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    84,
-                    10,
-                    7,
-                    1,
-                    2308,
-                    false,
-                    2584,
-                    2722
-                ]
-            },
-            "py/seq": [
-                84,
-                10,
-                7,
-                1,
-                2308,
-                false,
-                2584,
-                2722
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    85,
-                    12,
-                    7,
-                    1,
-                    777,
-                    false,
-                    1209,
-                    1425
-                ]
-            },
-            "py/seq": [
-                85,
-                12,
-                7,
-                1,
-                777,
-                false,
-                1209,
-                1425
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    86,
-                    12,
-                    8,
-                    1,
-                    1644,
-                    false,
-                    2076,
-                    2292
-                ]
-            },
-            "py/seq": [
-                86,
-                12,
-                8,
-                1,
-                1644,
-                false,
-                2076,
-                2292
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    87,
-                    12,
-                    8,
-                    1,
-                    1605,
-                    false,
-                    2037,
-                    2253
-                ]
-            },
-            "py/seq": [
-                87,
-                12,
-                8,
-                1,
-                1605,
-                false,
-                2037,
-                2253
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    88,
-                    12,
-                    7,
-                    1,
-                    2023,
-                    false,
-                    2455,
-                    2671
-                ]
-            },
-            "py/seq": [
-                88,
-                12,
-                7,
-                1,
-                2023,
-                false,
-                2455,
-                2671
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    89,
-                    11,
-                    9,
-                    1,
-                    481,
-                    false,
-                    913,
-                    1129
-                ]
-            },
-            "py/seq": [
-                89,
-                11,
-                9,
-                1,
-                481,
-                false,
-                913,
-                1129
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    90,
-                    10,
-                    7,
-                    1,
-                    1786,
-                    false,
-                    2062,
-                    2200
-                ]
-            },
-            "py/seq": [
-                90,
-                10,
-                7,
-                1,
-                1786,
-                false,
-                2062,
-                2200
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    91,
-                    11,
-                    8,
-                    1,
-                    1796,
-                    false,
-                    2084,
-                    2228
-                ]
-            },
-            "py/seq": [
-                91,
-                11,
-                8,
-                1,
-                1796,
-                false,
-                2084,
-                2228
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    92,
-                    12,
-                    8,
-                    1,
-                    90,
-                    false,
-                    522,
-                    738
-                ]
-            },
-            "py/seq": [
-                92,
-                12,
-                8,
-                1,
-                90,
-                false,
-                522,
-                738
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    93,
-                    10,
-                    9,
-                    1,
-                    1208,
-                    false,
-                    1628,
-                    1838
-                ]
-            },
-            "py/seq": [
-                93,
-                10,
-                9,
-                1,
-                1208,
-                false,
-                1628,
-                1838
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    94,
-                    11,
-                    8,
-                    1,
-                    670,
-                    false,
-                    958,
-                    1102
-                ]
-            },
-            "py/seq": [
-                94,
-                11,
-                8,
-                1,
-                670,
-                false,
-                958,
-                1102
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    95,
-                    10,
-                    7,
-                    1,
-                    2306,
-                    false,
-                    2582,
-                    2720
-                ]
-            },
-            "py/seq": [
-                95,
-                10,
-                7,
-                1,
-                2306,
-                false,
-                2582,
-                2720
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    96,
-                    10,
-                    9,
-                    1,
-                    1985,
-                    false,
-                    2405,
-                    2615
-                ]
-            },
-            "py/seq": [
-                96,
-                10,
-                9,
-                1,
-                1985,
-                false,
-                2405,
-                2615
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    97,
-                    11,
-                    7,
-                    1,
-                    439,
-                    false,
-                    727,
-                    871
-                ]
-            },
-            "py/seq": [
-                97,
-                11,
-                7,
-                1,
-                439,
-                false,
-                727,
-                871
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    98,
-                    12,
-                    7,
-                    1,
-                    185,
-                    false,
-                    617,
-                    833
-                ]
-            },
-            "py/seq": [
-                98,
-                12,
-                7,
-                1,
-                185,
-                false,
-                617,
-                833
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    99,
-                    10,
-                    7,
-                    1,
-                    1716,
-                    false,
-                    1992,
-                    2130
-                ]
-            },
-            "py/seq": [
-                99,
-                10,
-                7,
-                1,
-                1716,
-                false,
-                1992,
-                2130
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    100,
-                    11,
-                    7,
-                    1,
-                    2015,
-                    false,
-                    2303,
-                    2447
-                ]
-            },
-            "py/seq": [
-                100,
-                11,
-                7,
-                1,
-                2015,
-                false,
-                2303,
-                2447
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    101,
-                    11,
-                    7,
-                    1,
-                    743,
-                    false,
-                    1031,
-                    1175
-                ]
-            },
-            "py/seq": [
-                101,
-                11,
-                7,
-                1,
-                743,
-                false,
-                1031,
-                1175
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    102,
-                    10,
-                    7,
-                    1,
-                    1779,
-                    false,
-                    2055,
-                    2193
-                ]
-            },
-            "py/seq": [
-                102,
-                10,
-                7,
-                1,
-                1779,
-                false,
-                2055,
-                2193
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    103,
-                    11,
-                    7,
-                    1,
-                    1390,
-                    false,
-                    1678,
-                    1822
-                ]
-            },
-            "py/seq": [
-                103,
-                11,
-                7,
-                1,
-                1390,
-                false,
-                1678,
-                1822
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    104,
-                    12,
-                    7,
-                    1,
-                    1478,
-                    false,
-                    1910,
-                    2126
-                ]
-            },
-            "py/seq": [
-                104,
-                12,
-                7,
-                1,
-                1478,
-                false,
-                1910,
-                2126
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    105,
-                    12,
-                    9,
-                    1,
-                    1369,
-                    false,
-                    1945,
-                    2233
-                ]
-            },
-            "py/seq": [
-                105,
-                12,
-                9,
-                1,
-                1369,
-                false,
-                1945,
-                2233
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    106,
-                    10,
-                    9,
-                    1,
-                    2036,
-                    false,
-                    2456,
-                    2666
-                ]
-            },
-            "py/seq": [
-                106,
-                10,
-                9,
-                1,
-                2036,
-                false,
-                2456,
-                2666
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    107,
-                    12,
-                    8,
-                    1,
-                    1975,
-                    false,
-                    2407,
-                    2623
-                ]
-            },
-            "py/seq": [
-                107,
-                12,
-                8,
-                1,
-                1975,
-                false,
-                2407,
-                2623
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    108,
-                    10,
-                    9,
-                    1,
-                    1770,
-                    false,
-                    2190,
-                    2400
-                ]
-            },
-            "py/seq": [
-                108,
-                10,
-                9,
-                1,
-                1770,
-                false,
-                2190,
-                2400
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    109,
-                    11,
-                    7,
-                    1,
-                    501,
-                    false,
-                    789,
-                    933
-                ]
-            },
-            "py/seq": [
-                109,
-                11,
-                7,
-                1,
-                501,
-                false,
-                789,
-                933
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    110,
-                    10,
-                    8,
-                    1,
-                    1637,
-                    false,
-                    1913,
-                    2051
-                ]
-            },
-            "py/seq": [
-                110,
-                10,
-                8,
-                1,
-                1637,
-                false,
-                1913,
-                2051
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    111,
-                    12,
-                    7,
-                    1,
-                    2115,
-                    false,
-                    2547,
-                    2763
-                ]
-            },
-            "py/seq": [
-                111,
-                12,
-                7,
-                1,
-                2115,
-                false,
-                2547,
-                2763
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    112,
-                    11,
-                    8,
-                    1,
-                    1099,
-                    false,
-                    1387,
-                    1531
-                ]
-            },
-            "py/seq": [
-                112,
-                11,
-                8,
-                1,
-                1099,
-                false,
-                1387,
-                1531
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    113,
-                    12,
-                    7,
-                    1,
-                    2439,
-                    false,
-                    2871,
-                    3087
-                ]
-            },
-            "py/seq": [
-                113,
-                12,
-                7,
-                1,
-                2439,
-                false,
-                2871,
-                3087
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    114,
-                    11,
-                    7,
-                    1,
-                    1513,
-                    false,
-                    1801,
-                    1945
-                ]
-            },
-            "py/seq": [
-                114,
-                11,
-                7,
-                1,
-                1513,
-                false,
-                1801,
-                1945
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    115,
-                    10,
-                    9,
-                    1,
-                    1977,
-                    false,
-                    2397,
-                    2607
-                ]
-            },
-            "py/seq": [
-                115,
-                10,
-                9,
-                1,
-                1977,
-                false,
-                2397,
-                2607
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    116,
-                    12,
-                    7,
-                    1,
-                    1490,
-                    false,
-                    1922,
-                    2138
-                ]
-            },
-            "py/seq": [
-                116,
-                12,
-                7,
-                1,
-                1490,
-                false,
-                1922,
-                2138
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    117,
-                    10,
-                    8,
-                    1,
-                    678,
-                    false,
-                    954,
-                    1092
-                ]
-            },
-            "py/seq": [
-                117,
-                10,
-                8,
-                1,
-                678,
-                false,
-                954,
-                1092
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    118,
-                    11,
-                    8,
-                    1,
-                    2222,
-                    false,
-                    2510,
-                    2654
-                ]
-            },
-            "py/seq": [
-                118,
-                11,
-                8,
-                1,
-                2222,
-                false,
-                2510,
-                2654
-            ]
-        },
-        {
-            "py/object": "airlift.envs.airlift_env.CargoObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    119,
-                    10,
-                    7,
-                    1,
-                    1668,
-                    false,
-                    1944,
-                    2082
-                ]
-            },
-            "py/seq": [
-                119,
-                10,
-                7,
-                1,
-                1668,
-                false,
-                1944,
-                2082
-            ]
-        }
-    ],
-    "event_new_cargo": [],
-    "scenario_info": [
-        {
-            "py/object": "airlift.envs.airlift_env.ScenarioObservation",
-            "py/newargs": {
-                "py/tuple": [
-                    10
-                ]
-            },
-            "py/seq": [
-                10
-            ]
+            "id": 0,
+            "location": 10,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 2138,
+            "is_available": false,
+            "soft_deadline": 2546,
+            "hard_deadline": 2750
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 1,
+            "location": 11,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 2444,
+            "is_available": false,
+            "soft_deadline": 2708,
+            "hard_deadline": 2840
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 2,
+            "location": 12,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 1329,
+            "is_available": false,
+            "soft_deadline": 1749,
+            "hard_deadline": 1959
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 3,
+            "location": 11,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 305,
+            "is_available": false,
+            "soft_deadline": 713,
+            "hard_deadline": 917
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 4,
+            "location": 12,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 1761,
+            "is_available": false,
+            "soft_deadline": 2037,
+            "hard_deadline": 2175
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 5,
+            "location": 12,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 1983,
+            "is_available": false,
+            "soft_deadline": 2259,
+            "hard_deadline": 2397
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 6,
+            "location": 10,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 2350,
+            "is_available": false,
+            "soft_deadline": 2614,
+            "hard_deadline": 2746
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 7,
+            "location": 11,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 1635,
+            "is_available": false,
+            "soft_deadline": 2043,
+            "hard_deadline": 2247
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 8,
+            "location": 10,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 1607,
+            "is_available": false,
+            "soft_deadline": 1871,
+            "hard_deadline": 2003
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 9,
+            "location": 11,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 955,
+            "is_available": false,
+            "soft_deadline": 1363,
+            "hard_deadline": 1567
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 10,
+            "location": 11,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 1589,
+            "is_available": false,
+            "soft_deadline": 1997,
+            "hard_deadline": 2201
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 11,
+            "location": 10,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 297,
+            "is_available": false,
+            "soft_deadline": 705,
+            "hard_deadline": 909
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 12,
+            "location": 12,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 1887,
+            "is_available": false,
+            "soft_deadline": 2163,
+            "hard_deadline": 2301
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 13,
+            "location": 12,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 1983,
+            "is_available": false,
+            "soft_deadline": 2403,
+            "hard_deadline": 2613
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 14,
+            "location": 12,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 1708,
+            "is_available": false,
+            "soft_deadline": 2128,
+            "hard_deadline": 2338
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 15,
+            "location": 12,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 1894,
+            "is_available": false,
+            "soft_deadline": 2170,
+            "hard_deadline": 2308
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 16,
+            "location": 11,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 1938,
+            "is_available": false,
+            "soft_deadline": 2346,
+            "hard_deadline": 2550
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 17,
+            "location": 10,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 1971,
+            "is_available": false,
+            "soft_deadline": 2235,
+            "hard_deadline": 2367
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 18,
+            "location": 10,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 1624,
+            "is_available": false,
+            "soft_deadline": 2032,
+            "hard_deadline": 2236
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 19,
+            "location": 10,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 2036,
+            "is_available": false,
+            "soft_deadline": 2444,
+            "hard_deadline": 2648
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 20,
+            "location": 11,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 2100,
+            "is_available": false,
+            "soft_deadline": 2508,
+            "hard_deadline": 2712
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 21,
+            "location": 11,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 114,
+            "is_available": false,
+            "soft_deadline": 522,
+            "hard_deadline": 726
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 22,
+            "location": 10,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 1541,
+            "is_available": false,
+            "soft_deadline": 1949,
+            "hard_deadline": 2153
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 23,
+            "location": 10,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 1225,
+            "is_available": false,
+            "soft_deadline": 1633,
+            "hard_deadline": 1837
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 24,
+            "location": 11,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 1883,
+            "is_available": false,
+            "soft_deadline": 2147,
+            "hard_deadline": 2279
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 25,
+            "location": 11,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 1988,
+            "is_available": false,
+            "soft_deadline": 2252,
+            "hard_deadline": 2384
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 26,
+            "location": 10,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 1502,
+            "is_available": false,
+            "soft_deadline": 1910,
+            "hard_deadline": 2114
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 27,
+            "location": 12,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 1475,
+            "is_available": false,
+            "soft_deadline": 1895,
+            "hard_deadline": 2105
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 28,
+            "location": 11,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 349,
+            "is_available": false,
+            "soft_deadline": 757,
+            "hard_deadline": 961
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 29,
+            "location": 11,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 294,
+            "is_available": false,
+            "soft_deadline": 702,
+            "hard_deadline": 906
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 30,
+            "location": 12,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 215,
+            "is_available": false,
+            "soft_deadline": 491,
+            "hard_deadline": 629
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 31,
+            "location": 11,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 2167,
+            "is_available": false,
+            "soft_deadline": 2575,
+            "hard_deadline": 2779
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 32,
+            "location": 10,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 372,
+            "is_available": false,
+            "soft_deadline": 780,
+            "hard_deadline": 984
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 33,
+            "location": 10,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 1514,
+            "is_available": false,
+            "soft_deadline": 1922,
+            "hard_deadline": 2126
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 34,
+            "location": 12,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 860,
+            "is_available": false,
+            "soft_deadline": 1280,
+            "hard_deadline": 1490
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 35,
+            "location": 10,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 1913,
+            "is_available": false,
+            "soft_deadline": 2177,
+            "hard_deadline": 2309
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 36,
+            "location": 10,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 578,
+            "is_available": false,
+            "soft_deadline": 986,
+            "hard_deadline": 1190
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 37,
+            "location": 11,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 1068,
+            "is_available": false,
+            "soft_deadline": 1476,
+            "hard_deadline": 1680
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 38,
+            "location": 11,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 125,
+            "is_available": false,
+            "soft_deadline": 533,
+            "hard_deadline": 737
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 39,
+            "location": 11,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 2482,
+            "is_available": false,
+            "soft_deadline": 2746,
+            "hard_deadline": 2878
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 40,
+            "location": 10,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 1098,
+            "is_available": false,
+            "soft_deadline": 1362,
+            "hard_deadline": 1494
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 41,
+            "location": 10,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 1587,
+            "is_available": false,
+            "soft_deadline": 1995,
+            "hard_deadline": 2199
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 42,
+            "location": 10,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 2080,
+            "is_available": false,
+            "soft_deadline": 2488,
+            "hard_deadline": 2692
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 43,
+            "location": 12,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 1622,
+            "is_available": false,
+            "soft_deadline": 1898,
+            "hard_deadline": 2036
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 44,
+            "location": 10,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 2284,
+            "is_available": false,
+            "soft_deadline": 2692,
+            "hard_deadline": 2896
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 45,
+            "location": 10,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 2268,
+            "is_available": false,
+            "soft_deadline": 2532,
+            "hard_deadline": 2664
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 46,
+            "location": 10,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 2334,
+            "is_available": false,
+            "soft_deadline": 2742,
+            "hard_deadline": 2946
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 47,
+            "location": 11,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 524,
+            "is_available": false,
+            "soft_deadline": 788,
+            "hard_deadline": 920
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 48,
+            "location": 12,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 317,
+            "is_available": false,
+            "soft_deadline": 737,
+            "hard_deadline": 947
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 49,
+            "location": 10,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 1234,
+            "is_available": false,
+            "soft_deadline": 1498,
+            "hard_deadline": 1630
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 50,
+            "location": 10,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 817,
+            "is_available": false,
+            "soft_deadline": 1225,
+            "hard_deadline": 1429
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 51,
+            "location": 12,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 1363,
+            "is_available": false,
+            "soft_deadline": 1783,
+            "hard_deadline": 1993
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 52,
+            "location": 12,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 2186,
+            "is_available": false,
+            "soft_deadline": 2462,
+            "hard_deadline": 2600
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 53,
+            "location": 10,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 2396,
+            "is_available": false,
+            "soft_deadline": 2804,
+            "hard_deadline": 3008
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 54,
+            "location": 10,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 297,
+            "is_available": false,
+            "soft_deadline": 705,
+            "hard_deadline": 909
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 55,
+            "location": 12,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 1800,
+            "is_available": false,
+            "soft_deadline": 2076,
+            "hard_deadline": 2214
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 56,
+            "location": 11,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 1227,
+            "is_available": false,
+            "soft_deadline": 1491,
+            "hard_deadline": 1623
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 57,
+            "location": 10,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 56,
+            "is_available": false,
+            "soft_deadline": 320,
+            "hard_deadline": 452
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 58,
+            "location": 11,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 2025,
+            "is_available": false,
+            "soft_deadline": 2433,
+            "hard_deadline": 2637
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 59,
+            "location": 11,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 2141,
+            "is_available": false,
+            "soft_deadline": 2549,
+            "hard_deadline": 2753
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 60,
+            "location": 11,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 462,
+            "is_available": false,
+            "soft_deadline": 870,
+            "hard_deadline": 1074
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 61,
+            "location": 11,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 961,
+            "is_available": false,
+            "soft_deadline": 1369,
+            "hard_deadline": 1573
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 62,
+            "location": 11,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 34,
+            "is_available": false,
+            "soft_deadline": 298,
+            "hard_deadline": 430
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 63,
+            "location": 11,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 764,
+            "is_available": false,
+            "soft_deadline": 1172,
+            "hard_deadline": 1376
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 64,
+            "location": 11,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 2414,
+            "is_available": false,
+            "soft_deadline": 2678,
+            "hard_deadline": 2810
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 65,
+            "location": 10,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 1625,
+            "is_available": false,
+            "soft_deadline": 1889,
+            "hard_deadline": 2021
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 66,
+            "location": 10,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 1338,
+            "is_available": false,
+            "soft_deadline": 1602,
+            "hard_deadline": 1734
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 67,
+            "location": 11,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 2229,
+            "is_available": false,
+            "soft_deadline": 2493,
+            "hard_deadline": 2625
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 68,
+            "location": 11,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 1532,
+            "is_available": false,
+            "soft_deadline": 1940,
+            "hard_deadline": 2144
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 69,
+            "location": 11,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 2366,
+            "is_available": false,
+            "soft_deadline": 2774,
+            "hard_deadline": 2978
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 70,
+            "location": 10,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 752,
+            "is_available": false,
+            "soft_deadline": 1016,
+            "hard_deadline": 1148
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 71,
+            "location": 12,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 1067,
+            "is_available": false,
+            "soft_deadline": 1343,
+            "hard_deadline": 1481
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 72,
+            "location": 12,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 2176,
+            "is_available": false,
+            "soft_deadline": 2596,
+            "hard_deadline": 2806
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 73,
+            "location": 11,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 2228,
+            "is_available": false,
+            "soft_deadline": 2636,
+            "hard_deadline": 2840
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 74,
+            "location": 10,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 21,
+            "is_available": false,
+            "soft_deadline": 429,
+            "hard_deadline": 633
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 75,
+            "location": 10,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 1489,
+            "is_available": false,
+            "soft_deadline": 1897,
+            "hard_deadline": 2101
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 76,
+            "location": 11,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 2060,
+            "is_available": false,
+            "soft_deadline": 2324,
+            "hard_deadline": 2456
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 77,
+            "location": 12,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 56,
+            "is_available": false,
+            "soft_deadline": 476,
+            "hard_deadline": 686
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 78,
+            "location": 10,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 2004,
+            "is_available": false,
+            "soft_deadline": 2268,
+            "hard_deadline": 2400
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 79,
+            "location": 12,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 1181,
+            "is_available": false,
+            "soft_deadline": 1601,
+            "hard_deadline": 1811
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 80,
+            "location": 12,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 1364,
+            "is_available": false,
+            "soft_deadline": 1640,
+            "hard_deadline": 1778
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 81,
+            "location": 10,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 2353,
+            "is_available": false,
+            "soft_deadline": 2761,
+            "hard_deadline": 2965
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 82,
+            "location": 12,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 193,
+            "is_available": false,
+            "soft_deadline": 469,
+            "hard_deadline": 607
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 83,
+            "location": 11,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 750,
+            "is_available": false,
+            "soft_deadline": 1158,
+            "hard_deadline": 1362
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 84,
+            "location": 12,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 2338,
+            "is_available": false,
+            "soft_deadline": 2758,
+            "hard_deadline": 2968
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 85,
+            "location": 12,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 86,
+            "is_available": false,
+            "soft_deadline": 362,
+            "hard_deadline": 500
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 86,
+            "location": 12,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 2150,
+            "is_available": false,
+            "soft_deadline": 2570,
+            "hard_deadline": 2780
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 87,
+            "location": 10,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 1583,
+            "is_available": false,
+            "soft_deadline": 1991,
+            "hard_deadline": 2195
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 88,
+            "location": 11,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 2165,
+            "is_available": false,
+            "soft_deadline": 2573,
+            "hard_deadline": 2777
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 89,
+            "location": 12,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 822,
+            "is_available": false,
+            "soft_deadline": 1242,
+            "hard_deadline": 1452
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 90,
+            "location": 10,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 2423,
+            "is_available": false,
+            "soft_deadline": 2831,
+            "hard_deadline": 3035
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 91,
+            "location": 11,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 2018,
+            "is_available": false,
+            "soft_deadline": 2426,
+            "hard_deadline": 2630
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 92,
+            "location": 10,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 476,
+            "is_available": false,
+            "soft_deadline": 884,
+            "hard_deadline": 1088
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 93,
+            "location": 12,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 924,
+            "is_available": false,
+            "soft_deadline": 1200,
+            "hard_deadline": 1338
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 94,
+            "location": 12,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 671,
+            "is_available": false,
+            "soft_deadline": 1091,
+            "hard_deadline": 1301
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 95,
+            "location": 10,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 1546,
+            "is_available": false,
+            "soft_deadline": 1810,
+            "hard_deadline": 1942
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 96,
+            "location": 12,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 1960,
+            "is_available": false,
+            "soft_deadline": 2380,
+            "hard_deadline": 2590
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 97,
+            "location": 10,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 1019,
+            "is_available": false,
+            "soft_deadline": 1427,
+            "hard_deadline": 1631
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 98,
+            "location": 10,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 1328,
+            "is_available": false,
+            "soft_deadline": 1592,
+            "hard_deadline": 1724
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 99,
+            "location": 12,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 300,
+            "is_available": false,
+            "soft_deadline": 720,
+            "hard_deadline": 930
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 100,
+            "location": 11,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 2312,
+            "is_available": false,
+            "soft_deadline": 2576,
+            "hard_deadline": 2708
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 101,
+            "location": 11,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 1183,
+            "is_available": false,
+            "soft_deadline": 1591,
+            "hard_deadline": 1795
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 102,
+            "location": 10,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 598,
+            "is_available": false,
+            "soft_deadline": 1006,
+            "hard_deadline": 1210
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 103,
+            "location": 12,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 1213,
+            "is_available": false,
+            "soft_deadline": 1489,
+            "hard_deadline": 1627
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 104,
+            "location": 11,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 2010,
+            "is_available": false,
+            "soft_deadline": 2418,
+            "hard_deadline": 2622
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 105,
+            "location": 12,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 341,
+            "is_available": false,
+            "soft_deadline": 761,
+            "hard_deadline": 971
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 106,
+            "location": 11,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 588,
+            "is_available": false,
+            "soft_deadline": 996,
+            "hard_deadline": 1200
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 107,
+            "location": 12,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 405,
+            "is_available": false,
+            "soft_deadline": 681,
+            "hard_deadline": 819
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 108,
+            "location": 10,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 1563,
+            "is_available": false,
+            "soft_deadline": 1971,
+            "hard_deadline": 2175
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 109,
+            "location": 10,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 431,
+            "is_available": false,
+            "soft_deadline": 839,
+            "hard_deadline": 1043
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 110,
+            "location": 12,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 1220,
+            "is_available": false,
+            "soft_deadline": 1640,
+            "hard_deadline": 1850
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 111,
+            "location": 11,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 821,
+            "is_available": false,
+            "soft_deadline": 1229,
+            "hard_deadline": 1433
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 112,
+            "location": 12,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 1353,
+            "is_available": false,
+            "soft_deadline": 1773,
+            "hard_deadline": 1983
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 113,
+            "location": 12,
+            "destination": 8,
+            "weight": 1,
+            "earliest_pickup_time": 2154,
+            "is_available": false,
+            "soft_deadline": 2574,
+            "hard_deadline": 2784
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 114,
+            "location": 11,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 2196,
+            "is_available": false,
+            "soft_deadline": 2604,
+            "hard_deadline": 2808
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 115,
+            "location": 12,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 2113,
+            "is_available": false,
+            "soft_deadline": 2533,
+            "hard_deadline": 2743
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 116,
+            "location": 11,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 1940,
+            "is_available": false,
+            "soft_deadline": 2204,
+            "hard_deadline": 2336
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 117,
+            "location": 10,
+            "destination": 9,
+            "weight": 1,
+            "earliest_pickup_time": 199,
+            "is_available": false,
+            "soft_deadline": 607,
+            "hard_deadline": 811
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 118,
+            "location": 12,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 699,
+            "is_available": false,
+            "soft_deadline": 975,
+            "hard_deadline": 1113
+        },
+        {
+            "py/object": "airlift.envs.airlift_env.CargoObservation",
+            "id": 119,
+            "location": 12,
+            "destination": 7,
+            "weight": 1,
+            "earliest_pickup_time": 168,
+            "is_available": false,
+            "soft_deadline": 444,
+            "hard_deadline": 582
         }
     ]
 }
