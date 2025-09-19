@@ -5,9 +5,6 @@ channels:
 dependencies:
   - python==3.9
   - pip==21.3.1
-  - freeglut
-  - mesa-libglu
-  - mesa-libgl
 
   - pip:
       # For debugging purposes, you may want to comment out the following line and instead install the airlift package
