@@ -23,9 +23,10 @@ These instructions will guide you through setting up the simulation environment 
 2.  **Install the `airlift` Package in Editable Mode**
 
     Activate the conda environment. 
-    '''bash
-    conda activate airlift-solution"
-    '''
+    ```bash
+    conda activate airlift-solution
+    ```
+   
 
     Then run this installation to download the airlift software package. 
 
