@@ -43,3 +43,15 @@ These instructions will guide you through setting up the simulation environment 
     ```
 
     Your terminal prompt should now indicate that you are in the `airlift` environment. You are now ready to run the simulation and work on the code.
+
+4.  **Update database and return solution**
+
+    To start working on the project, you need to activate the Conda environment in your terminal.
+
+    ```bash
+       python db-update/json_update.py
+    ```
+
+    You can use the `--instruction` arguement to pass in a natural language instruction or modify user prompt directly in this file.
+    
+    The updated database is stored in the `database` folder with the name `updated_database.json` and the solution is stored in the `solution` folder with the name `updated_solution.json`
