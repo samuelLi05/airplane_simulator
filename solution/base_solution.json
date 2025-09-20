@@ -1,0 +1,362 @@
+[
+    {
+        "a_0": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 6
+        },
+        "a_1": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 10
+        },
+        "a_2": {
+            "priority": 1,
+            "cargo_to_load": [
+                8,
+                14,
+                27,
+                28,
+                29,
+                32,
+                35
+            ],
+            "cargo_to_unload": [],
+            "destination": 0
+        },
+        "a_3": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 10
+        },
+        "a_4": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 0
+        },
+        "a_5": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 6
+        },
+        "a_6": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 4
+        },
+        "a_7": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 7
+        },
+        "a_8": {
+            "priority": 1,
+            "cargo_to_load": [
+                12,
+                22,
+                23
+            ],
+            "cargo_to_unload": [],
+            "destination": 0
+        },
+        "a_9": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 11
+        }
+    },
+    {
+        "a_0": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 6
+        },
+        "a_1": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 10
+        },
+        "a_2": {
+            "priority": 1,
+            "cargo_to_load": [
+                0,
+                3,
+                13
+            ],
+            "cargo_to_unload": [],
+            "destination": 14
+        },
+        "a_3": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 10
+        },
+        "a_4": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 6
+        },
+        "a_5": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 14
+        },
+        "a_6": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 0
+        },
+        "a_7": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 0
+        },
+        "a_8": {
+            "priority": 1,
+            "cargo_to_load": [
+                10,
+                15,
+                36
+            ],
+            "cargo_to_unload": [],
+            "destination": 2
+        },
+        "a_9": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 1
+        }
+    },
+    {
+        "a_0": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 7
+        },
+        "a_1": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 10
+        },
+        "a_2": {
+            "priority": 1,
+            "cargo_to_load": [
+                0,
+                3,
+                4
+            ],
+            "cargo_to_unload": [],
+            "destination": 0
+        },
+        "a_3": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 10
+        },
+        "a_4": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 14
+        },
+        "a_5": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 0
+        },
+        "a_6": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 4
+        },
+        "a_7": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 7
+        },
+        "a_8": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 1
+        },
+        "a_9": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 14
+        }
+    },
+    {
+        "a_0": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 10
+        },
+        "a_1": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 0
+        },
+        "a_2": {
+            "priority": 1,
+            "cargo_to_load": [
+                0,
+                13,
+                30
+            ],
+            "cargo_to_unload": [
+                28,
+                29,
+                32,
+                35
+            ],
+            "destination": 2
+        },
+        "a_3": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 0
+        },
+        "a_4": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 1
+        },
+        "a_5": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 0
+        },
+        "a_6": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 6
+        },
+        "a_7": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 7
+        },
+        "a_8": {
+            "priority": 1,
+            "cargo_to_load": [
+                6,
+                10
+            ],
+            "cargo_to_unload": [
+                12,
+                22
+            ],
+            "destination": 5
+        },
+        "a_9": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 0
+        }
+    },
+    {
+        "a_0": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 10
+        },
+        "a_1": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 10
+        },
+        "a_2": {
+            "priority": 1,
+            "cargo_to_load": [
+                3,
+                4,
+                16
+            ],
+            "cargo_to_unload": [],
+            "destination": 1
+        },
+        "a_3": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 7
+        },
+        "a_4": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 12
+        },
+        "a_5": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 6
+        },
+        "a_6": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 11
+        },
+        "a_7": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 0
+        },
+        "a_8": {
+            "priority": 1,
+            "cargo_to_load": [
+                2,
+                15,
+                25,
+                36
+            ],
+            "cargo_to_unload": [
+                23
+            ],
+            "destination": 5
+        },
+        "a_9": {
+            "priority": 1,
+            "cargo_to_load": [],
+            "cargo_to_unload": [],
+            "destination": 0
+        }
+    }
+]

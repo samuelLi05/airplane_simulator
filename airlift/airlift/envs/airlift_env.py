@@ -207,12 +207,12 @@ class AirliftEnv(ParallelEnv):
             self.routemap, airplanes, cargo = self.world_generator.generate()
         else:
             self.routemap, airplanes, cargo = ManualWorldGenerator(json_file_path).generate(self.routemap)
-            print ("Injecting")
+            #print ("Injecting")
 
         if len(airplanes) != len(self.possible_agents):
-            print ("updating")
+            #print ("updating")
             self.possible_agents = ['a_' + str(i) for i in range(len(airplanes))]
-            print (len(self.possible_agents))
+            #print (len(self.possible_agents))
             if hasattr(self.__class__.action_spaces, "cache_clear"):
                 self.__class__.action_spaces.cache_clear()
             if hasattr(self.__class__.observation_spaces, "cache_clear"):
@@ -221,7 +221,7 @@ class AirliftEnv(ParallelEnv):
                 self.__class__.state_space.cache_clear()
 
             self.agents = list(self.possible_agents)
-            print (len(self.agents))
+            #print (len(self.agents))
 
         self.renderer.reset(self.routemap, airplanes)
         self.cargo_by_id = {}

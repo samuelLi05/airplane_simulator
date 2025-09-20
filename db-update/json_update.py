@@ -6,6 +6,18 @@ import json
 import sys
 import os
 
+from airlift.envs.airlift_env import AirliftEnv
+# Starter kit solution
+sys.path.append('airlift-starter-kit')
+from solution.mysolution import MySolution
+
+# Helper methods
+from airlift.solutions import doepisode
+from eval_solution import write_results
+
+# Maximum number of steps the episode will run
+max_cycles = 5000
+
 # For quick start, see: https://colab.research.google.com/drive/1plysMDLiC4HOboFAl5ufUXehyZp4uihS?authuser=5#scrollTo=5DGkohEA92jR
 
 # Configure OpenAI client
@@ -118,7 +130,7 @@ if __name__ == '__main__':
     Updated JSON will be saved to ./test-environments/updated_database.json
     """
     user_prompt = "The route between airport 1 and airport 7 is unavailable."
-    user_prompt = "Each airport with cost higher than 0.6 that airport 1 is connected to is unavailable"
+    user_prompt = "Add 10 additional cargo fields mapping to the cargo structure"
 
     parser = argparse.ArgumentParser(description='geo-olm agent')
     parser.add_argument('--Test', '-T', type=int, default=0, help='input json Test to load from')
@@ -127,7 +139,37 @@ if __name__ == '__main__':
     parser.add_argument('--instruction', '-i', type=str, default=user_prompt, help='natural language instruction to edit the input json')
     args = parser.parse_args()
 
-    in_path = f"./test-environments/Test_{args.Test}_json/Level_{args.Level}.json"
-    out_path = f"./test-environments/updated_database.json"
+    in_path = f"./database/example.json"
+    out_path = f"./database/agent_database.json"
+    in_pkl = f"./database/example.pkl"
+    solution_path = "./solution/agent_solution.json"
 
     openai_json_edit(in_path, out_path, args.instruction, args.model)
+
+    # Load the edited json file into Airlift environment
+
+    env = AirliftEnv.load(in_pkl)
+    obs1 = env.reset()
+
+    """
+    Run a single episode utilizing the solution and manually injected JSON edits to the environment. 
+    """
+    env_info, metrics, time_taken, total_solution_time, step_metrics = \
+    doepisode(env,
+                solution=MySolution(),
+                render=True,
+                render_sleep_time=0, # Set this to 0.1 to slow down the simulation
+                env_seed=100,
+                solution_seed=200,
+                capture_metrics=True, 
+                early_exit=5,
+                inject_path= out_path, # edited json file we inject
+                json_file_path=solution_path) # Where solution is stored
+
+    print("Missed Deliveries: {}".format(metrics.missed_deliveries))
+    print("Lateness:          {}".format(metrics.total_lateness))
+    print("Total flight cost: {}".format(metrics.total_cost))
+    print("Score:             {}".format(metrics.score))
+
+    write_results(env_info, step_metrics)
+

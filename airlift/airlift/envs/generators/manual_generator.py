@@ -44,7 +44,11 @@ class ManualWorldGenerator(WorldGenerator):
         airports = []
         for node_id, node_data in self.global_state['route_map']['json://0']['_node'].items():
             airport_id = int(node_id.split('json://')[-1])
-            pos_data = node_data['pos']['py/seq']
+            if isinstance(node_data['pos'], dict):
+                pos_data = node_data['pos']['py/seq']
+            else:
+                pos_data = node_data['pos']
+            #pos_data = node_data['pos']['py/seq']
             position = FlatCoordinate(pos_data)
             working_capacity = node_data.get('working_capacity', 1) # Default to 1 if missing
             airports.append(Airport(id=airport_id, pos=position, working_capacity=working_capacity))
@@ -113,7 +117,16 @@ class ManualWorldGenerator(WorldGenerator):
     
     @property
     def plane_types(self):
-        return [PlaneType(id=pt['py/seq'][0], max_weight=pt['py/seq'][1]) for pt in self.global_state['plane_types']] #FROM JSON
+        planes = []
+        for pt in self.global_state['plane_types']:
+            if isinstance(pt, dict):
+                plane_data = pt['py/seq']
+                planes.append(PlaneType(id=plane_data[0], max_weight=plane_data[1]))
+            else:
+                planes.append(PlaneType(id=pt[0], max_weight=pt[1]))
+        return planes
+    # not taking into account singular non list object loading
+    #[PlaneType(id=pt['py/seq'][0], max_weight=pt['py/seq'][1]) for pt in self.global_state['plane_types']] #FROM JSON
     
     @property
     def max_airports(self):
@@ -145,7 +158,7 @@ class ManualWorldGenerator(WorldGenerator):
     
 
 if __name__ == "__main__":
-    routes, airplanes, cargo =ManualWorldGenerator("./test-environments/Test_1_json/example.json").generate()
+    routes, airplanes, cargo =ManualWorldGenerator("./database/example.json").generate()
     print (routes)
     print (airplanes)
     print (cargo)

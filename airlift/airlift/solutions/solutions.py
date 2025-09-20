@@ -57,7 +57,7 @@ class Solution:
         return list(obs.values())[0]["globalstate"]  # Assume state space for each agent is the same
 
 
-def doepisode(env, solution, render=False, env_seed=None, solution_seed=None, render_sleep_time=0.1, capture_metrics=False, render_mode="human", early_exit=False, inject_path = "", json_file_path=""):
+def doepisode(env, solution, render=False, env_seed=None, solution_seed=None, render_sleep_time=0.1, capture_metrics=False, render_mode="human", early_exit=0, inject_path = "", json_file_path=""):
     """
     Runs a single episode.
 
@@ -114,7 +114,7 @@ def doepisode(env, solution, render=False, env_seed=None, solution_seed=None, re
                 time.sleep(render_sleep_time)
         # Extract only a single solutiuon
         # TODO stop at 5 steps
-        if (early_exit and json_file_path):
+        if (early_exit and json_file_path and step >= early_exit):
             json_env = jsonpickle.encode(total_actions, indent=4, keys=True)
             with open(json_file_path, 'w') as f:
                 f.write(json_env)
