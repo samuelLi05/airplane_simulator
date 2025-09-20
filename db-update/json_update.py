@@ -127,10 +127,9 @@ def openai_json_edit(in_path, out_path, user_prompt, model="gpt-5-mini"):
 
 if __name__ == '__main__':
     """
-    Updated JSON will be saved to ./test-environments/updated_database.json
+    Updated JSON will be saved to ./database/updated_database.json
     """
-    user_prompt = "The route between airport 1 and airport 7 is unavailable."
-    user_prompt = "Add 10 additional cargo fields mapping to the cargo structure"
+    user_prompt = "The route between airport 1 and airport 12 is unavailable."
 
     parser = argparse.ArgumentParser(description='geo-olm agent')
     parser.add_argument('--Test', '-T', type=int, default=0, help='input json Test to load from')
@@ -140,9 +139,9 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     in_path = f"./database/example.json"
-    out_path = f"./database/agent_database.json"
+    out_path = f"./database/updated_database.json"
     in_pkl = f"./database/example.pkl"
-    solution_path = "./solution/agent_solution.json"
+    solution_path = "./solution/updated_solution.json"
 
     openai_json_edit(in_path, out_path, args.instruction, args.model)
 
@@ -166,10 +165,10 @@ if __name__ == '__main__':
                 inject_path= out_path, # edited json file we inject
                 json_file_path=solution_path) # Where solution is stored
 
-    print("Missed Deliveries: {}".format(metrics.missed_deliveries))
-    print("Lateness:          {}".format(metrics.total_lateness))
-    print("Total flight cost: {}".format(metrics.total_cost))
-    print("Score:             {}".format(metrics.score))
+    # print("Missed Deliveries: {}".format(metrics.missed_deliveries))
+    # print("Lateness:          {}".format(metrics.total_lateness))
+    # print("Total flight cost: {}".format(metrics.total_cost))
+    # print("Score:             {}".format(metrics.score))
 
-    write_results(env_info, step_metrics)
+    # write_results(env_info, step_metrics)
 
