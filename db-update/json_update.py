@@ -5,6 +5,7 @@ import prompts
 import json
 import sys
 import os
+import math
 
 from airlift.envs.airlift_env import AirliftEnv
 # Starter kit solution
@@ -107,6 +108,85 @@ def write_json_to_file(json_data, path):
         print(f"Failed to write output file: {e}", file=sys.stderr)
 
 
+def classify_prompt(prompt: str) -> tuple[str, float]:
+    """
+    Classify a prompt as 'A', 'B', or 'C' using GPT-5-nano log probabilities.
+
+    Returns:
+        (label, confidence): 
+            label = 'A' | 'B' | 'C'
+            confidence = probability of the chosen label
+    """
+    response = client.completions.create(
+        model="gpt-4o-mini",
+        prompt=(
+            "Classify the following user prompt into one of these options:\n"
+            "A. Extract info from a database\n"
+            "B. Modify the database\n"
+            "C. Uncertain\n\n"
+            f"Prompt: {prompt}\n\nPlease answer with a signle, capital letter:"
+        ),
+        max_tokens=1,
+        logprobs=3,     # request logprobs for top tokens
+        temperature=0   # deterministic output
+    )
+
+    choice = response.choices[0]
+    
+    logprobs = choice.logprobs.top_logprobs[0]
+
+    prob_a = math.exp(logprobs.get(" A", float("-inf")))
+    prob_b = math.exp(logprobs.get(" B", float("-inf")))
+    prob_c = math.exp(logprobs.get(" C", float("-inf")))
+
+    total = prob_a + prob_b + prob_c
+    if total == 0:
+        return "C", 0.33  # fallback
+
+    probs = {
+        "A": prob_a / total,
+        "B": prob_b / total,
+        "C": prob_c / total,
+    }
+
+    label = max(probs, key=probs.get)
+    confidence = probs[label]
+
+    return label, confidence
+
+def handle_prompt(prompt: str, data_path: str) -> str:
+    """
+    Handle a user prompt based on classification:
+    A -> Use GPT-5-nano with a JSON database to answer
+    B -> Return empty string
+    C -> Return clarification request
+    """
+    # First classify
+    label, _ = classify_prompt(prompt)
+
+    if label == "A":
+        # Load JSON database
+        with open(data_path, "r") as f:
+            database = json.load(f)
+
+        # Ask GPT-5-nano to answer using the database
+        response = client.chat.completions.create(
+            model="gpt-5-nano",
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant. Use only the provided database."},
+                {"role": "user", "content": f"Database:\n{json.dumps(database, indent=2)}\n\nQuestion: {prompt}"}
+            ],
+            temperature=0
+        )
+
+        return response.choices[0].message.content.strip()
+    elif label == "B":
+        # Modify DB → not handled by GPT, so return nothing
+        return "Database Updated."
+    else:
+        # Clarification
+        return "I'm not sure what you want, please clarify."
+
 def openai_json_edit(in_path, out_path, user_prompt, model="gpt-5-mini"):
     """
     End-to-end pipeline for JSON editing (load -> LLM call -> write) with OpenAI.
@@ -116,14 +196,34 @@ def openai_json_edit(in_path, out_path, user_prompt, model="gpt-5-mini"):
     out_path (str): Path to the output JSON file.
     user_prompt (str): Natural-language instruction describing the edit.
 
-    returns
-    None
+    returns a response
     """
-    original_json = load_json_from_file(in_path)
-    request = openai_request(original_json, user_prompt, model)
-    updated_json = json.loads(request.output[1].content[0].text)
-    write_json_to_file(updated_json, out_path)
+    response = handle_prompt(user_prompt, in_path)
+    if response == "Database Updated.":
+        original_json = load_json_from_file(in_path)
+        request = openai_request(original_json, user_prompt, model)
+        updated_json = json.loads(request.output[1].content[0].text)
+        write_json_to_file(updated_json, out_path)
+    return response
 
+def write_solution(in_pkl):
+    # Load the edited json file into Airlift environment
+    env = AirliftEnv.load(in_pkl)
+    obs1 = env.reset()
+    """
+    Run a single episode utilizing the solution and manually injected JSON edits to the environment. 
+    """
+    env_info, metrics, time_taken, total_solution_time, step_metrics = \
+    doepisode(env,
+                solution=MySolution(),
+                render=True,
+                render_sleep_time=0, # Set this to 0.1 to slow down the simulation
+                env_seed=100,
+                solution_seed=200,
+                capture_metrics=True, 
+                early_exit=5,
+                inject_path= out_path, # edited json file we inject
+                json_file_path=solution_path) # Where solution is stored
 
 if __name__ == '__main__':
     """
@@ -142,33 +242,7 @@ if __name__ == '__main__':
     out_path = f"./database/updated_database.json"
     in_pkl = f"./database/example.pkl"
     solution_path = "./solution/updated_solution.json"
-
+   
     openai_json_edit(in_path, out_path, args.instruction, args.model)
-
-    # Load the edited json file into Airlift environment
-
-    env = AirliftEnv.load(in_pkl)
-    obs1 = env.reset()
-
-    """
-    Run a single episode utilizing the solution and manually injected JSON edits to the environment. 
-    """
-    env_info, metrics, time_taken, total_solution_time, step_metrics = \
-    doepisode(env,
-                solution=MySolution(),
-                render=True,
-                render_sleep_time=0, # Set this to 0.1 to slow down the simulation
-                env_seed=100,
-                solution_seed=200,
-                capture_metrics=True, 
-                early_exit=5,
-                inject_path= out_path, # edited json file we inject
-                json_file_path=solution_path) # Where solution is stored
-
-    # print("Missed Deliveries: {}".format(metrics.missed_deliveries))
-    # print("Lateness:          {}".format(metrics.total_lateness))
-    # print("Total flight cost: {}".format(metrics.total_cost))
-    # print("Score:             {}".format(metrics.score))
-
-    # write_results(env_info, step_metrics)
-
+    write_solution(in_pkl)
+    
