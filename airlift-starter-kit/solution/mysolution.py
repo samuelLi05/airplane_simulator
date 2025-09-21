@@ -7,6 +7,47 @@ from airlift.solutions import Solution
 
 import json
 
+def airlift_json_to_pddl(json_file, problem_out="../../database/problem.pddl"):
+    with open(json_file, "r") as f:
+        data = json.load(f)
+
+    nodes = data["route_map"]["json://0"]["_node"]
+    adj = data["route_map"]["json://0"]["_adj"]
+    agents = data["agents"]
+    cargos = data["active_cargo"]
+
+    # --- Objects ---
+    airports = [f"airport{nodes[k]['airport']}" for k in nodes]
+    planes = list(agents.keys())
+    cargo_objs = [f"c{c['id']}" for c in cargos]
+
+    # --- Init ---
+    init_facts = []
+    for a, info in agents.items():
+        init_facts.append(f"(at {a} airport{info['current_airport']})")
+    for c in cargos:
+        init_facts.append(f"(cargo-at c{c['id']} airport{c['location']})")
+    for n, neighbors in adj.items():
+        for dest in neighbors:
+            init_facts.append(f"(connected airport{nodes[n]['airport']} airport{nodes[dest]['airport']})")
+
+    # --- Goal ---
+    goal_facts = [f"(cargo-at c{c['id']} airport{c['destination']})" for c in cargos]
+
+    # --- PDDL problem ---
+    problem_pddl = f"(define (problem airlift)\n"
+    problem_pddl += "  (:domain airlift)\n"
+    problem_pddl += "  (:objects " + " ".join(planes + cargo_objs + airports) + ")\n"
+    problem_pddl += "  (:init\n    " + "\n    ".join(init_facts) + "\n  )\n"
+    problem_pddl += "  (:goal (and\n    " + "\n    ".join(goal_facts) + "\n  ))\n"
+    problem_pddl += ")"
+
+    with open(problem_out, "w") as f:
+        f.write(problem_pddl)
+
+    return problem_pddl
+
+
 class PDDL_Planner(Solution):
     """
     Utilizing this class for your solution is required for your submission. The primary solution algorithm will go inside the
