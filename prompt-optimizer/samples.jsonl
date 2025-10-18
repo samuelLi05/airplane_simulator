@@ -1,0 +1,6 @@
+{"prompt": "Could you ensure all routes from airport 2 are operational?", "solution": "B. Modify the database." }
+{"prompt": "List airports that have unavailable routes.", "solution": "A. Extract info from a database"}
+{"prompt": "Routes between 1 and 5 should be double-checked.", "solution": "C. Uncertain"}
+{"prompt": "Costs between 3 and 5 should match the current fuel price of 0.65", "solution": "B. Modify the database."}
+{"prompt": "Find all airports that has some routes being unavailable.", "solution": "A. Extract info from a database"}
+{"prompt": "Update the route from airport 4 to airport 6", "solution": "C. Uncertain"}
