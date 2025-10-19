@@ -2,6 +2,23 @@ import argparse
 import concurrent
 from dotenv import load_dotenv
 from tqdm import tqdm
+
+# Workaround for Python 3.9 typing issue with aiohttp 3.13+
+import sys
+if sys.version_info < (3, 10):
+    # Monkey patch to fix the typing issue
+    import typing
+    _original_remove_dups_flatten = typing._remove_dups_flatten
+    def _patched_remove_dups_flatten(parameters):
+        try:
+            return _original_remove_dups_flatten(parameters)
+        except TypeError as e:
+            if "unhashable type" in str(e):
+                # Fallback: convert to tuple of string representations
+                return tuple(dict.fromkeys(str(p) if not isinstance(p, type) else p for p in parameters))
+            raise
+    typing._remove_dups_flatten = _patched_remove_dups_flatten
+
 import textgrad as tg
 from textgrad.tasks import load_task
 import numpy as np
