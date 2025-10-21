@@ -23,12 +23,56 @@ import textgrad as tg
 from textgrad.tasks import load_task
 import numpy as np
 import random
+import os
+import json
 load_dotenv()
 
 def set_seed(seed):
     np.random.seed(seed)
     random.seed(seed)
 
+class Dataset:
+    def __init__(self, seq, desc):
+        self._seq = list(seq)
+        self._desc = desc
+    def __len__(self):
+        return len(self._seq)
+    def __getitem__(self, idx):
+        return self._seq[idx]
+    def __iter__(self):
+        return iter(self._seq)
+    def get_task_description(self):
+        return self._desc
+    
+class EvalFn:
+        """Simple evaluator returning a tg.Variable(1|0). Supports dict or list-style calls."""
+        def _extract(self, v):
+            try:
+                return v.get_value()
+            except Exception:
+                return getattr(v, "value", v)
+
+        def __call__(self, inputs=None):
+            if isinstance(inputs, dict):
+                pred = inputs.get("prediction")
+                gt = inputs.get("ground_truth_answer")
+            else:
+                # expected [x, y, response]
+                _, gt, pred = inputs
+            pred_text = str(self._extract(pred)).strip()
+            gt_text = str(self._extract(gt)).strip()
+            match = 1 if pred_text == gt_text else 0
+                # Return a Variable with a role_description (required by TextGrad Variable)
+            return tg.Variable(match, requires_grad=False, role_description="evaluation result")
+
+        def parse_output(self, var):
+            try:
+                return int(var.value)
+            except Exception:
+                try:
+                    return int(var.get_value())
+                except Exception:
+                    return int(var)
 
 def eval_sample(item, eval_fn, model):
     """
@@ -37,7 +81,8 @@ def eval_sample(item, eval_fn, model):
     """
     x, y = item
     x = tg.Variable(x, requires_grad=False, role_description="query to the language model")
-    y = tg.Variable(int(y), requires_grad=False, role_description="correct answer for the query")
+    # keep label as string (samples.jsonl uses strings like 'A. Extract info...')
+    y = tg.Variable(y, requires_grad=False, role_description="correct answer for the query")
     response = model(x)
     try:
         eval_output_variable = eval_fn(inputs=dict(prediction=response, ground_truth_answer=y))
@@ -81,14 +126,47 @@ def run_validation_revert(system_prompt: tg.Variable, results, model, eval_fn, v
 
     results["validation_acc"].append(val_performance)
 
+def load_dataset(data_path:str, system_prompt:str, train, val, test):
+    with open(data_path, "r", encoding="utf-8") as fh:
+        samples = [json.loads(line) for line in fh if line.strip()]
+
+    data = [(s.get("prompt"), s.get("solution")) for s in samples]
+
+    # Shuffle in place
+    random.shuffle(data)
+    n = len(data)
+
+    if (isinstance(train, float) or isinstance(val, float) or isinstance(test, float)) or (train + val + test) <= 1:
+        tr_count = int(n * float(train))
+        val_count = int(n * float(val))
+    else:
+        tr_count = int(train)
+        val_count = int(val)
+    # Ensure counts do not exceed available samples
+    tr_count = max(0, min(tr_count, n))
+    val_count = max(0, min(val_count, n - tr_count))
+
+    train_data = data[:tr_count]
+    val_data = data[tr_count: tr_count + val_count]
+    test_data = data[tr_count + val_count:]
+
+    train_set = Dataset(train_data, system_prompt)
+    val_set = Dataset(val_data, system_prompt)
+    test_set = Dataset(test_data, system_prompt)
+    eval_fn = EvalFn()
+
+    return train_set, val_set, test_set, eval_fn
+
 if __name__=="__main__":
     set_seed(12)
     llm_api_eval = tg.get_engine(engine_name="experimental:gpt-5-mini")
     llm_api_test = tg.get_engine(engine_name="experimental:gpt-5-mini")
     tg.set_backward_engine(llm_api_eval, override=True)
 
+    system_prompt = "Could you ensure all routes from airport 2 are operational?"
+
     # Load the data and the evaluation function
-    train_set, val_set, test_set, eval_fn = load_task("GSM8K_DSPy", evaluation_api=llm_api_eval)
+    train_set, val_set, test_set, eval_fn = load_dataset(data_path="prompt-optimizer/samples.jsonl", system_prompt=system_prompt, train=4, val=1, test=1)
     print("Train/Val/Test Set Lengths: ", len(train_set), len(val_set), len(test_set))
     STARTING_SYSTEM_PROMPT = train_set.get_task_description()
 
@@ -105,7 +183,11 @@ if __name__=="__main__":
 
     system_prompt = tg.Variable(STARTING_SYSTEM_PROMPT,
                                 requires_grad=True,
-                                role_description="structured system prompt to a somewhat capable language model that specifies the behavior and strategies for the QA task")
+                                role_description=(
+                                    "Rephrase the following system prompt so that it is immediately clear whether the user's intent is A: extract information from the database, "
+                                    "or B: modify/update the database. Return only the rephrased prompt text (do NOT output labels like 'A' or 'B' or any other classification token). "
+                                    "The rephrased prompt should make the intent obvious from its wording."
+                                ))
     model = tg.BlackboxLLM(llm_api_test, system_prompt)
 
     optimizer = tg.TextualGradientDescent(engine=llm_api_eval, parameters=[system_prompt])
