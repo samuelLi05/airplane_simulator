@@ -185,7 +185,7 @@ if __name__=="__main__":
                                 requires_grad=True,
                                 role_description=(
                                     "Rephrase the following system prompt so that it is immediately clear whether the user's intent is A: extract information from the database, "
-                                    "or B: modify/update the database. Return only the rephrased prompt text (do NOT output labels like 'A' or 'B' or any other classification token). "
+                                    "or B: modify/update the database. Airports, routes, costs, and cargo are database entries. Return only the rephrased prompt text (do NOT output labels like 'A' or 'B' or any other classification token). "
                                     "The rephrased prompt should make the intent obvious from its wording."
                                 ))
     model = tg.BlackboxLLM(llm_api_test, system_prompt)
