@@ -4,3 +4,4 @@ justin/
 __pycache__/
 .env
 logs/
+.cache/
