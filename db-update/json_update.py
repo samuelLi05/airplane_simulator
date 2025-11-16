@@ -27,6 +27,43 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 
+def load_dpo_model() -> str:
+    """Load the fine-tuned DPO model name from saved metadata."""
+    meta_path = "prompt-optimizer/model_meta.json"
+    if not os.path.exists(meta_path):
+        return None
+    try:
+        with open(meta_path, "r", encoding="utf-8") as f:
+            meta = json.load(f)
+        return meta.get("fine_tuned_model")
+    except Exception:
+        return None
+
+
+def clarify_with_dpo(prompt: str, dpo_model: str) -> str:
+    """Use the fine-tuned DPO model to clarify an uncertain prompt."""
+    system_prompt = (
+        "You are a database command interpreter. Transform ambiguous user requests "
+        "into precise, actionable instructions. Make it clear whether the user wants to "
+        "extract information from the database OR modify the database. Include specific "
+        "field names (route_available, cost, time) and conditions."
+    )
+    try:
+        response = client.chat.completions.create(
+            model=dpo_model,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": prompt}
+            ],
+            temperature=0.3,
+            max_tokens=150
+        )
+        return response.choices[0].message.content.strip()
+    except Exception as e:
+        print(f"DPO clarification failed: {e}")
+        return prompt  # fallback to original
+
+
 def openai_request(original_json, user_prompt, model="gpt-5-mini") -> str:
     """
     LLM call with JSON update information to OpenAI.
@@ -159,10 +196,28 @@ def handle_prompt(prompt: str, data_path: str) -> str:
     Handle a user prompt based on classification:
     A -> Use GPT-5-nano with a JSON database to answer
     B -> Return empty string
-    C -> Return clarification request
+    C -> Use DPO model to clarify, then re-classify
     """
     # First classify
-    label, _ = classify_prompt(prompt)
+    label, confidence = classify_prompt(prompt)
+
+    # If uncertain (C), try to clarify with DPO model
+    if label == "C":
+        dpo_model = load_dpo_model()
+        if dpo_model:
+            print(f"Prompt unclear. Using DPO model ({dpo_model}) to clarify...")
+            clarified_prompt = clarify_with_dpo(prompt, dpo_model)
+            print(f"Clarified prompt: {clarified_prompt}")
+            
+            # Re-classify the clarified prompt
+            label, confidence = classify_prompt(clarified_prompt)
+            print(f"Re-classified as: {label} (confidence: {confidence:.2f})")
+            
+            # Use the clarified prompt for subsequent processing
+            prompt = clarified_prompt
+        else:
+            print("No DPO model found. Returning clarification request.")
+            return "I'm not sure what you want, please clarify."
 
     if label == "A":
         # Load JSON database
@@ -184,7 +239,7 @@ def handle_prompt(prompt: str, data_path: str) -> str:
         # Modify DB → not handled by GPT, so return nothing
         return "Database Updated."
     else:
-        # Clarification
+        # Still uncertain after DPO clarification (or no DPO model)
         return "I'm not sure what you want, please clarify."
 
 def openai_json_edit(in_path, out_path, user_prompt, model="gpt-5-mini"):
