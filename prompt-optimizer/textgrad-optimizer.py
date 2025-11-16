@@ -66,7 +66,6 @@ class EmbeddingEvalScorer:
     dataset/trainer utilities that caused import-time failures in the env.
     """
     def __init__(self, corpus=None, model_name: str = "sentence-transformers/all-MiniLM-L6-v2", cache_dir: str = None, batch_size: int = 32, device: str = None):
-        # lazy imports so top-level doesn't fail if transformers isn't present
         self.tokenizer_cls = AutoTokenizer
         self.model_cls = AutoModel
         self.torch = torch
