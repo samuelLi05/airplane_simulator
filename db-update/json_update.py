@@ -27,7 +27,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 
-def load_dpo_model() -> str:
+def load_dpo_model(model_id:str) -> str:
     """Load the fine-tuned DPO model name from saved metadata."""
     meta_path = "prompt-optimizer/model_meta.json"
     if not os.path.exists(meta_path):
@@ -35,13 +35,13 @@ def load_dpo_model() -> str:
     try:
         with open(meta_path, "r", encoding="utf-8") as f:
             meta = json.load(f)
-        return meta.get("fine_tuned_model")
+        return meta.get(model_id).get("fine_tuned_model")
     except Exception:
         return None
 
 
 def clarify_with_dpo(prompt: str, dpo_model: str) -> str:
-    """Use the fine-tuned DPO model to clarify an uncertain prompt."""
+    """Use the fine-tuned DPO model to clarify prompts."""
     system_prompt = (
         "You are a database command interpreter. Transform ambiguous user requests "
         "into precise, actionable instructions. Make it clear whether the user wants to "
@@ -191,40 +191,50 @@ def classify_prompt(prompt: str) -> tuple[str, float]:
 
     return label, confidence
 
-def handle_prompt(prompt: str, data_path: str) -> str:
+def handle_prompt(prompt: str, data_path: str, confidence_threshold: float = 0.5) -> str:
     """
     Handle a user prompt based on classification:
     A -> Use GPT-5-nano with a JSON database to answer
     B -> Return empty string
     C -> Use DPO model to clarify, then re-classify
+    
+    For A and B: if confidence < threshold, optimize with DPO and re-classify
     """
     # First classify
     label, confidence = classify_prompt(prompt)
+    print(f"Initial classification: {label} (confidence: {confidence:.2f})")
 
-    # If uncertain (C), try to clarify with DPO model
-    if label == "C":
-        dpo_model = load_dpo_model()
+    # If uncertain (C) OR if confidence is low for A/B, use DPO model to optimiz. 
+    #Trehsholding for confidence withh log probs should be replaced withsome other evalatuion metric in future
+    if label == "C" or confidence < confidence_threshold:
+        dpo_model = load_dpo_model(model_id="dpo testing")
         if dpo_model:
-            print(f"Prompt unclear. Using DPO model ({dpo_model}) to clarify...")
-            clarified_prompt = clarify_with_dpo(prompt, dpo_model)
-            print(f"Clarified prompt: {clarified_prompt}")
+            if label == "C":
+                print(f"Prompt unclear (label C). Using DPO model ({dpo_model}) to clarify...")
+            else:
+                print(f"Low confidence ({confidence:.2f} < {confidence_threshold}). Using DPO model ({dpo_model}) to optimize prompt...")
             
-            # Re-classify the clarified prompt
-            label, confidence = classify_prompt(clarified_prompt)
+            optimized_prompt = clarify_with_dpo(prompt, dpo_model)
+            print(f"Optimized prompt: {optimized_prompt}")
+            
+            # Re-classify the optimized prompt
+            label, confidence = classify_prompt(optimized_prompt)
             print(f"Re-classified as: {label} (confidence: {confidence:.2f})")
             
-            # Use the clarified prompt for subsequent processing
-            prompt = clarified_prompt
+            # Use the optimized prompt for subsequent processing
+            prompt = optimized_prompt
         else:
-            print("No DPO model found. Returning clarification request.")
-            return "I'm not sure what you want, please clarify."
+            print("No DPO model found.")
+            if label == "C":
+                return "I'm not sure what you want, please clarify."
+            # If A or B with low confidence but no DPO model, proceed anyway
+            print("Proceeding with original prompt despite low confidence.")
 
     if label == "A":
         # Load JSON database
         with open(data_path, "r") as f:
             database = json.load(f)
 
-        # Ask GPT-5-nano to answer using the database
         response = client.chat.completions.create(
             model="gpt-5-nano",
             messages=[
@@ -242,7 +252,7 @@ def handle_prompt(prompt: str, data_path: str) -> str:
         # Still uncertain after DPO clarification (or no DPO model)
         return "I'm not sure what you want, please clarify."
 
-def openai_json_edit(in_path, out_path, user_prompt, model="gpt-5-mini"):
+def openai_json_edit(in_path, out_path, user_prompt, model="gpt-5-mini", confidence_threshold=0.5):
     """
     End-to-end pipeline for JSON editing (load -> LLM call -> write) with OpenAI.
 
@@ -250,10 +260,11 @@ def openai_json_edit(in_path, out_path, user_prompt, model="gpt-5-mini"):
     in_path (str): Path to the input JSON file.
     out_path (str): Path to the output JSON file.
     user_prompt (str): Natural-language instruction describing the edit.
+    confidence_threshold (float): Minimum confidence to accept classification without DPO optimization.
 
     returns a response
     """
-    response = handle_prompt(user_prompt, in_path)
+    response = handle_prompt(user_prompt, in_path, confidence_threshold=confidence_threshold)
     if response == "Database Updated.":
         original_json = load_json_from_file(in_path)
         request = openai_request(original_json, user_prompt, model)
@@ -291,6 +302,7 @@ if __name__ == '__main__':
     parser.add_argument('--Level', '-L', type=int, default=0, help='input json Level to load from')
     parser.add_argument('--model', type=str, default="gpt-5-mini", help='OpenAI model to use')
     parser.add_argument('--instruction', '-i', type=str, default=user_prompt, help='natural language instruction to edit the input json')
+    parser.add_argument('--confidence-threshold', type=float, default=0.5, help='minimum confidence threshold for classification (default: 0.5)')
     args = parser.parse_args()
 
     in_path = f"./database/example.json"
@@ -298,6 +310,6 @@ if __name__ == '__main__':
     in_pkl = f"./database/example.pkl"
     solution_path = "./solution/updated_solution.json"
    
-    openai_json_edit(in_path, out_path, args.instruction, args.model)
+    openai_json_edit(in_path, out_path, args.instruction, args.model, confidence_threshold=args.confidence_threshold)
     write_solution(in_pkl)
     

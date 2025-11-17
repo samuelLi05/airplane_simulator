@@ -1,10 +1,3 @@
-"""
-Direct Preference Optimization (DPO) for prompt refinement using OpenAI API.
-
-Barebones implementation that trains a model to transform ambiguous prompts
-into clear, actionable database instructions.
-"""
-
 import json
 import os
 import time
@@ -26,18 +19,33 @@ def load_samples(data_path: str) -> List[Dict]:
 
 
 def create_dpo_training_data(samples: List[Dict], system_prompt: str) -> List[Dict]:
-    """Convert samples to OpenAI DPO training format."""
+    """Convert samples to OpenAI DPO training format.
+    
+    Uses the 'solution' field (A, B, or C) to determine the target classification intent:
+    - A: Extract information from database (query/read)
+    - B: Modify the database (update/write)
+    - C: Uncertain/ambiguous (needs clarification)
+    
+    The gold_rephrase should clarify the prompt to match the solution's intent.
+    The rejected response represents a wrong classification or unclear intent.
+    """
     training_data = []
     
     for sample in samples:
         original_prompt = sample.get("prompt", "")
         gold_rephrase = sample.get("gold_rephrase", "")
+        solution = sample.get("solution", "C")  # A, B, or C
         
         if not original_prompt or not gold_rephrase:
             continue
         
-        # Rejected: weak baseline
-        rejected_response = f"The user wants to {original_prompt.lower()}"
+        # Create rejected response based on the solution classification
+        if solution == "A":
+            rejected_response = f"Update the database based on: {original_prompt}"
+        elif solution == "B":
+            rejected_response = f"Show me information about: {original_prompt.lower()}"
+        else:  # solution == "C"
+            rejected_response = f"The user wants to {original_prompt.lower()}"
         
         # OpenAI DPO format: input, preferred_output, non_preferred_output
         dpo_example = {
@@ -80,23 +88,31 @@ def upload_training_file(client: OpenAI, file_path: str) -> str:
     return file_id
 
 
-def save_model_metadata(model_name: str, output_dir: str):
-    """Save the fine-tuned model name/ID to disk so we can reuse it later."""
-    meta = {"fine_tuned_model": model_name, "saved_at": time.time()}
+def save_model_metadata(model_name: str, output_dir: str, model_tag: str = "default"):
+    """Save the fine-tuned model name/ID to disk under a user-specified tag."""
     path = os.path.join(output_dir, "model_meta.json")
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
+            all_meta = json.load(f)
+    else:
+        all_meta = {}
+    all_meta[model_tag] = {"fine_tuned_model": model_name, "saved_at": time.time()}
     with open(path, "w", encoding="utf-8") as f:
-        json.dump(meta, f)
-    print(f"Saved model metadata to {path}")
+        json.dump(all_meta, f, indent=2)
+    print(f"Saved model metadata under tag '{model_tag}' to {path}")
 
 
-def load_model_metadata(output_dir: str) -> Optional[str]:
-    """Return the saved fine-tuned model name if present, else None."""
+def load_model_metadata(output_dir: str, model_tag: str = "default") -> Optional[str]:
+    """Return the saved fine-tuned model name for a given tag, else None."""
     path = os.path.join(output_dir, "model_meta.json")
     if not os.path.exists(path):
         return None
     with open(path, "r", encoding="utf-8") as f:
-        meta = json.load(f)
-    return meta.get("fine_tuned_model")
+        all_meta = json.load(f)
+    entry = all_meta.get(model_tag)
+    if entry:
+        return entry.get("fine_tuned_model")
+    return None
 
 
 def _load_response_cache(cache_path: str) -> Dict[str, str]:
@@ -228,6 +244,8 @@ def main():
     output_dir = "prompt-optimizer"
     model = "gpt-4.1-2025-04-14"
     suffix = "prompt-clarifier"
+
+    model_tag = "clarifier with solutions"
     
     system_prompt = (
         "You are a database command interpreter. Transform ambiguous user requests "
@@ -253,31 +271,36 @@ def main():
     print(f"Loaded {len(samples)} samples")
     # Check if we've already saved a fine-tuned model id and reuse it
     os.makedirs(output_dir, exist_ok=True)
-    finetuned_model = load_model_metadata(output_dir)
-    if finetuned_model:
-        print(f"Found saved fine-tuned model: {finetuned_model}. Skipping training and reusing it.")
-    else:
-        print("\nCreating DPO training data...")
-        training_data = create_dpo_training_data(samples, system_prompt)
+    
+    print("\nCreating DPO training data...")
+    training_data = create_dpo_training_data(samples, system_prompt)
+    
+    # Show distribution of solution types for verification
+    solution_counts = {"A": 0, "B": 0, "C": 0}
+    for sample in samples:
+        sol = sample.get("solution", "C")
+        solution_counts[sol] = solution_counts.get(sol, 0) + 1
+    print(f"Training data breakdown: {solution_counts['A']} queries (A), "
+            f"{solution_counts['B']} modifications (B), {solution_counts['C']} uncertain (C)")
 
-        # Save to file
-        training_file_path = os.path.join(output_dir, "dpo_training_data.jsonl")
-        save_training_file(training_data, training_file_path)
+    # Save to file
+    training_file_path = os.path.join(output_dir, "dpo_training_data.jsonl")
+    save_training_file(training_data, training_file_path)
 
-        # Upload training file
-        training_file_id = upload_training_file(client, training_file_path)
+    # Upload training file
+    training_file_id = upload_training_file(client, training_file_path)
 
-        # Create fine-tuning job
-        job_id = create_dpo_finetune_job(client, training_file_id, model, suffix)
+    # Create fine-tuning job
+    job_id = create_dpo_finetune_job(client, training_file_id, model, suffix)
 
-        # Monitor job
-        finetuned_model = monitor_finetune_job(client, job_id)
+    # Monitor job
+    finetuned_model = monitor_finetune_job(client, job_id)
     
     # Test fine-tuned model
     if finetuned_model:
         # persist metadata so future runs can skip retraining
         try:
-            save_model_metadata(finetuned_model, output_dir)
+            save_model_metadata(finetuned_model, output_dir, model_tag=model_tag)
         except Exception:
             pass
 
