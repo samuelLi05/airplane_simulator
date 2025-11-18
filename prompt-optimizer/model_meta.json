@@ -1,1 +1,10 @@
-{"dpo testing": {"fine_tuned_model": "ft:gpt-4.1-2025-04-14:ut-autonomous:prompt-clarifier:CcU2OvQt", "saved_at": 1763288037.9750545}}
+{
+  "dpo testing": {
+    "fine_tuned_model": "ft:gpt-4.1-2025-04-14:ut-autonomous:prompt-clarifier:CcU2OvQt",
+    "saved_at": 1763288037.9750545
+  },
+  "clarifier with solutions": {
+    "fine_tuned_model": "ft:gpt-4.1-2025-04-14:ut-autonomous:prompt-clarifier:CcsJP22M",
+    "saved_at": 1763381340.1975148
+  }
+}
