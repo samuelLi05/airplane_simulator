@@ -207,7 +207,7 @@ def handle_prompt(prompt: str, data_path: str, confidence_threshold: float = 0.5
     # If uncertain (C) OR if confidence is low for A/B, use DPO model to optimiz. 
     #Trehsholding for confidence withh log probs should be replaced withsome other evalatuion metric in future
     if label == "C" or confidence < confidence_threshold:
-        dpo_model = load_dpo_model(model_id="dpo testing")
+        dpo_model = load_dpo_model(model_id="clarifier with solutions")
         if dpo_model:
             if label == "C":
                 print(f"Prompt unclear (label C). Using DPO model ({dpo_model}) to clarify...")
