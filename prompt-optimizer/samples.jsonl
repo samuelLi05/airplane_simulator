@@ -1,0 +1,100 @@
+{"prompt": "Show all airports that currently have inactive routes.", "solution": "A", "gold_rephrase": "Return airports with at least one route where `route_available` is false."}
+  {"prompt": "Which routes are unavailable at the moment?", "solution": "A", "gold_rephrase": "Retrieve all entries from the routes table where `route_available` equals false."}
+  {"prompt": "List all destination airports connected to airport 1.", "solution": "A", "gold_rephrase": "Return all route destinations where `origin_airport_id` is 1."}
+  {"prompt": "Identify airports that currently have no active departures.", "solution": "A", "gold_rephrase": "Return all airports where all `route_available` flags for outbound routes are false."}
+  {"prompt": "Find every route that costs more than 0.8.", "solution": "A", "gold_rephrase": "Retrieve all routes where `cost` exceeds 0.8 in the database."}
+  {"prompt": "Which airports have more than five available routes?", "solution": "A", "gold_rephrase": "Return airports with outbound route count > 5 where `route_available` is true."}
+  {"prompt": "Display routes that connect airport 3 to any other airport.", "solution": "A", "gold_rephrase": "Retrieve all routes with `origin_airport_id` = 3."}
+  {"prompt": "How many unavailable routes exist in total?", "solution": "A", "gold_rephrase": "Count all rows in the routes table where `route_available` = false."}
+  {"prompt": "List the route IDs that are currently disabled.", "solution": "A", "gold_rephrase": "Return the `route_id` fields for all routes where `route_available` is false."}
+  {"prompt": "Show airports that only have available outbound routes.", "solution": "A", "gold_rephrase": "Return all airports where every outbound route record has `route_available` = true."}
+
+  {"prompt": "Retrieve all routes that connect airport 2 to airport 5.", "solution": "A", "gold_rephrase": "Return all records where `origin_airport_id` = 2 and `destination_airport_id` = 5."}
+  {"prompt": "List airports with at least one outbound route currently disabled.", "solution": "A", "gold_rephrase": "Return all airports that have any route with `route_available` = false."}
+  {"prompt": "Show the top 5 airports with the most active routes.", "solution": "A", "gold_rephrase": "Query airports ordered by the number of active routes (`route_available` = true) and limit to 5."}
+  {"prompt": "Find all routes that have no recorded cost value.", "solution": "A", "gold_rephrase": "Retrieve all route entries where `cost` is null or missing."}
+  {"prompt": "Display the total number of available routes per airport.", "solution": "A", "gold_rephrase": "Count and group routes by `origin_airport_id` where `route_available` = true."}
+  {"prompt": "Which airports have no incoming connections?", "solution": "A", "gold_rephrase": "Return airports where there are no routes with matching `destination_airport_id`."}
+  {"prompt": "List all airports that have flights to airport 4.", "solution": "A", "gold_rephrase": "Return all `origin_airport_id`s where `destination_airport_id` = 4."}
+  {"prompt": "Retrieve routes that cost less than 0.5 and are active.", "solution": "A", "gold_rephrase": "Select routes with `cost` < 0.5 and `route_available` = true."}
+  {"prompt": "Show the average route cost for each origin airport.", "solution": "A", "gold_rephrase": "Compute the mean of `cost` values grouped by `origin_airport_id`."}
+  {"prompt": "List all airports with zero available routes.", "solution": "A", "gold_rephrase": "Return airports where all outbound `route_available` flags are false."}
+
+  {"prompt": "Identify the airport with the highest number of unavailable routes.", "solution": "A", "gold_rephrase": "Aggregate and rank airports by count of routes with `route_available` = false."}
+  {"prompt": "Find routes that are currently active and cost above 1.0.", "solution": "A", "gold_rephrase": "Return routes where `route_available` = true and `cost` > 1.0."}
+  {"prompt": "Show all airports with at least ten total routes.", "solution": "A", "gold_rephrase": "Return airports that have ten or more route entries in the routes table."}
+  {"prompt": "Which airports have both available and unavailable routes?", "solution": "A", "gold_rephrase": "Retrieve airports that have a mix of `route_available` = true and false entries."}
+  {"prompt": "List the destination airports for routes departing airport 8.", "solution": "A", "gold_rephrase": "Select all `destination_airport_id`s where `origin_airport_id` = 8."}
+  {"prompt": "Find all airports with routes costing under 0.4.", "solution": "A", "gold_rephrase": "Return all origin airports that have at least one route where `cost` < 0.4."}
+  {"prompt": "Display every route where origin equals destination.", "solution": "A", "gold_rephrase": "Retrieve all routes with `origin_airport_id` = `destination_airport_id`."}
+  {"prompt": "List airports that currently have more than two unavailable routes.", "solution": "A", "gold_rephrase": "Select airports with count(`route_available` = false) > 2."}
+  {"prompt": "Retrieve route IDs for flights originating from airport 9.", "solution": "A", "gold_rephrase": "Return all `route_id`s where `origin_airport_id` = 9."}
+  {"prompt": "Show all routes that have been marked as available.", "solution": "A", "gold_rephrase": "Retrieve all route entries where `route_available` = true."}
+
+
+  {"prompt": "Mark all routes departing from airport 4 as unavailable.", "solution": "B", "gold_rephrase": "Update all routes where `origin_airport_id` = 4, setting `route_available` = false."}
+  {"prompt": "Set the cost of routes between airport 1 and 3 to 0.75.", "solution": "B", "gold_rephrase": "Update `cost` = 0.75 for routes connecting airport 1 and airport 3."}
+  {"prompt": "Reactivate all currently disabled routes.", "solution": "B", "gold_rephrase": "Update every route record where `route_available` = false to `route_available` = true."}
+  {"prompt": "Adjust all fuel-based route costs to 0.62.", "solution": "B", "gold_rephrase": "Update the `cost` field to 0.62 for routes referencing fuel pricing."}
+  {"prompt": "Remove all unavailable routes from the dataset.", "solution": "B", "gold_rephrase": "Delete records from the routes table where `route_available` = false."}
+  {"prompt": "Update time estimates for routes originating from airport 2.", "solution": "B", "gold_rephrase": "Modify `time_estimate` for all records with `origin_airport_id` = 2."}
+  {"prompt": "Change the availability of the route between airports 6 and 9 to true.", "solution": "B", "gold_rephrase": "Set `route_available` = true for route entries with `origin_airport_id` = 6 and `destination_airport_id` = 9."}
+  {"prompt": "Increase all route costs by 5%.", "solution": "B", "gold_rephrase": "Multiply every route's `cost` field by 1.05."}
+  {"prompt": "Reset every route's availability flag to false for maintenance.", "solution": "B", "gold_rephrase": "Update all route records by setting `route_available` = false."}
+  {"prompt": "Synchronize all route costs with the latest fuel index value of 0.68.", "solution": "B", "gold_rephrase": "Update `cost` = 0.68 for all records where pricing depends on the fuel index."}
+
+  {"prompt": "Deactivate all routes that currently exceed a cost of 1.0.", "solution": "B", "gold_rephrase": "Update all routes with `cost` > 1.0 to set `route_available` = false."}
+  {"prompt": "Change the cost for routes from airport 7 to 0.55.", "solution": "B", "gold_rephrase": "Update the `cost` field to 0.55 where `origin_airport_id` = 7."}
+  {"prompt": "Reset availability of all routes to true.", "solution": "B", "gold_rephrase": "Set `route_available` = true for all route records."}
+  {"prompt": "Reduce all route costs by 10%.", "solution": "B", "gold_rephrase": "Multiply every route’s `cost` field by 0.9."}
+  {"prompt": "Disable routes connecting airport 2 and 9.", "solution": "B", "gold_rephrase": "Update routes where `origin_airport_id` = 2 and `destination_airport_id` = 9, setting `route_available` = false."}
+  {"prompt": "Adjust all unavailable routes to cost 0.0.", "solution": "B", "gold_rephrase": "Update all route records where `route_available` = false to `cost` = 0.0."}
+  {"prompt": "Recalculate cost fields using new pricing data of 0.7.", "solution": "B", "gold_rephrase": "Update `cost` = 0.7 for all route entries."}
+  {"prompt": "Activate every route that was previously disabled.", "solution": "B", "gold_rephrase": "Update routes where `route_available` = false to `route_available` = true."}
+  {"prompt": "Set time estimates for all routes to null.", "solution": "B", "gold_rephrase": "Update the `time_estimate` field to null for all route records."}
+  {"prompt": "Replace missing cost entries with 0.5.", "solution": "B", "gold_rephrase": "Update all routes where `cost` is null to `cost` = 0.5."}
+
+  {"prompt": "Update the destination airport field for route 15 to 8.", "solution": "B", "gold_rephrase": "Set `destination_airport_id` = 8 where `route_id` = 15."}
+  {"prompt": "Delete all routes that are inactive.", "solution": "B", "gold_rephrase": "Remove all records from routes table where `route_available` = false."}
+  {"prompt": "Synchronize all costs to match the fuel price 0.66.", "solution": "B", "gold_rephrase": "Update every route’s `cost` field to 0.66."}
+  {"prompt": "Correct the availability flag for routes between airports 1 and 2.", "solution": "B", "gold_rephrase": "Set `route_available` = true for all routes where origin=1 and destination=2."}
+  {"prompt": "Lower all route costs by 0.05.", "solution": "B", "gold_rephrase": "Subtract 0.05 from every route’s `cost` value."}
+  {"prompt": "Duplicate all routes from airport 3 to airport 4.", "solution": "B", "gold_rephrase": "Insert new route records for each existing route where `origin_airport_id` = 3 and `destination_airport_id` = 4."}
+  {"prompt": "Set all unavailable routes to active again.", "solution": "B", "gold_rephrase": "Update routes with `route_available` = false to `route_available` = true."}
+  {"prompt": "Modify the time estimates for routes from airport 1 to 2 hours.", "solution": "B", "gold_rephrase": "Update `time_estimate` = 2 where `origin_airport_id` = 1."}
+  {"prompt": "Remove all routes where cost is above 2.0.", "solution": "B", "gold_rephrase": "Delete route records where `cost` > 2.0."}
+  {"prompt": "Reassign all routes from airport 10 to airport 11.", "solution": "B", "gold_rephrase": "Update all routes where `origin_airport_id` = 10, setting it to 11."}
+
+
+  {"prompt": "Double-check that all routes from airport 3 are correctly marked.", "solution": "C", "gold_rephrase": "Retrieve routes originating from airport 3 and verify their `route_available` status."}
+  {"prompt": "Review the route data between airports 2 and 8 for accuracy.", "solution": "C", "gold_rephrase": "Inspect and report the current `route_available` and `cost` values for the route between airports 2 and 8."}
+  {"prompt": "Ensure the route availability flags for airport 5 look consistent.", "solution": "C", "gold_rephrase": "Query all routes from airport 5 and confirm that `route_available` fields match expected values."}
+  {"prompt": "The connection between airports 1 and 7 seems off; check it.", "solution": "C", "gold_rephrase": "Retrieve data for the route between airports 1 and 7 and examine the `cost` and `availability` fields."}
+  {"prompt": "Inspect why routes from airport 9 are showing delays.", "solution": "C", "gold_rephrase": "Retrieve routes with `origin_airport_id` = 9 and check related delay or cost parameters."}
+  {"prompt": "Confirm that route 12 reflects the recent schedule update.", "solution": "C", "gold_rephrase": "Review the entry for route ID 12 and verify that schedule and cost data are current."}
+  {"prompt": "Verify if airport 4 has any inactive destination routes.", "solution": "C", "gold_rephrase": "Retrieve routes from airport 4 and check for `route_available = false` entries without modifying data."}
+  {"prompt": "Investigate anomalies in route costs between airports 3 and 6.", "solution": "C", "gold_rephrase": "Query route records connecting airports 3 and 6 to identify inconsistent `cost` values."}
+  {"prompt": "Audit the database entries for routes from airport 10.", "solution": "C", "gold_rephrase": "Retrieve all routes where `origin_airport_id` = 10 and review their fields for correctness."}
+  {"prompt": "Routes from airport 2 might have incorrect costs; please verify.", "solution": "C", "gold_rephrase": "Fetch routes with `origin_airport_id` = 2 and check if their `cost` values align with expected rates."}
+
+  {"prompt": "Review the data consistency for routes from airport 6.", "solution": "C", "gold_rephrase": "Retrieve all routes with `origin_airport_id` = 6 and check `cost` and `availability` consistency."}
+  {"prompt": "Investigate why costs from airport 1 appear unusually high.", "solution": "C", "gold_rephrase": "Query routes from airport 1 and analyze `cost` values for anomalies."}
+  {"prompt": "Confirm whether airport 5 has routes incorrectly flagged as available.", "solution": "C", "gold_rephrase": "Retrieve routes with `origin_airport_id` = 5 and verify the correctness of `route_available` fields."}
+  {"prompt": "Inspect the route between airports 2 and 3 for missing values.", "solution": "C", "gold_rephrase": "Retrieve the route record linking airports 2 and 3 and check for null fields."}
+  {"prompt": "Audit all route records for inconsistencies in cost and time.", "solution": "C", "gold_rephrase": "Select all routes and compare `cost` and `time_estimate` fields for anomalies."}
+  {"prompt": "Verify that all airport IDs are correctly assigned in routes.", "solution": "C", "gold_rephrase": "Check the `origin_airport_id` and `destination_airport_id` columns for invalid or swapped entries."}
+  {"prompt": "Check if the availability status of airport 8 routes matches logs.", "solution": "C", "gold_rephrase": "Retrieve all routes from airport 8 and compare `route_available` with operational logs."}
+  {"prompt": "Determine why airport 2 routes are missing time estimates.", "solution": "C", "gold_rephrase": "Retrieve routes where `origin_airport_id` = 2 and `time_estimate` is null."}
+  {"prompt": "Assess data accuracy for routes that cost exactly 0.75.", "solution": "C", "gold_rephrase": "Query all routes with `cost` = 0.75 and verify the correctness of related fields."}
+  {"prompt": "Investigate whether route 22 reflects the correct status.", "solution": "C", "gold_rephrase": "Retrieve the record for route ID 22 and check if `route_available` matches the intended state."}
+
+  {"prompt": "Examine the cause of duplicated routes in the database.", "solution": "C", "gold_rephrase": "Retrieve all route entries and identify duplicates by `origin_airport_id` and `destination_airport_id`."}
+  {"prompt": "Verify that all unavailable routes have corresponding maintenance notes.", "solution": "C", "gold_rephrase": "Retrieve routes where `route_available` = false and check linked maintenance logs."}
+  {"prompt": "Review all recent updates to the route cost field.", "solution": "C", "gold_rephrase": "Fetch route entries modified in the last update batch and inspect `cost` values."}
+  {"prompt": "Ensure there are no routes missing destination IDs.", "solution": "C", "gold_rephrase": "Query the routes table for records where `destination_airport_id` is null."}
+  {"prompt": "Analyze irregular route costs for airport 7 departures.", "solution": "C", "gold_rephrase": "Retrieve all routes from airport 7 and examine `cost` field deviations."}
+  {"prompt": "Cross-check the route data between airports 3 and 9.", "solution": "C", "gold_rephrase": "Retrieve and verify the record linking airports 3 and 9 for consistency in cost and status."}
+  {"prompt": "Determine whether inactive routes are logged correctly.", "solution": "C", "gold_rephrase": "Query all routes with `route_available` = false and confirm proper logging."}
+  {"prompt": "Review why routes from airport 4 appear duplicated.", "solution": "C", "gold_rephrase": "Retrieve routes from airport 4 and check for identical destination entries."}
+  {"prompt": "Inspect airport 9 route records for inconsistent costs.", "solution": "C", "gold_rephrase": "Query all routes where `origin_airport_id` = 9 and verify `cost` uniformity."}
+  {"prompt": "Evaluate whether all active routes have valid cost values.", "solution": "C", "gold_rephrase": "Retrieve routes where `route_available` = true and ensure `cost` is not null or invalid."}

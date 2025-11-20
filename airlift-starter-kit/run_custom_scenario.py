@@ -35,7 +35,7 @@ DynamicCargoGenerator we can also use the StaticCargoGenerator.
 
 
 ## Load from Pickle file
-env = AirliftEnv.load("./test-environments/Test_1/Level_1.pkl")
+env = AirliftEnv.load("./database/example.pkl")
 obs1 = env.reset()
 
 """
@@ -49,9 +49,9 @@ env_info, metrics, time_taken, total_solution_time, step_metrics = \
             env_seed=100,
             solution_seed=200,
             capture_metrics=True, 
-            early_exit=True,
-            inject_path= "./test-environments/Test_1_json/example.json", # edited json file we inject
-            json_file_path="./test-environments/solution_example.json") # Where solution is stored
+            early_exit=5,
+            inject_path= "./database/example.json", # edited json file we inject
+            json_file_path="./solution/base_solution.json") # Where solution is stored
 
 print("Missed Deliveries: {}".format(metrics.missed_deliveries))
 print("Lateness:          {}".format(metrics.total_lateness))
