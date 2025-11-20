@@ -53,17 +53,95 @@ class Dataset:
     
 def checkpoint(model, path):
     """Saves the model's current state to the specified path."""
-    state = {
-        'model_state_dict': model.state_dict(),
+    # Prefer saving a torch-style state_dict when available (typical for nn.Module)
+    try:
+        if hasattr(model, "state_dict") and callable(getattr(model, "state_dict")):
+            state = {
+                'model_state_dict': model.state_dict(),
+            }
+            torch.save(state, path)
+            print(f"Checkpoint (state_dict) saved to {path}")
+            return
+    except Exception:
+        # Fall through to fallback saver
+        pass
+
+    # Fallback: model doesn't expose a state_dict (e.g. BlackboxLLM). Save
+    # a small metadata bundle that can be used to rehydrate or debug later.
+    fallback = {
+        'model_type': type(model).__name__,
+        'model_repr': repr(model),
     }
-    torch.save(state, path)
-    print(f"Checkpoint saved to {path}")
+
+    # Try to extract any system prompt or prompt-like variable from the object
+    for attr in ('system_prompt', 'system_prompt_var', 'prompt', 'systemPrompt'):
+        try:
+            v = getattr(model, attr, None)
+        except Exception:
+            v = None
+        if v is not None:
+            try:
+                # textgrad Variable exposes get_value / value
+                val = v.get_value()
+            except Exception:
+                val = getattr(v, 'value', None)
+            fallback['system_prompt'] = val
+            break
+
+    # Try to include engine/llm handle if present
+    for attr in ('engine', 'llm_api', 'api'):
+        try:
+            v = getattr(model, attr, None)
+        except Exception:
+            v = None
+        if v is not None:
+            try:
+                fallback[attr] = repr(v)
+            except Exception:
+                fallback[attr] = str(type(v))
+
+    torch.save({'fallback': fallback}, path)
+    print(f"Fallback checkpoint saved to {path} (no state_dict available)")
 
 def load_checkpoint(model, path):
     """Loads the model's state from the specified path."""
     state = torch.load(path)
-    model.load_state_dict(state['model_state_dict'])
-    print(f"Checkpoint loaded from {path}")
+    if isinstance(state, dict) and 'model_state_dict' in state:
+        try:
+            model.load_state_dict(state['model_state_dict'])
+            print(f"Checkpoint (state_dict) loaded from {path}")
+            return
+        except Exception as e:
+            print(f"Failed to load state_dict into model: {e}")
+
+    # Fallback path: try to apply metadata saved earlier for non-pytorch models
+    if isinstance(state, dict) and 'fallback' in state:
+        fb = state['fallback']
+        sys_prompt = fb.get('system_prompt')
+        if sys_prompt is not None:
+            # Attempt to set the system prompt on the model if possible
+            for attr in ('system_prompt', 'system_prompt_var', 'prompt', 'systemPrompt'):
+                try:
+                    v = getattr(model, attr, None)
+                except Exception:
+                    v = None
+                if v is not None:
+                    # If the attribute is a textgrad Variable, set its value
+                    try:
+                        v.set_value(sys_prompt)
+                        print(f"Restored system prompt into model.{attr}")
+                        break
+                    except Exception:
+                        try:
+                            setattr(model, attr, sys_prompt)
+                            print(f"Assigned system prompt to model.{attr}")
+                            break
+                        except Exception:
+                            continue
+        print(f"Loaded fallback checkpoint info from {path}")
+        return
+
+    print(f"Unknown or unsupported checkpoint format in {path}")
 
 
 class EmbeddingEvalScorer:
@@ -241,8 +319,6 @@ def eval_sample(item, eval_fn, model):
     x = tg.Variable(x, requires_grad=False, role_description="query to the language model")
     y = tg.Variable(y, requires_grad=False, role_description="correct answer for the query")
     response = model(x)
-    # Call the evaluator with a mapping. StringBasedFunction will return a Variable whose
-    # .value is a stringified loss. Parse that to a float and return similarity = 1 - loss.
     try:
         eval_output_variable = eval_fn(inputs=dict(prediction=response, ground_truth_answer=y))
     except Exception:
@@ -348,8 +424,6 @@ if __name__=="__main__":
 
     starting_prompt = "A blocking condition appears in the route between airport 1 and 5 that needs to be shown"
 
-    # Load the data and evaluation function (use llm_api_eval as the eval engine).
-    # Use 'logprob' eval_method to compute conditional token log-probabilities as the scorer.
     train_set, val_set, test_set, eval_fn = load_dataset(
         data_path="prompt-optimizer/samples.jsonl",
         system_prompt=starting_prompt,
