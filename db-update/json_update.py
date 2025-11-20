@@ -295,7 +295,7 @@ if __name__ == '__main__':
     """
     Updated JSON will be saved to ./database/updated_database.json
     """
-    user_prompt = "The route between airport 1 and airport 12 is unavailable."
+    user_prompt = "A blocking condition appears in the route between airport 1 and 5 that needs to be shown."
 
     parser = argparse.ArgumentParser(description='geo-olm agent')
     parser.add_argument('--Test', '-T', type=int, default=0, help='input json Test to load from')

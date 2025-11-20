@@ -54,8 +54,6 @@ def create_dpo_training_data(samples: List[Dict], system_prompt: str) -> List[Di
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": original_prompt}
                 ],
-                "tools": [],
-                "parallel_tool_calls": True
             },
             "preferred_output": [
                 {"role": "assistant", "content": gold_rephrase}

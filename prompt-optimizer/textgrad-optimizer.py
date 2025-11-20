@@ -28,11 +28,6 @@ import textgrad as tg
 from textgrad.tasks import load_task
 from textgrad.tasks.big_bench_hard import string_based_equality_fn
 from textgrad.autograd.string_based_ops import StringBasedFunction
-# We'll use Hugging Face transformers directly for embeddings to avoid pulling
-# the `sentence-transformers` package which brings extra dataset/train utilities
-# that caused import-time issues in the environment. The class below lazily
-# imports `transformers` and `torch` and performs mean-pooling on the last
-# hidden state to create sentence embeddings.
 load_dotenv()
 import re
 from openai import OpenAI
@@ -55,6 +50,20 @@ class Dataset:
         return iter(self._seq)
     def get_task_description(self):
         return self._desc  
+    
+def checkpoint(model, path):
+    """Saves the model's current state to the specified path."""
+    state = {
+        'model_state_dict': model.state_dict(),
+    }
+    torch.save(state, path)
+    print(f"Checkpoint saved to {path}")
+
+def load_checkpoint(model, path):
+    """Loads the model's state from the specified path."""
+    state = torch.load(path)
+    model.load_state_dict(state['model_state_dict'])
+    print(f"Checkpoint loaded from {path}")
 
 
 class EmbeddingEvalScorer:
@@ -230,7 +239,6 @@ def eval_sample(item, eval_fn, model):
     """
     x, y = item
     x = tg.Variable(x, requires_grad=False, role_description="query to the language model")
-    # keep label as string (samples.jsonl uses strings like 'A. Extract info...')
     y = tg.Variable(y, requires_grad=False, role_description="correct answer for the query")
     response = model(x)
     # Call the evaluator with a mapping. StringBasedFunction will return a Variable whose
@@ -238,7 +246,6 @@ def eval_sample(item, eval_fn, model):
     try:
         eval_output_variable = eval_fn(inputs=dict(prediction=response, ground_truth_answer=y))
     except Exception:
-        # Fallback: try calling with explicit kwargs (some eval fns accept this)
         eval_output_variable = eval_fn(prediction=response, ground_truth_answer=y)
 
     # extract the stringified loss from the returned Variable or direct value
@@ -346,9 +353,9 @@ if __name__=="__main__":
     train_set, val_set, test_set, eval_fn = load_dataset(
         data_path="prompt-optimizer/samples.jsonl",
         system_prompt=starting_prompt,
-        train=4,
-        val=1,
-        test=1
+        train=70,
+        val=10,
+        test=10
     )
     print("Train/Val/Test Set Lengths: ", len(train_set), len(val_set), len(test_set))
     STARTING_SYSTEM_PROMPT = train_set.get_task_description()
@@ -407,5 +414,8 @@ if __name__=="__main__":
             results["prompt"].append(system_prompt.get_value())
             if steps == 3:
                 break
+    checkpoint_path = "./prompt-optimizer/textgrad_model.pt"
+    checkpoint(model, checkpoint_path)
+
     print (results)
 
