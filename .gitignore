@@ -1,4 +1,5 @@
-*.csv
+envinfo_2025*.csv
+metrics*.csv
 justin/
 .vscode/
 __pycache__/
