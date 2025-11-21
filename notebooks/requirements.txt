@@ -1,0 +1,7 @@
+sentence_transformers
+openai
+pandas
+matplotlib
+dotenv
+datasets
+torch[transformers]

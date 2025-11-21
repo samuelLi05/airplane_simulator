@@ -5,3 +5,4 @@ __pycache__/
 .env
 logs/
 .cache/
+air_sim_model_v3/
