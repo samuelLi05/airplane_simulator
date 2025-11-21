@@ -46,7 +46,7 @@ def clarify_with_dpo(prompt: str, dpo_model: str) -> str:
         "You are a database command interpreter. Transform ambiguous user requests "
         "into precise, actionable instructions. Make it clear whether the user wants to "
         "extract information from the database OR modify the database. Include specific "
-        "field names (route_available, cost, time) and conditions."
+        "field names (route_available, cost, time) and conditions. Do not make SQL, just create natural language instructions."
     )
     try:
         response = client.chat.completions.create(
@@ -236,7 +236,7 @@ def handle_prompt(prompt: str, data_path: str, confidence_threshold: float = 0.5
             database = json.load(f)
 
         response = client.chat.completions.create(
-            model="gpt-5-nano",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant. Use only the provided database."},
                 {"role": "user", "content": f"Database:\n{json.dumps(database, indent=2)}\n\nQuestion: {prompt}"}
@@ -295,7 +295,7 @@ if __name__ == '__main__':
     """
     Updated JSON will be saved to ./database/updated_database.json
     """
-    user_prompt = "A blocking condition appears in the route between airport 1 and 5 that needs to be shown."
+    user_prompt = "Analyze routes from airport 3 are consistent and cross check inconsistent prices and cargoes."
 
     parser = argparse.ArgumentParser(description='geo-olm agent')
     parser.add_argument('--Test', '-T', type=int, default=0, help='input json Test to load from')
