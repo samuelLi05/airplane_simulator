@@ -1,0 +1,91 @@
+gold_rephrase,prompt,solution
+Return airports with at least one route where `route_available` is false.,Show all airports that currently have inactive routes.,A
+Retrieve all entries from the routes table where `route_available` equals false.,Which routes are unavailable at the moment?,A
+Return all route destinations where `origin_airport_id` is 1.,List all destination airports connected to airport 1.,A
+Return all airports where all `route_available` flags for outbound routes are false.,Identify airports that currently have no active departures.,A
+Retrieve all routes where `cost` exceeds 0.8 in the database.,Find every route that costs more than 0.8.,A
+Return airports with outbound route count > 5 where `route_available` is true.,Which airports have more than five available routes?,A
+Retrieve all routes with `origin_airport_id` = 3.,Display routes that connect airport 3 to any other airport.,A
+Count all rows in the routes table where `route_available` = false.,How many unavailable routes exist in total?,A
+Return the `route_id` fields for all routes where `route_available` is false.,List the route IDs that are currently disabled.,A
+Return all airports where every outbound route record has `route_available` = true.,Show airports that only have available outbound routes.,A
+Return all records where `origin_airport_id` = 2 and `destination_airport_id` = 5.,Retrieve all routes that connect airport 2 to airport 5.,A
+Return all airports that have any route with `route_available` = false.,List airports with at least one outbound route currently disabled.,A
+Query airports ordered by the number of active routes (`route_available` = true) and limit to 5.,Show the top 5 airports with the most active routes.,A
+Retrieve all route entries where `cost` is null or missing.,Find all routes that have no recorded cost value.,A
+Count and group routes by `origin_airport_id` where `route_available` = true.,Display the total number of available routes per airport.,A
+Return airports where there are no routes with matching `destination_airport_id`.,Which airports have no incoming connections?,A
+Return all `origin_airport_id`s where `destination_airport_id` = 4.,List all airports that have flights to airport 4.,A
+Select routes with `cost` < 0.5 and `route_available` = true.,Retrieve routes that cost less than 0.5 and are active.,A
+Compute the mean of `cost` values grouped by `origin_airport_id`.,Show the average route cost for each origin airport.,A
+Return airports where all outbound `route_available` flags are false.,List all airports with zero available routes.,A
+Aggregate and rank airports by count of routes with `route_available` = false.,Identify the airport with the highest number of unavailable routes.,A
+Return routes where `route_available` = true and `cost` > 1.0.,Find routes that are currently active and cost above 1.0.,A
+Return airports that have ten or more route entries in the routes table.,Show all airports with at least ten total routes.,A
+Retrieve airports that have a mix of `route_available` = true and false entries.,Which airports have both available and unavailable routes?,A
+Select all `destination_airport_id`s where `origin_airport_id` = 8.,List the destination airports for routes departing airport 8.,A
+Return all origin airports that have at least one route where `cost` < 0.4.,Find all airports with routes costing under 0.4.,A
+Retrieve all routes with `origin_airport_id` = `destination_airport_id`.,Display every route where origin equals destination.,A
+Select airports with count(`route_available` = false) > 2.,List airports that currently have more than two unavailable routes.,A
+Return all `route_id`s where `origin_airport_id` = 9.,Retrieve route IDs for flights originating from airport 9.,A
+Retrieve all route entries where `route_available` = true.,Show all routes that have been marked as available.,A
+"Update all routes where `origin_airport_id` = 4, setting `route_available` = false.",Mark all routes departing from airport 4 as unavailable.,B
+Update `cost` = 0.75 for routes connecting airport 1 and airport 3.,Set the cost of routes between airport 1 and 3 to 0.75.,B
+Update every route record where `route_available` = false to `route_available` = true.,Reactivate all currently disabled routes.,B
+Update the `cost` field to 0.62 for routes referencing fuel pricing.,Adjust all fuel-based route costs to 0.62.,B
+Delete records from the routes table where `route_available` = false.,Remove all unavailable routes from the dataset.,B
+Modify `time_estimate` for all records with `origin_airport_id` = 2.,Update time estimates for routes originating from airport 2.,B
+Set `route_available` = true for route entries with `origin_airport_id` = 6 and `destination_airport_id` = 9.,Change the availability of the route between airports 6 and 9 to true.,B
+Multiply every route's `cost` field by 1.05.,Increase all route costs by 5%.,B
+Update all route records by setting `route_available` = false.,Reset every route's availability flag to false for maintenance.,B
+Update `cost` = 0.68 for all records where pricing depends on the fuel index.,Synchronize all route costs with the latest fuel index value of 0.68.,B
+Update all routes with `cost` > 1.0 to set `route_available` = false.,Deactivate all routes that currently exceed a cost of 1.0.,B
+Update the `cost` field to 0.55 where `origin_airport_id` = 7.,Change the cost for routes from airport 7 to 0.55.,B
+Set `route_available` = true for all route records.,Reset availability of all routes to true.,B
+Multiply every route’s `cost` field by 0.9.,Reduce all route costs by 10%.,B
+"Update routes where `origin_airport_id` = 2 and `destination_airport_id` = 9, setting `route_available` = false.",Disable routes connecting airport 2 and 9.,B
+Update all route records where `route_available` = false to `cost` = 0.0.,Adjust all unavailable routes to cost 0.0.,B
+Update `cost` = 0.7 for all route entries.,Recalculate cost fields using new pricing data of 0.7.,B
+Update routes where `route_available` = false to `route_available` = true.,Activate every route that was previously disabled.,B
+Update the `time_estimate` field to null for all route records.,Set time estimates for all routes to null.,B
+Update all routes where `cost` is null to `cost` = 0.5.,Replace missing cost entries with 0.5.,B
+Set `destination_airport_id` = 8 where `route_id` = 15.,Update the destination airport field for route 15 to 8.,B
+Remove all records from routes table where `route_available` = false.,Delete all routes that are inactive.,B
+Update every route’s `cost` field to 0.66.,Synchronize all costs to match the fuel price 0.66.,B
+Set `route_available` = true for all routes where origin=1 and destination=2.,Correct the availability flag for routes between airports 1 and 2.,B
+Subtract 0.05 from every route’s `cost` value.,Lower all route costs by 0.05.,B
+Insert new route records for each existing route where `origin_airport_id` = 3 and `destination_airport_id` = 4.,Duplicate all routes from airport 3 to airport 4.,B
+Update routes with `route_available` = false to `route_available` = true.,Set all unavailable routes to active again.,B
+Update `time_estimate` = 2 where `origin_airport_id` = 1.,Modify the time estimates for routes from airport 1 to 2 hours.,B
+Delete route records where `cost` > 2.0.,Remove all routes where cost is above 2.0.,B
+"Update all routes where `origin_airport_id` = 10, setting it to 11.",Reassign all routes from airport 10 to airport 11.,B
+Retrieve routes originating from airport 3 and verify their `route_available` status.,Double-check that all routes from airport 3 are correctly marked.,C
+Inspect and report the current `route_available` and `cost` values for the route between airports 2 and 8.,Review the route data between airports 2 and 8 for accuracy.,C
+Query all routes from airport 5 and confirm that `route_available` fields match expected values.,Ensure the route availability flags for airport 5 look consistent.,C
+Retrieve data for the route between airports 1 and 7 and examine the `cost` and `availability` fields.,The connection between airports 1 and 7 seems off; check it.,C
+Retrieve routes with `origin_airport_id` = 9 and check related delay or cost parameters.,Inspect why routes from airport 9 are showing delays.,C
+Review the entry for route ID 12 and verify that schedule and cost data are current.,Confirm that route 12 reflects the recent schedule update.,C
+Retrieve routes from airport 4 and check for `route_available = false` entries without modifying data.,Verify if airport 4 has any inactive destination routes.,C
+Query route records connecting airports 3 and 6 to identify inconsistent `cost` values.,Investigate anomalies in route costs between airports 3 and 6.,C
+Retrieve all routes where `origin_airport_id` = 10 and review their fields for correctness.,Audit the database entries for routes from airport 10.,C
+Fetch routes with `origin_airport_id` = 2 and check if their `cost` values align with expected rates.,Routes from airport 2 might have incorrect costs; please verify.,C
+Retrieve all routes with `origin_airport_id` = 6 and check `cost` and `availability` consistency.,Review the data consistency for routes from airport 6.,C
+Query routes from airport 1 and analyze `cost` values for anomalies.,Investigate why costs from airport 1 appear unusually high.,C
+Retrieve routes with `origin_airport_id` = 5 and verify the correctness of `route_available` fields.,Confirm whether airport 5 has routes incorrectly flagged as available.,C
+Retrieve the route record linking airports 2 and 3 and check for null fields.,Inspect the route between airports 2 and 3 for missing values.,C
+Select all routes and compare `cost` and `time_estimate` fields for anomalies.,Audit all route records for inconsistencies in cost and time.,C
+Check the `origin_airport_id` and `destination_airport_id` columns for invalid or swapped entries.,Verify that all airport IDs are correctly assigned in routes.,C
+Retrieve all routes from airport 8 and compare `route_available` with operational logs.,Check if the availability status of airport 8 routes matches logs.,C
+Retrieve routes where `origin_airport_id` = 2 and `time_estimate` is null.,Determine why airport 2 routes are missing time estimates.,C
+Query all routes with `cost` = 0.75 and verify the correctness of related fields.,Assess data accuracy for routes that cost exactly 0.75.,C
+Retrieve the record for route ID 22 and check if `route_available` matches the intended state.,Investigate whether route 22 reflects the correct status.,C
+Retrieve all route entries and identify duplicates by `origin_airport_id` and `destination_airport_id`.,Examine the cause of duplicated routes in the database.,C
+Retrieve routes where `route_available` = false and check linked maintenance logs.,Verify that all unavailable routes have corresponding maintenance notes.,C
+Fetch route entries modified in the last update batch and inspect `cost` values.,Review all recent updates to the route cost field.,C
+Query the routes table for records where `destination_airport_id` is null.,Ensure there are no routes missing destination IDs.,C
+Retrieve all routes from airport 7 and examine `cost` field deviations.,Analyze irregular route costs for airport 7 departures.,C
+Retrieve and verify the record linking airports 3 and 9 for consistency in cost and status.,Cross-check the route data between airports 3 and 9.,C
+Query all routes with `route_available` = false and confirm proper logging.,Determine whether inactive routes are logged correctly.,C
+Retrieve routes from airport 4 and check for identical destination entries.,Review why routes from airport 4 appear duplicated.,C
+Query all routes where `origin_airport_id` = 9 and verify `cost` uniformity.,Inspect airport 9 route records for inconsistent costs.,C
+Retrieve routes where `route_available` = true and ensure `cost` is not null or invalid.,Evaluate whether all active routes have valid cost values.,C
