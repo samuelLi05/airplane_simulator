@@ -249,7 +249,7 @@ def main():
         "You are a database command interpreter. Transform ambiguous user requests "
         "into precise, actionable instructions. Make it clear whether the user wants to "
         "extract information from the database OR modify the database. Include specific "
-        "field names (route_available, cost, time) and conditions."
+        "field names (route_available, cost, time) and conditions. Do not make SQL, only natural language instructions."
     )
     
     test_prompts = [
