@@ -5,7 +5,8 @@ import prompts
 import json
 import sys
 import os
-import math
+import numpy as np
+import pandas as pd
 
 from airlift.envs.airlift_env import AirliftEnv
 # Starter kit solution
@@ -25,6 +26,10 @@ except ImportError:
     TEXTGRAD_AVAILABLE = False
     print("[json_update] WARNING: Could not import textgrad_optimizer. Falling back to direct DPO.")
 
+# Import sentence-transformers for contrastive learning classification
+from sentence_transformers import SentenceTransformer
+CONTRASTIVE_AVAILABLE = True
+
 # Maximum number of steps the episode will run
 max_cycles = 5000
 
@@ -35,6 +40,111 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 # Default model tag for DPO
 DEFAULT_MODEL_TAG = "clarifier with solutions"
+
+# Contrastive learning model path and data
+CONTRASTIVE_MODEL_PATH = os.path.join(os.path.dirname(__file__), "..", "notebooks", "air_sim_model_v3")
+CONTRASTIVE_DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "notebooks", "sample_data.csv")
+
+# Global contrastive learning components
+_contrastive_model = None
+_centroid_A = None
+_centroid_B = None
+
+
+def _load_contrastive_classifier():
+    global _contrastive_model, _centroid_A, _centroid_B
+    
+    if _contrastive_model is not None:
+        return _contrastive_model, _centroid_A, _centroid_B
+    
+    # Load trained model
+    print(f"[Contrastive] Loading model from {CONTRASTIVE_MODEL_PATH}...")
+    _contrastive_model = SentenceTransformer(CONTRASTIVE_MODEL_PATH)
+    
+    # Load training data and split by class
+    df = pd.read_csv(CONTRASTIVE_DATA_PATH)
+    sample_data = df.to_dict(orient="records")
+    
+    sample_data_A = [d['prompt'] for d in sample_data if d['solution'] == 'A']
+    sample_data_B = [d['prompt'] for d in sample_data if d['solution'] == 'B']
+    
+    # Use 80% for training centroids (same as notebook)
+    train_perc = 0.8
+    A_train = sample_data_A[:int(len(sample_data_A) * train_perc)]
+    B_train = sample_data_B[:int(len(sample_data_B) * train_perc)]
+    
+    # Compute centroids
+    _centroid_A = _get_emb_centroid_for_texts(A_train, _contrastive_model)
+    _centroid_B = _get_emb_centroid_for_texts(B_train, _contrastive_model)
+    
+    print(f"[Contrastive] Loaded model and computed centroids (A: {len(A_train)} samples, B: {len(B_train)} samples)")
+    
+    return _contrastive_model, _centroid_A, _centroid_B
+
+
+def _get_emb_centroid_for_texts(texts, model):
+    """
+    Compute the centroid embedding for a list of texts.
+    
+    Args:
+        texts: List of text strings
+        model: SentenceTransformer model
+    
+    Returns:
+        Normalized centroid embedding (numpy array)
+    """
+    emb = model.encode(
+        texts,
+        convert_to_numpy=True,
+        normalize_embeddings=True,
+    )
+    centroid = emb.mean(axis=0)
+    # Re-normalize centroid to unit length for cosine similarity
+    centroid = centroid / np.linalg.norm(centroid)
+    return centroid
+
+
+def _classify_with_centroids(text: str, model, centroid_A, centroid_B, sim_threshold: float = 0.6) -> dict:
+    """
+    Classify a prompt using cosine similarity to class centroids.
+    
+    Args:
+        text: The prompt text to classify
+        model: SentenceTransformer model
+        centroid_A: Centroid for class A (extract info)
+        centroid_B: Centroid for class B (modify database)
+        sim_threshold: Minimum similarity to assign A or B (else C)
+    
+    Returns:
+        dict with prediction, similarities, distances, and margin
+    """
+    # Embed the input text
+    emb = model.encode(text, convert_to_numpy=True, normalize_embeddings=True)
+    
+    # Compute cosine similarities (dot product since vectors are normalized)
+    sim_A = float(np.dot(emb, centroid_A))
+    sim_B = float(np.dot(emb, centroid_B))
+    
+    # Cosine distances
+    dist_A = 1.0 - sim_A
+    dist_B = 1.0 - sim_B
+    
+    # Decision rule
+    best_sim = max(sim_A, sim_B)
+    
+    if best_sim < sim_threshold:
+        pred = "C"  # Too far from both clusters → uncertain
+    else:
+        pred = "A" if sim_A >= sim_B else "B"
+    
+    return {
+        "prediction": pred,
+        "sim_A": sim_A,
+        "sim_B": sim_B,
+        "dist_A": dist_A,
+        "dist_B": dist_B,
+        "margin": abs(sim_A - sim_B),
+    }
 
 
 def load_dpo_model(model_id:str) -> str:
@@ -204,53 +314,55 @@ def write_json_to_file(json_data, path):
         print(f"Failed to write output file: {e}", file=sys.stderr)
 
 
-def classify_prompt(prompt: str) -> tuple[str, float]:
+def classify_prompt(prompt: str, sim_threshold: float = 0.6) -> tuple[str, float]:
     """
-    Classify a prompt as 'A', 'B', or 'C' using GPT-5-nano log probabilities.
-
+    Classify a prompt as 'A', 'B', or 'C' using contrastive learning centroids.
+    
+    Uses a pre-trained SentenceTransformer model to embed the prompt and
+    compares cosine similarity to class centroids:
+        A = Extract information from database
+        B = Modify the database
+        C = Uncertain (if similarity to both centroids is below threshold)
+    
+    Args:
+        prompt: The user prompt to classify
+        sim_threshold: Minimum cosine similarity to assign A or B (default: 0.6)
+    
     Returns:
         (label, confidence): 
             label = 'A' | 'B' | 'C'
-            confidence = probability of the chosen label
+            confidence = cosine similarity to the chosen class centroid
+                         (or margin between A and B for interpretability)
     """
-    response = client.completions.create(
-        model="gpt-4o-mini",
-        prompt=(
-            "Classify the following user prompt into one of these options:\n"
-            "A. Extract info from a database\n"
-            "B. Modify the database\n"
-            "C. Uncertain\n\n"
-            f"Prompt: {prompt}\n\nPlease answer with a signle, capital letter:"
-        ),
-        max_tokens=1,
-        logprobs=3,     # request logprobs for top tokens
-        temperature=0   # deterministic output
-    )
-
-    choice = response.choices[0]
     
-    logprobs = choice.logprobs.top_logprobs[0]
+    try:
+        # Load model and centroids (lazy loading, cached after first call)
+        model, centroid_A, centroid_B = _load_contrastive_classifier()
+        
+        # Classify using centroid similarity
+        result = _classify_with_centroids(prompt, model, centroid_A, centroid_B, sim_threshold)
+        
+        label = result["prediction"]
+        
+        # Use the similarity to the winning centroid as confidence
+        if label == "A":
+            confidence = result["sim_A"]
+        elif label == "B":
+            confidence = result["sim_B"]
+        else:  # C
+            # For uncertain, use the best similarity as a measure
+            confidence = max(result["sim_A"], result["sim_B"])
+        
+        print(f"[Contrastive] sim_A={result['sim_A']:.3f}, sim_B={result['sim_B']:.3f}, "
+              f"margin={result['margin']:.3f} → {label}")
+        
+        return label, confidence
+        
+    except Exception as e:
+        print(f"Classification failed: {e}")
+        return "C", 0.33
 
-    prob_a = math.exp(logprobs.get(" A", float("-inf")))
-    prob_b = math.exp(logprobs.get(" B", float("-inf")))
-    prob_c = math.exp(logprobs.get(" C", float("-inf")))
-
-    total = prob_a + prob_b + prob_c
-    if total == 0:
-        return "C", 0.33  # fallback
-
-    probs = {
-        "A": prob_a / total,
-        "B": prob_b / total,
-        "C": prob_c / total,
-    }
-
-    label = max(probs, key=probs.get)
-    confidence = probs[label]
-
-    return label, confidence
-
-def handle_prompt(prompt: str, data_path: str, confidence_threshold: float = 0.5) -> str:
+def handle_prompt(prompt: str, data_path: str, confidence_threshold: float = 0.7) -> str:
     """
     Handle a user prompt based on classification with TextGrad optimization.
     
@@ -384,7 +496,7 @@ def write_solution(in_pkl):
 
 if __name__ == '__main__':
 
-    user_prompt = "Analyze routes from airport 3 are consistent and cross check inconsistent prices and cargoes."
+    user_prompt = "A blocking condition appears in the route between airport 1 and 5 that needs to be shown."
 
     parser = argparse.ArgumentParser(description='geo-olm agent')
     parser.add_argument('--Test', '-T', type=int, default=0, help='input json Test to load from')
