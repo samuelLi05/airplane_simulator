@@ -70,6 +70,17 @@ These instructions guide you through setting up the simulation environment on Li
     
     The updated database is stored in the `database` folder with the name `updated_database.json` and the solution is stored in the `solution` folder with the name `updated_solution.json`
 
+## Repository structure (root)
+
+- airlift — simulator and main Python package
+- airlift-starter-kit — environment and quickstart files (Conda/Env)
+- examples — demo media (GIF/MP4) and example assets
+- notebooks — Jupyter notebooks for contrastive learning
+- prompt-optimizer — fine-tuning and prompt optimization tools (DPO, TextGrad)
+- db-update — scripts to update the database and return solutions
+- database — input databases (JSON)
+- solution — generated solution outputs (JSON)
+
 ## Example Notebooks
 [Contrastive Learning Notebook](./notebooks/Contrastive_Learning.ipynb)
 
@@ -80,5 +91,5 @@ These instructions guide you through setting up the simulation environment on Li
 [TextGrad Prompt Optimizer](./prompt-optimizer/textgrad_optimizer.py)
 
 ## Sample Training Data
-[Fine-Tuning Training Data](./prompt-optimizer/dpo_training_data.jsonl)
+[Fine-Tuning Training Data](./prompt-optimizer/dpo_training_data.jsonl)<br>
 [Prompt Optimization Training Data](./prompt-optimizer/samples.jsonl)
