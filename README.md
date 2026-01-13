@@ -1,14 +1,28 @@
-# Airplane Simulator
+# Foundation Models for Logistics Operations: Towards Certifiable, Conversational Interfaces
 
-This project is a simulation environment for airlift logistics.
+We introduce a neurosymbolic framework that enhances multimodal logistics by converting natural-language requests into verifiable planning specifications. By quantifying and addressing uncertainty at the token level through an interactive clarification loop, our approach enables certifiable, real-time decision-making that outperforms significantly larger models with lower latency.
+
+## Demo Videos
+
+<img src="./examples/DIUDemoV2.gif" alt="Video Demos" width="800" />
+
+**Full video** available at: [here](./examples/DIU%20Demo%20V2.mp4)
+
+## Framework
+
+<p align="center">
+    <img src="./examples/VLL.png" alt="VLL" />
+</p>
+
+<p align="center">
+    <img src="./examples/Intent-Verification.png" alt="Intent Verification" />
+</p>
 
 ## Local Development Setup
-
-These instructions will guide you through setting up the simulation environment in an Linux environment.
+These instructions guide you through setting up the simulation environment on Linux.
 
 ### Prerequisites
-
-*   You must have a Conda installation (Miniconda or Anaconda).
+*   You must have a Conda installation (Miniconda or Anaconda)
 
 ### Installation Steps
 
@@ -48,10 +62,23 @@ These instructions will guide you through setting up the simulation environment 
 
     To start working on the project, you need to activate the Conda environment in your terminal.
 
-    ```bash
-       python db-update/json_update.py
-    ```
+     ```bash
+     python db-update/json_update.py
+     ```
 
-    You can use the `--instruction` arguement to pass in a natural language instruction or modify user prompt directly in this file.
+     You can use the `--instruction` argument to pass in a natural language instruction or modify the user prompt directly in this file.
     
     The updated database is stored in the `database` folder with the name `updated_database.json` and the solution is stored in the `solution` folder with the name `updated_solution.json`
+
+## Example Notebooks
+[Contrastive Learning Notebook](./notebooks/Contrastive_Learning.ipynb)
+
+## Model Fine-Tuning
+[DPO Fine-Tuning](./prompt-optimizer/dpo.py)
+
+## Prompt Optimization
+[TextGrad Prompt Optimizer](./prompt-optimizer/textgrad_optimizer.py)
+
+## Sample Training Data
+[Fine-Tuning Training Data](./prompt-optimizer/dpo_training_data.jsonl)
+[Prompt Optimization Training Data](./prompt-optimizer/samples.jsonl)
