@@ -14,9 +14,13 @@ We introduce a neurosymbolic framework that enhances multimodal logistics by con
     <img src="./examples/VLL.png" alt="VLL" />
 </p>
 
+Overview of an VLL agent. Language and visual inputs are converted into structured goals, filtered through an uncertainty‑aware verifier, and dispatched to symbolic planners.
+
 <p align="center">
     <img src="./examples/Intent-Verification.png" alt="Intent Verification" />
 </p>
+
+Overview of the uncertainty-aware intent-verification loop. The agent takes multimodal inputs—textual instructions and visual data—and embeds them into a learned latent space where intent types form distinct clusters. It computes a probabilistic guarantee from the distance to the nearest cluster centroid, and, if the guarantee falls below a threshold, proactively issues a clarification query before formalizing the goal to ensure downstream planners work with the correct intent.
 
 ## Local Development Setup
 These instructions guide you through setting up the simulation environment on Linux.
