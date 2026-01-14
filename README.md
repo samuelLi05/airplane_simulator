@@ -22,6 +22,16 @@ Overview of an VLL agent. Language and visual inputs are converted into structur
 
 Overview of the uncertainty-aware intent-verification loop. The agent takes multimodal inputs—textual instructions and visual data—and embeds them into a learned latent space where intent types form distinct clusters. It computes a probabilistic guarantee from the distance to the nearest cluster centroid, and, if the guarantee falls below a threshold, proactively issues a clarification query before formalizing the goal to ensure downstream planners work with the correct intent.
 
+## Results
+
+<p align="center">
+    <img src="./examples/prompt_optimization_examples.png" alt="VLL" />
+</p>
+
+<p align="center">
+    <img src="./examples/model_comparison_graph.png" alt="VLL" />
+</p>
+
 ## Local Development Setup
 These instructions guide you through setting up the simulation environment on Linux.
 
